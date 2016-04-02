@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-require(dotenv).load();
+// require('dotenv').load();
+var dotenv = require('dotenv');
+dotenv.load();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,9 +11,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/send', function(req, res, next) {
-  console.log('KEY: ', GOOGLE_API_KEY);
+  console.log('KEY: ', process.env.GOOGLE_API_KEY);
   var xhr = new XMLHttpRequest();
-  xhr.open('POST', 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaSyA34gNqYa9dpD_u4MCmrWUTi-zbQlSw0yA');
+  xhr.open('POST', 'https://www.googleapis.com/urlshortener/v1/url?key='+process.env.GOOGLE_API_KEY);
   xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.onload=function() {
     console.log((xhr.responseText));
