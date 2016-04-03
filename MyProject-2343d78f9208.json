@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "primal-monument-127023",
+  "private_key_id": "2343d78f9208376beda47b1ef342cf4d7c9381c2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCsdWq4AfOow/QG\ng644iv6wrH00W6kctUVZnhrujTC3n6eEj0bipRLHTNByNYHh3Y23/GTMmM9uQ0OO\nVusYC6ACvSnA+La0cTiuCDxNydGJ1ptpXRYhak020cUtG6l6AAgoSiacFPOI3MNB\nSGr0l2ESPcXtH09XBOSBQXvIj47mI3K0XrOew49Whp71MSeoNUGhWj8qcSoEddg2\nT2NHepSn6zw6uCFIUtVpfEADtRDqgdMXsAaSjpesqBHdiOSSITjYMykfTjXv7Ejg\nUlhD/zvtKGKUXutgqs12jGTGYq72rIZsMm01XyfXu9pxPINBC5K9bxFFHYzldfYv\nw+9vsfDnAgMBAAECggEAOZLtcMa+CI56jh4x8JB+nI7JMcyT9ZCSuWtuBEvAgtza\n+Qc4G/wN+9kqEabJWJU1dcHeCOvO/DmaeQ+NZrai0adDJDgkDrNpv7fiIfoJaSHr\nOk6oT7mEU5POZtPATYlrL8ApiZv4/aztxoKdqlBLSOK0jAgS3bM1ce1hnMBIbY3D\nUfw8FlqmcsAhWaRjPeZxcpqxEOD7K8nwtCxYEXPn9AOdRk1KxFcVY/UzpZJFQYK2\nhzYLn8dV6qkryMW18GuCKRgqSZ+4fl+TiXFHnXcF0fiPoXKLfU2pvjxyv2OQeDTX\n89SRCtPMMfriUuZVT/WsfAnw0Z0nAg4wRICaiGZqiQKBgQD8sd/a1odMI+MsfA5L\n4t0Zqb1QxrkyiL7IAQ/cc4fuqMRKGMihK7CJwhcgWmQ5XP/I4lISMkB/A329y397\noRu1C9JR2fJFwRE8LFJznf4oFU9AyjNEejaiD1gTqSFV9luCByFBZSrCuDTNCmQK\ndjlR7Gcf4FfilDurYOgoeR2cvQKBgQCutuED1XvSttCQXwXyhoDk2fM3Vjol+RBG\niHmMNm7exP4wWKQ3m1fA3wZmOCi75ROVq5KZGdgEKUOGyzHf17gnk/QgBEqVrUf2\nAOYapnb7eHuc4ZTjkfkK11p/GZnagejy+erjTKHI5dST523FQMbCBOsyKY4dXjaU\nTcoV1nMocwKBgQCKy7S2QdFMzAVyoK1Fl1V0TBxVKuH8VMndl1+76aVHPGGchWJl\nzFaKRBZpydx0+ZTxJQaJQhrU6Pj+77CVGlfaqKScGscM80/hKkMbiDNaluHSJ33j\nZfFuMFljaymJSujWUc49WjEThRRTbxql+GvhiKTYCGSdamgf6Pl7iZLvTQKBgEY5\nj7wgxQJvJOnCp/tRgOF7kTz+1aSJtbcECAcJogq8l4cLOgZ31A/cFRBlJkpPy01v\nhx8uuhsCEvhNGCDm7khKOefckbYTzkbdGaBApLZzOQxXx6ao97cZ1HAd9C9V5DI1\nrenq1WSQrJ8+eGq+nKVDoN2qwkqfocR+d+nLJsJtAoGASKhVTtVA8GnUAwp0CSzZ\nuOa+MZxux5jJzNSvXIgF/YGVnaQcqH9C2jz3l2G+KlVFM1c5KJppURPPerEj8qLu\nXI9BEbS56poxXoOpHjkL6oZMsjlmBuKVxFRebSoGgiJaZknO2IsGzDk8O4VK8Tib\npm1dZOWqojLYqibea+lR36Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "connect-bot@primal-monument-127023.iam.gserviceaccount.com",
+  "client_id": "112613994037761622932",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/connect-bot%40primal-monument-127023.iam.gserviceaccount.com"
+}
