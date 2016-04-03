@@ -116,11 +116,11 @@ router.get('/twsend', function(req, res, next) {
   });
 });
 
+// Reply back to app SMS number will be received here
 router.post('/receive', function(req, res, next) {
   console.log('Received a message from Twilio: ');
-  console.log('req: ', req.body.Body);
-  // console.log('res: ', res);
-  // console.log('next: ', next);
+  console.log('Message: ', req.body.Body);
+  console.log('From: ', req.body.From);
 });
 
 module.exports = router;
