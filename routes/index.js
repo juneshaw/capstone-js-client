@@ -118,7 +118,7 @@ router.get('/twsend', function(req, res, next) {
 
 router.get('/receive', function(req, res, next) {
   console.log('Received a message from Twilio: ');
-  console.log('res: ', res);
+  console.log('req: ', req.params.body);
   // console.log('res: ', res);
   // console.log('next: ', next);
 });
