@@ -61,26 +61,12 @@ router.get('/', function(req, res, next) {
 // restRequest.execute(function(jsonResponse, rawResponse){
 //Handle response
 
-// Textbelt
 
-router.get('/send', function(req, res, next) {
 
-  var text = require('textbelt');
-
-  var opts = {
-    fromAddr: 'june.shaw@me.com',  // "from" address in received text
-    fromName: 'June Shaw',       // "from" name in received text
-    region:   'us',              // region the receiving number is in: 'us', 'canada', 'intl'
-    subject:  'test'        // subject of the message
-  }
-  console.log('opts: ', opts);
-  text.sendText('3037264083', 'A sample text message!', opts, function(err) {
-    if (err) {
-      console.log(err);
-    }
-  });
-});
-
+// Test of Twilio send
+// This can be a link to a suggestion of the activity, or HTML of the idea
+// or ticket stub/date/time/event.
+// WORKING CORRECTLY ON HEROKU
 router.get('/twsend', function(req, res, next) {
   // Load the twilio module
   var twilio = require('twilio');
@@ -117,6 +103,15 @@ router.get('/twsend', function(req, res, next) {
 });
 
 // Reply back to app SMS number will be received here
+// This could be a Y, N, M confirmation to register.
+// The Y/N will be stored, and the M will be questioned again closer to the date.
+// Comments can be allowed to store on bulletin board for STRETCH
+// A THANK YOU can be added if necessary.
+// HTML pic of animal can be generated for STRETCH
+// calendar.ics can be returned for STRETCH
+// (console.log can screw up Twilio.)
+// (get was suggested, but post is working.)
+// WORKING ON HEROKU
 router.post('/receive', function(req, res, next) {
   console.log('Received a message from Twilio: ');
   console.log('Message: ', req.body.Body);
