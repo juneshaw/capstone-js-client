@@ -2,103 +2,298 @@ var knex = require('../db/knex')
 
 module.exports =
 {
-  Authors: function() {
-  return knex('authors');
+  Members: function() {
+  return knex('member');
 },
 
-  Books: function() {
-  return knex('books');
+  Groups: function() {
+  return knex('group');
 },
 
-  BookContributors: function() {
-  return knex('book_contributors');
+  Preferences: function() {
+  return knex('preference');
 },
 
-  Users: function() {
-  return knex('users');
+  Categories: function() {
+  return knex('category');
 },
 
-  insertAuthor: function (author) {
-   return(this.Authors().insert(author).returning('id'));
+  Activities: function() {
+  return knex('activity');
 },
 
-  author: function(id) {
-  return(this.Authors().where('id', id))
+{
+  Contact_Info: function() {
+  return knex('contact_info');
 },
 
- updateAuthor: function(id, author) {
-  return(this.Authors().where('id', id).first().update(author));
+  Locations: function() {
+  return knex('location');
 },
 
-  deleteAuthor: function(id) {
-  return(this.Authors().where('id', id).del())
+  Comments: function() {
+  return knex('comment');
 },
 
-  insertBook: function(book) {
-  return(this.Books().insert(book).returning('id'));
+  Activity_Members: function() {
+  return knex('activity_member');
 },
 
-  book: function(id) {
-  return(this.Books().where('id', id))
+  Group_Members: function() {
+  return knex('group_member');
 },
 
-  updateBook: function(id, book) {
-  return(this.Books().where('id', id).first().update(book));
+  Preference_Categories: function() {
+  return knex('preference_category');
 },
 
-  deleteBook: function(id) {
-  return(this.Books().where('id', id).del());
+  Custom_Categories: function() {
+  return knex('custom_category');
 },
 
-  insertBookContributor: function(bookContributor) {
+insertMember: function (member) {
+   return(this.Members().insert(member).returning('id'));
+},
+
+member: function(id) {
+  return(this.Members().where('id', id))
+},
+
+updateMember: function(id, member) {
+  return(this.Members().where('id', id).first().update(member));
+},
+
+deleteMember: function(id) {
+  return(this.Members().where('id', id).del())
+},
+
+insertGroup: function(group) {
+  return(this.Groups().insert(group).returning('id'));
+},
+
+group: function(id) {
+  return(this.Groups().where('id', id))
+},
+
+updateGroup: function(id, group) {
+  return(this.Groups().where('id', id).first().update(group));
+},
+
+deleteGroup: function(id) {
+  return(this.Groups().where('id', id).del());
+},
+
+insertPreference: function (preference) {
+   return(this.Preferences().insert(preference).returning('id'));
+},
+
+preference: function(id) {
+  return(this.Preferences().where('id', id))
+},
+
+updatePreference: function(id, preference) {
+  return(this.Preferences().where('id', id).first().update(preference));
+},
+
+deletePreference: function(id) {
+  return(this.Preferences().where('id', id).del())
+},
+
+insertCategory: function(category) {
+  return(this.Categories().insert(category).returning('id'));
+},
+
+category: function(id) {
+  return(this.Categories().where('id', id))
+},
+
+updateCategory: function(id, category) {
+  return(this.Categories().where('id', id).first().update(category));
+},
+
+deleteCategory: function(id) {
+  return(this.Categories().where('id', id).del());
+},
+
+insertActivity: function (activity) {
+   return(this.Activitys().insert(activity).returning('id'));
+},
+
+activity: function(id) {
+  return(this.Activitys().where('id', id))
+},
+
+updateActivity: function(id, activity) {
+  return(this.Activitys().where('id', id).first().update(activity));
+},
+
+deleteActivity: function(id) {
+  return(this.Activitys().where('id', id).del())
+},
+
+insertContact_Info function(contact_info) {
+  return(this.Contact_Info().insert(contact_info).returning('id'));
+},
+
+contact_info: function(id) {
+  return(this.Contact_Info().where('id', id))
+},
+
+updateContact_Info function(id, contact_info) {
+  return(this.Contact_Info().where('id', id).first().update(contact_info));
+},
+
+deleteContact_Info function(id) {
+  return(this.Contact_Info().where('id', id).del());
+},
+
+insertLocation: function (location) {
+   return(this.Locations().insert(location).returning('id'));
+},
+
+location: function(id) {
+  return(this.Locations().where('id', id))
+},
+
+updateLocation: function(id, location) {
+  return(this.Locations().where('id', id).first().update(location));
+},
+
+deleteLocation: function(id) {
+  return(this.Locations().where('id', id).del())
+},
+
+insertComment: function(comment) {
+  return(this.Comments().insert(comment).returning('id'));
+},
+
+comment: function(id) {
+  return(this.Comments().where('id', id))
+},
+
+updateComment: function(id, comment) {
+  return(this.Comments().where('id', id).first().update(comment));
+},
+
+deleteComment: function(id) {
+  return(this.Comments().where('id', id).del());
+},
+
+insertActivity_Member: function (activity_member) {
+   return(this.Activity_Members().insert(activity_member).returning('id'));
+},
+
+activity_member: function(id) {
+  return(this.Activity_Members().where('id', id))
+},
+
+updateActivity_Member: function(id, activity_member) {
+  return(this.Activity_Members().where('id', id).first().update(activity_member));
+},
+
+deleteActivity_Member: function(id) {
+  return(this.Activity_Members().where('id', id).del())
+},
+
+insertGroupMember: function(group_member) {
+  return(this.GroupMembers().insert(group_member).returning('id'));
+},
+
+group_member: function(id) {
+  return(this.GroupMembers().where('id', id))
+},
+
+updateGroupMember: function(id, group_member) {
+  return(this.GroupMembers().where('id', id).first().update(group_member));
+},
+
+deleteGroupMember: function(id) {
+  return(this.GroupMembers().where('id', id).del());
+},
+
+insertPreference_Category: function (preference_category) {
+   return(this.Preference_Categories().insert(preference_category).returning('id'));
+},
+
+preference_category: function(id) {
+  return(this.Preference_Categories().where('id', id))
+},
+
+updatePreference_Category: function(id, preference_category) {
+  return(this.Preference_Categories().where('id', id).first().update(preference_category));
+},
+
+deletePreference_Category: function(id) {
+  return(this.Preference_Categories().where('id', id).del())
+},
+
+insertCustom_Category: function(custom_category) {
+  return(this.Custom_Categories().insert(custom_category).returning('id'));
+},
+
+custom_category: function(id) {
+  return(this.Custom_Categories().where('id', id))
+},
+
+updateCustom_Category: function(id, custom_category) {
+  return(this.Custom_Categories().where('id', id).first().update(custom_category));
+},
+
+deleteCustom_Category: function(id) {
+  return(this.Custom_Categories().where('id', id).del());
+},
+
+//////////////
+
+insertBookContributor: function(bookContributor) {
     return(this.BookContributors().insert(bookContributor).returning('id'));
 },
 
-  bookContributor: function (id) {
+bookContributor: function (id) {
   return(this.BookContributors().where('id', id))
 },
 
-  updateBookContributor: function(id, bookContributor) {
+updateBookContributor: function(id, bookContributor) {
   return(this.BookContributors().where('id', id).first().update(bookContributor));
 },
 
-  deleteBookContributor: function(id) {
+deleteBookContributor: function(id) {
   return(this.BookContributors().where('id', id).del());
 },
 
-  insertUser: function (user) {
+insertUser: function (user) {
     return(this.Users().insert(user).returning('id'));
 },
 
-  user: function(id) {
+user: function(id) {
     return(this.Users().where('id', id))
 },
 
-  updateUser: function(id, user) {
+updateUser: function(id, user) {
     return(this.Users().where('id', id).first().update(user));
 },
 
-  deleteUser: function(id) {
+deleteUser: function(id) {
     return(this.Users().where('id', id).del())
 },
 
-  userByName: function(user_name) {
+userByName: function(user_name) {
     return(this.Users().where('user_name', user_name));
 },
 
-  authorDefaults: function(id) {
+authorDefaults: function(id) {
     return({'first_name': "", 'last_name': "", 'biography': "", 'portrait_url': ""});
 },
 
-  bookDefaults: function() {
+bookDefaults: function() {
     return({'title': "", 'genre': "", 'portrait_url': "", 'description': ""});
 },
 
-  bookContributorsByBook: function(book_id) {
+bookContributorsByBook: function(book_id) {
     return(this.BookContributors().where('book_id', book_id));
 },
 
-  bookContributorsByAuthor: function(author_id) {
+bookContributorsByAuthor: function(author_id) {
     return(this.BookContributors().where('author_id', author_id));
 },
 };
