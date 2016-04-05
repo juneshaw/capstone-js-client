@@ -8,10 +8,15 @@ var app = angular.module('clientApp', ['ngRoute', 'connectbotControllers']);
                 controller: 'MainController'
             })
             .when('/groups', {
-                templateUrl: './partials/groups.html',
+                templateUrl: './partials/groups/index.html',
                 controller: 'GroupIndexController'
             })
-                .otherwise({redirectTo : '/'})
+            .when('/groups/:id', {
+                        templateUrl: 'partials/groups/show.html',
+                         controller: 'GroupShowController'
+            })
+            .otherwise({redirectTo : '/'})
+
                 // $locationProvider.html5Mode(true);
 
         })
