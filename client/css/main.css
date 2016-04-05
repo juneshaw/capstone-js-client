@@ -6,7 +6,7 @@
 .splash {
   background-image:  url("../images/friends.jpg");
   background-size: contain;
-  border: solid 5px black;
+  border: solid 2px black;
 }
 
 .splashpic {
