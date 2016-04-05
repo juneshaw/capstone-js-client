@@ -37,3 +37,16 @@
   width: 100%;
   height: 15%;
 }
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+tr, td {
+  padding: 5px;
+}
+
+caption {
+  text-align: center;
+}

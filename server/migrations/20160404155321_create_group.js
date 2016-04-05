@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     table.string('title');
     table.integer('host_id');
     table.text('bio');
+    table.string('image_url');
     table.integer('preference_id');
   })
 };
