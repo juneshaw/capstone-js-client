@@ -1,5 +1,17 @@
-<div class = "container-fluid text-center splash">
-  <p>{{group_collection}}</p>
-  <!-- <h1>This is Awesome</h1> -->
+<div class = "container-fluid">
+  <table class="table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Bio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="group in groups" ng-href="#/groups/{{group.id}}">
+        <td>{{group.title}}</td>
+        <td>{{group.bio}}</td>
+      </tr>
+    </tbody>
   <!-- <img class="splashpic" src="../../images/friends.jpg" alt="Friend Picture"> -->
+  </table>
 </div>

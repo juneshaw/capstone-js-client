@@ -22,7 +22,6 @@ module.exports =
   return knex('activity');
 },
 
-{
   Contact_Info: function() {
   return knex('contact_info');
 },
@@ -131,7 +130,7 @@ deleteActivity: function(id) {
   return(this.Activitys().where('id', id).del())
 },
 
-insertContact_Info function(contact_info) {
+insertContact_Info: function(contact_info) {
   return(this.Contact_Info().insert(contact_info).returning('id'));
 },
 
@@ -139,11 +138,11 @@ contact_info: function(id) {
   return(this.Contact_Info().where('id', id))
 },
 
-updateContact_Info function(id, contact_info) {
+updateContact_Info: function(id, contact_info) {
   return(this.Contact_Info().where('id', id).first().update(contact_info));
 },
 
-deleteContact_Info function(id) {
+deleteContact_Info: function(id) {
   return(this.Contact_Info().where('id', id).del());
 },
 

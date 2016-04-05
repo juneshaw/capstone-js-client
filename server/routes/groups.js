@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../src/db.js');
 // var mailcomposer = require('mailcomposer');
 // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // require('dotenv').load();
@@ -9,7 +10,11 @@ dotenv.load();
 /* GET index page. */
 router.get('/', function(req, res, next) {
   console.log('got to the right groups route');
-  res.send({'test':"BACK from the server"});
+  db.Groups().then(function(data) {
+    res.send({payload:data});
+  })
+
+  // res.send({'test':"BACK from the server"});
 });
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'ConnectBot' });

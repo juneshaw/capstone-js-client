@@ -1,4 +1,15 @@
 /* red ##CF370D */
+[ng-click],
+[data-ng-click],
+[x-ng-click],
+[ng-href] {
+    cursor: pointer;
+}
+/*
+.pointer {
+  cursor: pointer;
+}*/
+
 .greeting {
     padding: 15px;
 }
