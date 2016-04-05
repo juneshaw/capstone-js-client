@@ -245,55 +245,26 @@ deleteCustom_Category: function(id) {
 
 //////////////
 
-insertBookContributor: function(bookContributor) {
-    return(this.BookContributors().insert(bookContributor).returning('id'));
-},
 
-bookContributor: function (id) {
-  return(this.BookContributors().where('id', id))
-},
 
-updateBookContributor: function(id, bookContributor) {
-  return(this.BookContributors().where('id', id).first().update(bookContributor));
-},
 
-deleteBookContributor: function(id) {
-  return(this.BookContributors().where('id', id).del());
-},
-
-insertUser: function (user) {
-    return(this.Users().insert(user).returning('id'));
-},
-
-user: function(id) {
-    return(this.Users().where('id', id))
-},
-
-updateUser: function(id, user) {
-    return(this.Users().where('id', id).first().update(user));
-},
-
-deleteUser: function(id) {
-    return(this.Users().where('id', id).del())
-},
-
-userByName: function(user_name) {
-    return(this.Users().where('user_name', user_name));
-},
-
-authorDefaults: function(id) {
-    return({'first_name': "", 'last_name': "", 'biography': "", 'portrait_url': ""});
-},
-
-bookDefaults: function() {
-    return({'title': "", 'genre': "", 'portrait_url': "", 'description': ""});
-},
-
-bookContributorsByBook: function(book_id) {
-    return(this.BookContributors().where('book_id', book_id));
-},
-
-bookContributorsByAuthor: function(author_id) {
-    return(this.BookContributors().where('author_id', author_id));
-},
+// userByName: function(user_name) {
+//     return(this.Users().where('user_name', user_name));
+// },
+//
+// authorDefaults: function(id) {
+//     return({'first_name': "", 'last_name': "", 'biography': "", 'portrait_url': ""});
+// },
+//
+// bookDefaults: function() {
+//     return({'title': "", 'genre': "", 'portrait_url': "", 'description': ""});
+// },
+//
+// bookContributorsByBook: function(book_id) {
+//     return(this.BookContributors().where('book_id', book_id));
+// },
+//
+// bookContributorsByAuthor: function(author_id) {
+//     return(this.BookContributors().where('author_id', author_id));
+// },
 };
