@@ -1,5 +1,6 @@
 
 var app = angular.module('clientApp', ['ngRoute', 'connectbotControllers']);
+        // app.config(function($routeProvider, $locationProvider) {
         app.config(function($routeProvider) {
             $routeProvider
             .when('/', {
@@ -11,4 +12,6 @@ var app = angular.module('clientApp', ['ngRoute', 'connectbotControllers']);
                 controller: 'GroupIndexController'
             })
                 .otherwise({redirectTo : '/'})
+                // $locationProvider.html5Mode(true);
+
         })

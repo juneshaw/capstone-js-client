@@ -9,10 +9,11 @@ connectbotControllers.controller('MainController', ['$scope', function($scope){
 }]);
 
 // app.controller('GroupIndexController', ['$scope', GroupService, function($scope){
-// app.controller('GroupIndexController', ['$scope', function($scope){
-  // GroupService.getGroups().then(function(payload) {
-  //   $scope.group_collection = payload.data;
-//     $scope.group_collection = "Testing group index";
-//   }, function(error) {
-//   });
-// }]);
+connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupService', function($scope, GroupService){
+  $scope.group_collection = "Testing group index";
+  GroupService.getGroups().then(function(payload) {
+    console.log('payload from getGroups: ', payload);
+    $scope.group_collection = payload;
+  }, function(error) {
+  });
+}]);
