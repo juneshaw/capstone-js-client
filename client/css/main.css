@@ -5,8 +5,11 @@
 
 .splash {
   background-image:  url("../images/friends.jpg");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
   background-size: contain;
-  border: solid 2px black;
+  background-position:center top;
 }
 
 .splashpic {
