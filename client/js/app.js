@@ -1,4 +1,5 @@
-var app = angular.module('clientApp', ['ngRoute'])
+
+var app = angular.module('clientApp', ['ngRoute', 'connectbotControllers']);
         app.config(function($routeProvider) {
             $routeProvider
             .when('/', {
@@ -6,8 +7,8 @@ var app = angular.module('clientApp', ['ngRoute'])
                 controller: 'MainController'
             })
             .when('/groups', {
-                templateUrl: './partials/group.html',
-                controller: 'GroupListController'
+                templateUrl: './partials/groups.html',
+                controller: 'GroupIndexController'
             })
                 .otherwise({redirectTo : '/'})
         })
