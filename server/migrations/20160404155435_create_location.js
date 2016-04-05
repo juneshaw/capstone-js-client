@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
     table.increments('id');
     table.string('address_1');
     table.string('address_2');
+    table.string('city');
     table.string('state');
     table.string('zipcode');
   })
