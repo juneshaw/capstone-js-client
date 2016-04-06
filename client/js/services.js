@@ -10,18 +10,7 @@ app.service("GroupService", function($http){
     // return $http.get("http://localhost:3000/groups/"+id, {method: "jsponp"});
     return $http.get("https://capstone-js.herokuapp.com/groups/"+id, {method: "jsonp"});
   }
-
-  // CatService.getCat = function(cat_id){
-  //   return $http.get("http://localhost:3000/cats/"+cat_id);
-  //   // return $http.get("https://frozen-badlands-34577.herokuapp.com/cats/"+cat_id, {method: "jsonp"});
-  // }
-  //
-  // CatService.addCat = function(catObject) {
-  //   return $http.post("http://localhost:3000/cats/", catObject);
-  // }
-
   return GroupService;
-
 });
 
 app.service("MemberService", function($http){
@@ -34,6 +23,14 @@ app.service("MemberService", function($http){
   MemberService.getMember = function(id) {
     return $http.get("http://capstone-js.herokuapp.com/members/"+id, {method: "jsonp"});
   }
-
   return MemberService;
 });
+
+app.service("ActivityService", function($http) {
+  var ActivityService = {};
+
+  ActivityService.getActivityLatest = function(groupId) {
+    return $http.get("http://capstone-js.herokuapp.com/activities/"+groupId, {method: "jsonp"});
+  }
+  return ActivityService;
+})
