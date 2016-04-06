@@ -21,7 +21,7 @@ connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupServic
   });
 }]);
 
-connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams', 'GroupService', 'MemberService', function($scope, $routeParams, GroupService, MemberService) {
+connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams', 'GroupService', 'MemberService', 'ActivityService', function($scope, $routeParams, GroupService, MemberService, ActivityService) {
   console.log('made it to the GroupShowController with id: ',$routeParams.id);
   $scope.groupId = $routeParams.id;
   GroupService.getGroup($scope.groupId).then(function(payload) {
