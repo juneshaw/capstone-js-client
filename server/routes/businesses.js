@@ -18,9 +18,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-  // knex('users').orderBy('name', 'desc')
-
   db.business(req.params.id).first().then(function(data) {
+    console.log('business data: ', data);
     res.send({payload:data});
   });
 });

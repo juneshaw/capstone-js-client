@@ -252,6 +252,7 @@ insertBusiness: function(business) {
 },
 
 business: function(id) {
+  console.log('in the db business!');
   return(this.Businesses().where('id', id))
 },
 
