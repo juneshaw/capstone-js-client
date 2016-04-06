@@ -119,6 +119,7 @@ insertActivity: function (activity) {
 },
 
 activity: function(id) {
+  console.log('in activity get');
   return(this.Activitys().where('id', id))
 },
 
