@@ -98,7 +98,8 @@ router.get('/:id', function(req, res, next) {
   db.activities(req.param.id).then(function(data, error) {
   // db.activities(req.param.id).sort('date').then(function(data, error) {
     console.log('data from activity for group', data);
-  })
+  });
+});
 
 
 module.exports = router;
