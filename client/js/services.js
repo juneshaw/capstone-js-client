@@ -2,13 +2,13 @@ app.service("GroupService", function($http){
   var GroupService = {};
 
   GroupService.getGroups = function(){
-    return $http.get("http://localhost:3000/groups", {method: "jsponp"});
-    // return $http.get("https://frozen-badlands-34577.herokuapp.com/cats", {method: "jsonp"});
+    // return $http.get("http://localhost:3000/groups", {method: "jsponp"});
+    return $http.get("https://capstone-js.herokuapp.com/groups", {method: "jsonp"});
   }
 
   GroupService.getGroup = function(id){
-    return $http.get("http://localhost:3000/groups/"+id, {method: "jsponp"});
-    // return $http.get("https://frozen-badlands-34577.herokuapp.com/cats", {method: "jsonp"});
+    // return $http.get("http://localhost:3000/groups/"+id, {method: "jsponp"});
+    return $http.get("https://capstone-js.herokuapp.com/groups/"+id, {method: "jsonp"});
   }
 
   // CatService.getCat = function(cat_id){
