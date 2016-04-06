@@ -6,7 +6,7 @@ var db = require('../src/db.js');
 var dotenv = require('dotenv');
 dotenv.load();
 
-// 
+//
 // var oauthSignature = require('oauth-signature');
 // var n = require('nonce')();
 // var request = require('request');
@@ -94,8 +94,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-  console.log('made it to the activities show');
-  db.activities(req.params.id).first().then(function(data) {
+  console.log('made it to the activities show with param id of: ', req.params.id);
+  db.activity(req.params.id).first().then(function(data) {
       res.send({payload:data});
   });
 });
