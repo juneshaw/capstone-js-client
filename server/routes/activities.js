@@ -6,12 +6,12 @@ var db = require('../src/db.js');
 var dotenv = require('dotenv');
 dotenv.load();
 
-//
-// var oauthSignature = require('oauth-signature');
-// var n = require('nonce')();
-// var request = require('request');
-// var qs = require('querystring');
-// var _ = require('lodash');
+
+var oauthSignature = require('oauth-signature');
+var n = require('nonce')();
+var request = require('request');
+var qs = require('querystring');
+var _ = require('lodash');
 
 /* Function for yelp call
  * ------------------------
