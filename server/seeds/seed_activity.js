@@ -12,7 +12,8 @@ exports.seed = function(knex, Promise) {
       category_id: 1,
       date: "2016-05-01",
       time: "19:00:00",
-      location_id: 1}),
+      location_id: 1,
+      business_id: 1}),
     knex('activity').insert({id: 2,
       group_id: 1,
       name: "Graduation Party",
@@ -20,7 +21,8 @@ exports.seed = function(knex, Promise) {
       category_id: 1,
       date: "2016-06-01",
       time: "19:00:00",
-      location_id: 1}),
+      location_id: 1,
+      business_id: 2}),
     knex('activity').insert({id: 3,
       group_id: 2,
       name: "test2",
@@ -28,7 +30,8 @@ exports.seed = function(knex, Promise) {
       category_id: 1,
       date: "2016-06-02",
       time: "19:00:00",
-      location_id: 2}),
+      location_id: 1,
+      business_id: 3}),
     knex('activity').insert({id: 4,
       group_id: 3,
       name: "test1",
@@ -36,6 +39,7 @@ exports.seed = function(knex, Promise) {
       category_id: 1,
       date: "2016-06-03",
       time: "19:00:00",
-      location_id: 3})
+      location_id: 1,
+      business_id: 4})
     );
   };

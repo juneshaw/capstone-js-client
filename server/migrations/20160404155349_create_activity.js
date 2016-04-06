@@ -8,6 +8,8 @@ exports.up = function(knex, Promise) {
     table.date('date');
     table.time('time');
     table.integer('location_id');
+    table.integer('business_id');
+
   })
 };
 

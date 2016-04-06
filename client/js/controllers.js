@@ -36,11 +36,14 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   });
 }]);
 
-connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', 'ActivityService', 'LocationService', function($scope, $routeParams, ActivityService, LocationService) {
+connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', 'ActivityService', 'LocationService', 'BusinessService', function($scope, $routeParams, ActivityService, LocationService, BusinessService) {
   console.log('made it to the ActivityShowController');
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
     $scope.activity = payload.data.payload;
     console.log('activity: ', $scope.activity);
+    BusinessService.getBusiness($scope.businessId).then(function(payload) {
+      $scope.business = payload.data.payload;
+    })
   })
 }])
