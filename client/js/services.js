@@ -21,4 +21,15 @@ app.service("GroupService", function($http){
   // }
 
   return GroupService;
+
+});
+
+app.service("MemberService", function($http){
+  var MemberService = {};
+
+  MemberService.getMember = function(id) {
+    return $http.get("http://capstone-js.herokuapp.com/members/"+id, {method: "jsonp"});
+  }
+
+  return MemberService;
 });

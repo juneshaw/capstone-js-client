@@ -21,13 +21,14 @@ connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupServic
   });
 }]);
 
-connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams', 'GroupService', function($scope, $routeParams, GroupService) {
+connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams', 'GroupService', 'MemberService', function($scope, $routeParams, GroupService, MemberService) {
   console.log('made it to the GroupShowController with id: ',$routeParams.id);
   $scope.groupId = $routeParams.id;
   GroupService.getGroup($scope.groupId).then(function(payload) {
-    console.log('the id: ', $routeParams.id);
-    console.log('payload for the SHOW group', payload);
     $scope.group = payload.data.payload;
+    MemberService.getMember($scope.group.host_id).then(function(payload) {
+      $scope.host = payload.data.payload;
+    })
   }, function(error) {
   });
 }]);

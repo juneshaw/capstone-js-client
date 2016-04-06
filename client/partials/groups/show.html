@@ -1,10 +1,12 @@
 <div class = "container-fluid">
-  <p>{{group.image_url}}</p>
   <div class = "row">
-    <div class = "col-md-4">
-      <img src="{{group.image_url}}" alt="Group Picture">
+    <div class = "col-sm-4">
+      <p>{{group.title}}</p>
+      <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture">
     </div>
-    <div class = "col-md-8">
+    <div class = "col-sm-8">
+      <p>{{group.bio}}</p>
+      <span>Host: {{member.first_name}} {{member.last_name}}</span>
 
     </div>
   </div>
