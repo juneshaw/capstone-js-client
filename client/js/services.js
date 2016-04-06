@@ -10,7 +10,7 @@ app.service("GroupService", function($http){
     // return $http.get("http://localhost:3000/groups/"+id, {method: "jsponp"});
     return $http.get("https://capstone-js.herokuapp.com/groups/"+id, {method: "jsonp"});
   }
-  
+
   GroupService.getActivityLatest = function(id) {
     console.log('made it to getActivityLatest');
     return $http.get("http://capstone-js.herokuapp.com/groups/"+id+"/activities", {method: "jsonp"});
@@ -41,4 +41,14 @@ app.service("ActivityService", function($http) {
     return $http.get("http://capstone-js.herokuapp.com/activities/"+activityId, {method: "jsonp"});
   }
   return ActivityService;
+})
+
+app.service("LocationService", function($http) {
+  var LocationService = {};
+
+  LocationService.getLocation = function(locationId) {
+    console.log('made it to getLocation');
+    return $http.get("http://capstone-js.herokuapp.com/locations/"+locationId, {method: "jsonp"});
+  }
+  return LocationService;
 })

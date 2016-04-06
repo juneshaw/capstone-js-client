@@ -5,17 +5,17 @@
       <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture">
     </div>
     <a ng-href="#/activities/{{activity.id}}">
-    <div class = "col-sm-4">
-      <p>{{group.bio}}</p>
-      <span>Host: {{host.first_name}} {{host.last_name}}</span>
-      <div class = "text-center ticket">
+      <div class = "col-sm-4">
+        <p>{{group.bio}}</p>
+        <span>Host: {{host.first_name}} {{host.last_name}}</span>
+        <div class = "text-center ticket">
 
-        <h4>{{activity.name}}</h4>
-        <h6>{{activity.date | date : fullDate}}</h6>
-        <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-        <!-- <h6>{{activity.location_id}}</h6> -->
-      </div>
-
+          <h4>{{activity.name}}</h4>
+          <h6>{{activity.date | date : fullDate}}</h6>
+          <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
+          <!-- <h6>{{activity.location_id}}</h6> -->
+        </div>
+      </a>
     </div>
   </div>
     <div class = "row row-horizon">

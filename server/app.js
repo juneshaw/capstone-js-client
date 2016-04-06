@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var groups = require('./routes/groups');
 var members = require('./routes/members');
 var activities = require('./routes/activities')
+var locations = require('./routes/locations')
 // var invites = require('./routes/invites')
 
 var app = express();
@@ -38,6 +39,7 @@ app.use('/users', users);
 app.use('/groups', groups);
 app.use('/members', members);
 app.use('/activities', activities);
+app.use('/locations', locations);
 // app.use('/invites', invites);
 
 // catch 404 and forward to error handler

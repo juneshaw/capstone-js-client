@@ -15,6 +15,10 @@ var app = angular.module('clientApp', ['ngRoute', 'connectbotControllers']);
                         templateUrl: 'partials/groups/show.html',
                          controller: 'GroupShowController'
             })
+            .when('/activities/:id', {
+                        templateUrl: 'partials/activities/show.html',
+                        controller: 'ActivityShowController'
+            })
             .otherwise({redirectTo : '/'})
 
                 // $locationProvider.html5Mode(true);
