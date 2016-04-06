@@ -120,7 +120,7 @@ insertActivity: function (activity) {
 
 activity: function(id) {
   console.log('in activity get');
-  return(this.Activitys().where('id', id))
+  return(this.Activities().where('id', id))
 },
 
 updateActivity: function(id, activity) {
