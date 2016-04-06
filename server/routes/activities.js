@@ -93,13 +93,14 @@ router.get('/', function(req, res, next) {
   request_yelp(set_parameters, callback);
 });
 
-// router.get('/:id', function(req, res, next) {
-//   // knex('users').orderBy('name', 'desc')
-//
-//   db.activitiesForGroup(req.params.id).orderBy('date', 'desc').first().then(function(data) {
-//       res.send({payload:data});
-//   });
-// });
+router.get('/:id', function(req, res, next) {
+  // knex('users').orderBy('name', 'desc')
+
+  db.activities(req.params.id).first().then(function(data) {
+    console.log('made it to the activities show');
+      res.send({payload:data});
+  });
+});
 
 
 module.exports = router;

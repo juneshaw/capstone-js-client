@@ -1,0 +1,41 @@
+<div class = "container-fluid text-container">
+<!-- <div class = "container-fluid text-container"> -->
+  <table class="table-striped table-bordered table-hover">
+    <caption>My Groups</caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Bio</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr ng-repeat="group in groups">
+      <!-- <tr ng-repeat="group in groups" such-href="#/groups/{{group.id}}"> -->
+
+      <!-- <tr ng-repeat="group in groups" ng-click="go()"> -->
+      <!-- <tr ng-repeat="group in groups" ng-href="#/groups/{{group.id}}"> -->
+        <!-- <td> -->
+        <!-- <a ng-href="/#/groups/{{group.id}}"> -->
+        <td>
+          <a ng-href="#/groups/{{group.id}}">
+            {{group.title}}
+          </a>
+        </td>
+        <td>
+          <a ng-href="#/groups/{{group.id}}">
+          <!-- <a style="display: block;" ng-href="#/groups/{{group.id}}"> -->
+            {{group.bio}}
+          </a>
+        </td>
+          <!-- <td>{{group.id}}</td> -->
+          <!-- <td>{{group.title}}</td>
+          <td>{{group.bio}}</td> -->
+        <!-- </a> -->
+        <!-- </td> -->
+      </tr>
+    <!-- </a> -->
+    </tbody>
+  <!-- <img class="splashpic" src="../../images/friends.jpg" alt="Friend Picture"> -->
+  </table>
+</div>
