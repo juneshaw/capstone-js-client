@@ -9,8 +9,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var groups = require('./routes/groups');
 var members = require('./routes/members');
-// var invites = require('./routes/invites')
 var activities = require('./routes/activities')
+// var invites = require('./routes/invites')
 
 var app = express();
 
@@ -37,8 +37,8 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/groups', groups);
 app.use('/members', members);
-// app.use('/invites', invites);
 app.use('/activities', activities);
+// app.use('/invites', invites);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
