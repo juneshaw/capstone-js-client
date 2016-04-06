@@ -96,7 +96,9 @@ router.get('/', function(req, res, next) {
 router.get('/:id', function(req, res, next) {
   console.log('Inside the activities for group route');
   console.log('for id of: ', req.params.id);
-  db.activitiesForGroup(req.params.id).sort('date').first().then(function(data) {
+  // knex('users').orderBy('name', 'desc')
+
+  db.activitiesForGroup(req.params.id).orderBy('date', 'desc').first().then(function(data) {
   // db.activities(req.param.id).sort('date').then(function(data, error) {
     console.log('data from activity for group', data);
       res.send({payload:data});
