@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var db = require('../src/db.js');
+
 // var yelp = require('node-yelp');
 var dotenv = require('dotenv');
 dotenv.load();
@@ -90,5 +92,13 @@ router.get('/', function(req, res, next) {
   };
   request_yelp(set_parameters, callback);
 });
+
+router.get('/:id', function(req, res, next) {
+  console.log('Inside the activities for group route');
+  db.activities(req.param.id).then(function(data, error) {
+  // db.activities(req.param.id).sort('date').then(function(data, error) {
+    console.log('data from activity for group', data);
+  })
+
 
 module.exports = router;
