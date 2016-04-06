@@ -37,7 +37,7 @@ app.service("ActivityService", function($http) {
   var ActivityService = {};
 
   ActivityService.getActivity = function(activityId) {
-    console.log('made it to getActivityLatest');
+    console.log('made it to getActivity with id of ', activityId);
     return $http.get("http://capstone-js.herokuapp.com/activities/"+activityId, {method: "jsonp"});
   }
   return ActivityService;
