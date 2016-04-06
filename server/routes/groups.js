@@ -17,12 +17,21 @@ router.get('/', function(req, res, next) {
   // res.send({'test':"BACK from the server"});
 });
 
+router.get('/:id/activities', function(req, res, next) {
+  // knex('users').orderBy('name', 'desc')
+
+  db.activitiesForGroup(req.params.id).orderBy('date', 'desc').first().then(function(data) {
+    res.send({payload:data});
+  });
+});
 router.get('/:id', function(req, res, next) {
   console.log('got to the show group route');
   db.group(req.params.id).then(function(data) {
     res.send({payload:data});
   })
 });
+
+
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'ConnectBot' });
 // });

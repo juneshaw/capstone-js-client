@@ -28,13 +28,18 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
     $scope.group = payload.data.payload;
     MemberService.getMember($scope.group.host_id).then(function(payload) {
       $scope.host = payload.data.payload;
-      console.log('member data: !!!!', $scope.host);
-      console.log('groupId: ', $scope.groupId);
-      ActivityService.getActivityLatest($scope.groupId).then(function(payload) {
+      GroupService.getActivityLatest($scope.groupId).then(function(payload) {
         $scope.activity = payload.data.payload;
-        console.log('activity data: ', $scope.activity);
       })
     })
   }, function(error) {
   });
 }]);
+
+connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', 'ActivityService', 'LocationService', function($scope, $routeParams, ActivityService, LocationService) {
+  console.log('made it to the ActivityShowController');
+  $scope.activityId = $routeParams.id;
+  ActivityService.getActivity($scope.activityId).then(function(payload) {
+    $scope.activity = payload.data.payload;
+  })
+}])

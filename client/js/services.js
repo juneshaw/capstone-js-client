@@ -10,6 +10,12 @@ app.service("GroupService", function($http){
     // return $http.get("http://localhost:3000/groups/"+id, {method: "jsponp"});
     return $http.get("https://capstone-js.herokuapp.com/groups/"+id, {method: "jsonp"});
   }
+  
+  GroupService.getActivityLatest = function(id) {
+    console.log('made it to getActivityLatest');
+    return $http.get("http://capstone-js.herokuapp.com/groups/"+id+"/activities", {method: "jsonp"});
+  }
+
   return GroupService;
 });
 
@@ -26,12 +32,13 @@ app.service("MemberService", function($http){
   return MemberService;
 });
 
+
 app.service("ActivityService", function($http) {
   var ActivityService = {};
 
-  ActivityService.getActivityLatest = function(groupId) {
+  ActivityService.getActivity = function(activityId) {
     console.log('made it to getActivityLatest');
-    return $http.get("http://capstone-js.herokuapp.com/activities/"+groupId, {method: "jsonp"});
+    return $http.get("http://capstone-js.herokuapp.com/activities/"+activityId, {method: "jsonp"});
   }
   return ActivityService;
 })

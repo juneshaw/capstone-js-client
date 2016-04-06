@@ -93,17 +93,13 @@ router.get('/', function(req, res, next) {
   request_yelp(set_parameters, callback);
 });
 
-router.get('/:id', function(req, res, next) {
-  console.log('Inside the activities for group route');
-  console.log('for id of: ', req.params.id);
-  // knex('users').orderBy('name', 'desc')
-
-  db.activitiesForGroup(req.params.id).orderBy('date', 'desc').first().then(function(data) {
-  // db.activities(req.param.id).sort('date').then(function(data, error) {
-    console.log('data from activity for group', data);
-      res.send({payload:data});
-  });
-});
+// router.get('/:id', function(req, res, next) {
+//   // knex('users').orderBy('name', 'desc')
+//
+//   db.activitiesForGroup(req.params.id).orderBy('date', 'desc').first().then(function(data) {
+//       res.send({payload:data});
+//   });
+// });
 
 
 module.exports = router;

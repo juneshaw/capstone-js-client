@@ -4,14 +4,18 @@
       <p>{{group.title}}</p>
       <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture">
     </div>
-    <div class = "col-sm-8">
+    <div class = "col-sm-4">
       <p>{{group.bio}}</p>
       <span>Host: {{host.first_name}} {{host.last_name}}</span>
       <div class = "text-center ticket">
-        <p>Next Activity</p>
-        <span>{{activity.name}}</span>
-        <span>{{activity.date}} {{activity.time}}</span>
-        <span>{{activity.location}}</span>
+
+        <h4>{{activity.name}}</h4>
+        <!-- <h6>{{activity.name}}</h6> -->
+        <h6>
+          {{ activity.date | date : fullDate}}
+        </h6>
+        {{activity.time | timeToNormal  | date: 'shortTime'}}
+        <h6>{{activity.location_id}}</h6>
       </div>
 
     </div>
