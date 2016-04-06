@@ -55,7 +55,7 @@ insertMember: function (member) {
 },
 
 member: function(id) {
-  return(this.Members().where('id', id))
+  return(this.Members().where('id', id).first());
 },
 
 updateMember: function(id, member) {

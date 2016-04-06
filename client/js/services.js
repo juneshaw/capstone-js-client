@@ -27,6 +27,10 @@ app.service("GroupService", function($http){
 app.service("MemberService", function($http){
   var MemberService = {};
 
+  MemberService.getMembers = function(){
+    // return $http.get("http://localhost:3000/groups", {method: "jsponp"});
+    return $http.get("https://capstone-js.herokuapp.com/members", {method: "jsonp"});
+  }
   MemberService.getMember = function(id) {
     return $http.get("http://capstone-js.herokuapp.com/members/"+id, {method: "jsonp"});
   }

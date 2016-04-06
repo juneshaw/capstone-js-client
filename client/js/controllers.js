@@ -26,8 +26,10 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   $scope.groupId = $routeParams.id;
   GroupService.getGroup($scope.groupId).then(function(payload) {
     $scope.group = payload.data.payload;
+    console.log('group data: !!!!!', payload.data.payload);
     MemberService.getMember($scope.group.host_id).then(function(payload) {
       $scope.host = payload.data.payload;
+      console.log('member data: !!!!', $scope.host);
     })
   }, function(error) {
   });
