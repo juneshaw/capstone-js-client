@@ -245,10 +245,9 @@ deleteCustom_Category: function(id) {
 //////////////
 
 activitiesForGroup: function(id) {
+  console.log('activitiesForGroup id: ', id);
   return(this.Activities().where('group_id', id));
 }
-
-
 
 // userByName: function(user_name) {
 //     return(this.Users().where('user_name', user_name));
