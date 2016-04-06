@@ -16,6 +16,13 @@ router.get('/', function(req, res, next) {
 
   // res.send({'test':"BACK from the server"});
 });
+
+router.get('/:id', function(req, res, next) {
+  console.log('got to the show group route');
+  db.group(req.params.id).then(function(data) {
+    res.send({payload:data});
+  })
+});
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'ConnectBot' });
 // });

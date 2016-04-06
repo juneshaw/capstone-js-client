@@ -71,7 +71,7 @@ insertGroup: function(group) {
 },
 
 group: function(id) {
-  return(this.Groups().where('id', id))
+  return(this.Groups().where('id', id).first())
 },
 
 updateGroup: function(id, group) {

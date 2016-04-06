@@ -6,6 +6,11 @@ app.service("GroupService", function($http){
     // return $http.get("https://frozen-badlands-34577.herokuapp.com/cats", {method: "jsonp"});
   }
 
+  GroupService.getGroup = function(id){
+    return $http.get("http://localhost:3000/groups/"+id, {method: "jsponp"});
+    // return $http.get("https://frozen-badlands-34577.herokuapp.com/cats", {method: "jsonp"});
+  }
+
   // CatService.getCat = function(cat_id){
   //   return $http.get("http://localhost:3000/cats/"+cat_id);
   //   // return $http.get("https://frozen-badlands-34577.herokuapp.com/cats/"+cat_id, {method: "jsonp"});
