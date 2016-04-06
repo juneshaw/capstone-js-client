@@ -1,41 +1,24 @@
-<div class = "container-fluid text-container">
-<!-- <div class = "container-fluid text-container"> -->
-  <table class="table-striped table-bordered table-hover">
-    <caption>My Groups</caption>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Bio</th>
-      </tr>
-    </thead>
-    <tbody>
+<div class = "container-fluid">
+  <div class = "row">
+    <div class = "col-sm-4">
+      <div class = "text-center ticket">
 
-      <tr ng-repeat="group in groups">
-      <!-- <tr ng-repeat="group in groups" such-href="#/groups/{{group.id}}"> -->
+        <h4>{{activity.name}}</h4>
+        <h6>{{activity.date | date : fullDate}}</h6>
+        <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
+        <!-- <h6>{{activity.location_id}}</h6> -->
+      </div>
+      <!-- <p>{{activity.name}}</p>
+      <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture"> -->
+    </div>
+    <div class = "col-sm-8">
 
-      <!-- <tr ng-repeat="group in groups" ng-click="go()"> -->
-      <!-- <tr ng-repeat="group in groups" ng-href="#/groups/{{group.id}}"> -->
-        <!-- <td> -->
-        <!-- <a ng-href="/#/groups/{{group.id}}"> -->
-        <td>
-          <a ng-href="#/groups/{{group.id}}">
-            {{group.title}}
-          </a>
-        </td>
-        <td>
-          <a ng-href="#/groups/{{group.id}}">
-          <!-- <a style="display: block;" ng-href="#/groups/{{group.id}}"> -->
-            {{group.bio}}
-          </a>
-        </td>
-          <!-- <td>{{group.id}}</td> -->
-          <!-- <td>{{group.title}}</td>
-          <td>{{group.bio}}</td> -->
-        <!-- </a> -->
-        <!-- </td> -->
-      </tr>
-    <!-- </a> -->
-    </tbody>
-  <!-- <img class="splashpic" src="../../images/friends.jpg" alt="Friend Picture"> -->
-  </table>
+    </div>
+    <!-- <a ng-href="#/activities/{{activity.id}}">
+    <div class = "col-sm-4">
+      <p>{{group.bio}}</p>
+      <span>Host: {{host.first_name}} {{host.last_name}}</span>
+
+    </div> -->
+  </div>
 </div>

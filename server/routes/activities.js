@@ -94,10 +94,8 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-  // knex('users').orderBy('name', 'desc')
-
+  console.log('made it to the activities show');
   db.activities(req.params.id).first().then(function(data) {
-    console.log('made it to the activities show');
       res.send({payload:data});
   });
 });
