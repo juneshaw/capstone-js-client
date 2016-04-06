@@ -50,6 +50,10 @@ module.exports =
   return knex('custom_category');
 },
 
+  Businesses: function() {
+  return knex('business');
+},
+
 insertMember: function (member) {
    return(this.Members().insert(member).returning('id'));
 },
@@ -241,6 +245,22 @@ updateCustom_Category: function(id, custom_category) {
 
 deleteCustom_Category: function(id) {
   return(this.Custom_Categories().where('id', id).del());
+},
+
+insertBusiness: function(business) {
+  return(this.Businesses().insert(business).returning('id'));
+},
+
+business: function(id) {
+  return(this.Businesses().where('id', id))
+},
+
+updateBusiness: function(id, business) {
+  return(this.Businesses().where('id', id).first().update(business));
+},
+
+deleteBusiness: function(id) {
+  return(this.Businesses().where('id', id).del());
 },
 
 //////////////

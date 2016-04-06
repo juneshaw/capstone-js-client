@@ -41,8 +41,8 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
     $scope.activity = payload.data.payload;
-    console.log('activity: ', $scope.activity);
     BusinessService.getBusiness($scope.businessId).then(function(payload) {
+      console.log('business data: ', payload.data.payload);
       $scope.business = payload.data.payload;
     })
   })
