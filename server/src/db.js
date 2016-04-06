@@ -244,6 +244,9 @@ deleteCustom_Category: function(id) {
 
 //////////////
 
+activitiesForGroup: function(id) {
+  return(this.Activities().where('group_id', id));
+}
 
 
 

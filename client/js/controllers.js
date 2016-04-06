@@ -29,6 +29,7 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
     MemberService.getMember($scope.group.host_id).then(function(payload) {
       $scope.host = payload.data.payload;
       console.log('member data: !!!!', $scope.host);
+      console.log('groupId: ', $scope.groupId);
       ActivityService.getActivityLatest($scope.groupId).then(function(payload) {
         $scope.activity = payload.data.payload
       })
