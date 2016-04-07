@@ -50,7 +50,10 @@
   <div class="row span12 rsvp rsvpYes">
     <h4 class = "vertical-text">Going</h4>
     <ul class="thumbnails">
-      <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="col-sm-2">
+      <!-- <div ng-repeat="product in products | filter: my÷≥Filter"> -->
+      <!-- <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
+
+      <li ng-repeat="member in members | rsvpYes" ng-click="getDetail(member.id)" class="col-sm-2">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
 
         <div class="thumbnail">
@@ -65,7 +68,7 @@
   <div class="row span12 rsvp rsvpMaybe">
     <h4 class = "vertical-text">Maybe</h4>
     <ul class="thumbnails">
-      <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="col-sm-2">
+      <li ng-repeat="member in members | rsvpMaybe" ng-click="getDetail(member.id)" class="col-sm-2">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
 
         <div class="thumbnail">
@@ -80,7 +83,7 @@
   <div class="row span12 rsvp rsvpNo">
     <h4 class = "vertical-text">Not Going</h4>
     <ul class="thumbnails">
-      <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="col-sm-2 animate-repeat">
+      <li ng-repeat="member in members | rsvpNo" ng-click="getDetail(member.id)" class="col-sm-2 animate-repeat">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
 
         <div class="thumbnail">
