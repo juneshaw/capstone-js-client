@@ -36,7 +36,7 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   });
 }]);
 
-connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', function($scope, $routeParams, ActivityService, LocationService, BusinessService, MemberService) {
+connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService) {
   console.log('made it to the ActivityShowController');
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
@@ -58,8 +58,9 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
           }
         }]};
         // $scope.map.markers.push(marker);
+
         ActivityService.getMembers($scope.activityId).then(function(payload) {
-          console.log('member payload: ', payload);
+          console.log('member payload for activity id: ',$scope.activityId, ' ', payload.data.payload);
           $scope.members = payload.data.payload;
         })
       });
