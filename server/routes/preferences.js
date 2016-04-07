@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
+  console.log('got to preference id route');
   db.preference(req.params.id).first().then(function(data) {
     console.log('preference data: ', data);
     res.send({payload:data});
@@ -23,6 +24,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.get('/:id/group', function(req, res, next) {
+  console.log('got to group preference route');
   db.preferenceGroup(req.params.id).then(function(data) {
     console.log('preference group data: ', data);
     res.send({payload:data});
