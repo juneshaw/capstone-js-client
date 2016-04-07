@@ -271,6 +271,10 @@ activitiesForGroup: function(id) {
   return(this.Activities().where('group_id', id));
 }
 
+activityMembers: function(activityId) {
+  return(this.Members().join('activity_member', 'members.id', 'activity_member.member_id').where('activity_member.activity_id', activityId)
+}
+
 // userByName: function(user_name) {
 //     return(this.Users().where('user_name', user_name));
 // },

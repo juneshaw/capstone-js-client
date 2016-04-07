@@ -93,6 +93,14 @@ router.get('/', function(req, res, next) {
   request_yelp(set_parameters, callback);
 });
 
+router.get('/:id/members', function(req, res, next) {
+  console.log('made it to the activities show with param id of: ', req.params.id);
+  db.activityMembers(req.params.id).first().then(function(data) {
+    console.log(' ACTIVITY member data: ', data);
+      res.send({payload:data});
+  });
+});
+
 router.get('/:id', function(req, res, next) {
   console.log('made it to the activities show with param id of: ', req.params.id);
   db.activity(req.params.id).first().then(function(data) {

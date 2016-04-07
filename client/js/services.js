@@ -40,6 +40,10 @@ app.service("ActivityService", function($http) {
     console.log('made it to getActivity with id of ', activityId);
     return $http.get("http://capstone-js.herokuapp.com/activities/"+activityId, {method: "jsonp"});
   }
+
+  ActivityService.getMembers = function(activityId) {
+    return $http.get("http://capstone-js.herokuapp.com/activities/"+activityId+"/members", {method: "jsonp"});
+  }
   return ActivityService;
 })
 
