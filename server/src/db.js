@@ -272,8 +272,10 @@ activitiesForGroup: function(id) {
 },
 
 activityMembers: function(activityId) {
-  return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
+  return (this.activity_member().where('activity_id', activityId).join(member, 'member_id', 'id'));
 }
+//   return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
+// }
 
 // userByName: function(user_name) {
 //     return(this.Users().where('user_name', user_name));
