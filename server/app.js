@@ -12,6 +12,7 @@ var members = require('./routes/members');
 var activities = require('./routes/activities')
 var locations = require('./routes/locations')
 var businesses = require('./routes/businesses')
+var activity_members = require('./routes/activity_members')
 // var invites = require('./routes/invites')
 
 var app = express();
@@ -42,6 +43,7 @@ app.use('/members', members);
 app.use('/activities', activities);
 app.use('/locations', locations);
 app.use('/businesses', businesses);
+app.use('/activity_members', activity_members);
 // app.use('/invites', invites);
 
 // catch 404 and forward to error handler

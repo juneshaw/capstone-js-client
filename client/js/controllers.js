@@ -59,6 +59,7 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
         }]};
         // $scope.map.markers.push(marker);
         ActivityService.getMembers($scope.activityId).then(function(payload) {
+          console.log('member payload: ', payload);
           $scope.members = payload.data.payload;
         })
       });
