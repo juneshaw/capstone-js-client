@@ -79,4 +79,10 @@ app.service("PreferenceService", function($http) {
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
   }
   return PreferenceService;
+
+  Preference.getPeriods = function() {
+    return(
+    {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    periods: ["weekly", "biweekly", "monthly"]});
+  }
 })

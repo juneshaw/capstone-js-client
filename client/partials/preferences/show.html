@@ -1,42 +1,51 @@
 <div class = "container-fluid">
   <h3>Activity Preferences</h3>
-  <h4>{{group.name}}</h4>
+  <h4 class = "text-center">{{group.title}}</h4>
   <div class = "row">
     <div class = "col-sm-4"> <!-- Times -->
-      <div class = "text-center">
-        <!-- Custom Date -->
-        <div class="dropdown">
-          <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
-            <div class="input-group"><input type="text" class="form-control" data-ng-model="data.dateDropDownInput"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-            </div>
-          </a>
-          <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-            <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
-          </ul>
+      <form class="form-inline" role="form">
+        <div class="form-group">
+          <label><i class="fa fa-globe"></i> Time</label></br>
+          <input type="time" id="time" name="time" ng-model="daytime.time"
+              placeholder="HH:mm:ss" required /></br>
+          <label><i class="fa fa-globe"></i> Day</label></br>
+          <input type="text" class="form-control" ng-model="selectedDay" bs-options="day for day in days" placeholder="Enter day" bs-typeahead></br>
+          <label><i class="fa fa-globe"></i>How Often</label></br>
+          <input type="text" class="form-control" ng-model="selectedOften" bs-options="period for period in periods" placeholder="Enter how often" bs-typeahead></br>
+          <label><i class="fa fa-globe"></i> Custom Date</label></br>
+          <div class="dropdown">
+            <!-- <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <div class="input-group"><input type="text" class="form-control" data-ng-model="data.dateDropDownInput"><span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+              </div>
+            </a> -->
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+              <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
+            </ul>
+            <!-- <h4>Popup</h4> -->
+           <div class="row">
+             <div class="col-md-9">
+               <p class="input-group">
+                 <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                 <span class="input-group-btn">
+                   <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                 </span>
+               </p>
+             </div>
+           </div>
+          </div>
         </div>
-      <!--
-        <h4>{{activity.name}}</h4>
-        <h6>{{activity.date | date : fullDate}}</h6>
-        <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
-        <!-- <h6>{{activity.location_id}}</h6> -->
+        <hr>
+      </form>
+
+
       </div>
       <div class = "text-center"> <!-- Other -->
-      <!--
-        <h4>{{activity.name}}</h4>
-        <h6>{{activity.date | date : fullDate}}</h6>
-        <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
-        <!-- <h6>{{activity.location_id}}</h6> -->
+
       </div>
       <div class = "text-center"> <!-- Map -->
-      <!--
-        <h4>{{activity.name}}</h4>
-        <h6>{{activity.date | date : fullDate}}</h6>
-        <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
-        <!-- <h6>{{activity.location_id}}</h6> -->
+
       </div>
 
-      <!-- <p>{{activity.name}}</p>
-      <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture"> -->
     </div>
     <div class="row span12 rsvp rsvpMaybe">  <!-- Theme gallery  and choices -->
       <h4 class = "vertical-text">Maybe</h4>
@@ -55,15 +64,8 @@
 
     </div>
     <div class = "row"> <!-- Sorts/other -->
+    </div>
 
     <div class = "col-sm-8">
-
     </div>
-    <!-- <a ng-href="#/activities/{{activity.id}}">
-    <div class = "col-sm-4">
-      <p>{{group.bio}}</p>
-      <span>Host: {{host.first_name}} {{host.last_name}}</span>
-
-    </div> -->
   </div>
-</div>

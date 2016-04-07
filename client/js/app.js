@@ -1,4 +1,4 @@
-var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'connectbotControllers']);
+var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap', 'connectbotControllers']);
         // app.config(function($routeProvider, $locationProvider) {
         app.config(function($routeProvider) {
             $routeProvider
