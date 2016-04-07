@@ -9,25 +9,33 @@ return function(input) {
 
 connectbotControllers.filter('rsvpYes', function () {
   return function(input) {
-    console.log('in the rsvp function with input: ', input);
-    return input.rsvp === 'Y' || input.rsvp === 'y';
+    return input.filter(function(element) {
+      console.log('element: ', element.rsvp);
+      return element.rsvp === 'Y' || element.rsvp === 'y'
+    })
 }});
 
 connectbotControllers.filter('rsvpNo', function () {
   return function(input) {
-    console.log('in the rsvp function with input: ', input);
-    return input.rsvp === 'N' || input.rsvp === 'n';
+    return input.filter(function(element) {
+      console.log('element: ', element.rsvp);
+      return element.rsvp === 'N' || element.rsvp === 'n'
+    })
 }});
 
 connectbotControllers.filter('rsvpMaybe', function () {
   return function(input) {
-    console.log('in the rsvp function with input: ', input);
-    return input.rsvp === 'M' || input.rsvp === 'm';
+    return input.filter(function(element) {
+      console.log('element: ', element.rsvp);
+      return element.rsvp === 'M' || element.rsvp === 'm'
+    })
 }});
 
 
 connectbotControllers.filter('rsvpUnknown', function () {
   return function(input) {
-    console.log('in the rsvp function with input: ', input);
-    return input.rsvp === 'U' || input.rsvp === 'u' || input.rsvp === '';
+    return input.filter(function(element) {
+      console.log('element: ', element.rsvp);
+      return element.rsvp === 'U' || element.rsvp === 'u'
+    })
 }});

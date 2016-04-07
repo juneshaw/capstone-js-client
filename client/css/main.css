@@ -347,3 +347,13 @@ ul {
     -webkit-transition: 1s linear all;
     transition: 1s linear all;
 }
+
+#map {
+  box-shadow: 0 0 30px black;
+
+}
+
+img {
+  margin: 0 auto;
+  margin-top: 2px;
+}
