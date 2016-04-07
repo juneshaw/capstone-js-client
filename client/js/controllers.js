@@ -66,11 +66,11 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
       });
     })
 }])
-connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService) {
+connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'GroupService', 'LocationService', 'BusinessService', 'MemberService', 'PreferenceService', function($scope, $routeParams, $animate, GroupService, ActivityService, LocationService, BusinessService, MemberService, PreferenceService) {
   console.log('made it to the PreferenceShowController');
   $scope.preferenceId = $routeParams.id;
-  PreferenceService.getPreference($scope.activityId).then(function(payload) {
-    $scope.preference = payload.data.payload;
+  PreferenceService.getGroup($scope.preferenceId).then(function(payload) {
+    $scope.group = payload.data.payload;
     // BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
     //   console.log('business data: ', payload.data.payload);
     //   $scope.business = payload.data.payload;

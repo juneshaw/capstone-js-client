@@ -74,5 +74,9 @@ app.service("PreferenceService", function($http) {
     console.log('made it to getPreference');
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
   }
+
+  PreferenceService.getGroup = function(preferenceId) {
+    return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
+  }
   return PreferenceService;
 })

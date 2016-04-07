@@ -1,12 +1,14 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('preference', function(table){
     table.increments('id');
+    table.string('day');
+    table.string('periodicity');
+    table.time('time');
     table.integer('custom_location_id');
-    table.integer('custom_category_flag');
+    table.boolean('custom_category_flag');
     table.integer('location_id');
     table.string('search_term');
-    table.string('sort');
-    table.string('category_filter');
+    table.integer('sort');
     table.integer('radius_filter');
   })
 };

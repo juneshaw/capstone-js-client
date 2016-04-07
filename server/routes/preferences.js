@@ -22,4 +22,11 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+router.get('/:id/group', function(req, res, next) {
+  db.preferenceGroup(req.params.id).then(function(data) {
+    console.log('preference group data: ', data);
+    res.send({payload:data});
+  });
+});
+
 module.exports = router;
