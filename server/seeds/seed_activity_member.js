@@ -19,6 +19,18 @@ exports.seed = function(knex, Promise) {
       member_id:4}),
     knex('activity_member').insert({id: 5,
       activity_id:2,
-      member_id:5})
+      member_id:5}),
+    knex('activity_member').insert({id: 6,
+      activity_id:2,
+      member_id:6}),
+    knex('activity_member').insert({id: 7,
+      activity_id:2,
+      member_id:7}),
+    knex('activity_member').insert({id: 8,
+      activity_id:2,
+      member_id:8}),
+    knex('activity_member').insert({id: 9,
+      activity_id:2,
+      member_id:9})
   );
 };

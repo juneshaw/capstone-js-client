@@ -66,3 +66,13 @@ app.service("BusinessService", function($http) {
   }
   return BusinessService;
 })
+
+app.service("PreferenceService", function($http) {
+  var PreferenceService = {};
+
+  PreferenceService.getPreference = function(preferenceId) {
+    console.log('made it to getPreference');
+    return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
+  }
+  return PreferenceService;
+})

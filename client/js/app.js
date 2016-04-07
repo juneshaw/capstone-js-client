@@ -18,6 +18,10 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'connectb
                         templateUrl: 'partials/activities/show.html',
                         controller: 'ActivityShowController'
             })
+            .when('/preferences/:id', {
+                        templateUrl: 'partials/preferences/show.html',
+                        controller: 'PreferenceShowController'
+            })
             .otherwise({redirectTo : '/'})
 
                 // $locationProvider.html5Mode(true);

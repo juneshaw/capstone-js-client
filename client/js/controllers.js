@@ -66,3 +66,33 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
       });
     })
 }])
+connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService) {
+  console.log('made it to the PreferenceShowController');
+  $scope.preferenceId = $routeParams.id;
+  PreferenceService.getPreference($scope.activityId).then(function(payload) {
+    $scope.preference = payload.data.payload;
+    // BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
+    //   console.log('business data: ', payload.data.payload);
+    //   $scope.business = payload.data.payload;
+    //   $scope.map = {
+    //     center: {
+    //             latitude: $scope.business.lat,
+    //             longitude: $scope.business.long
+    //     },
+    //     zoom: 8,
+    //     markers: [{
+    //       id: Date.now(),
+    //       coords: {
+    //           latitude: $scope.business.lat,
+    //           longitude: $scope.business.long
+    //       }
+    //     }]};
+    //     // $scope.map.markers.push(marker);
+    //
+    //     ActivityService.getMembers($scope.activityId).then(function(payload) {
+    //       console.log('member payload for activity id: ',$scope.activityId, ' ', payload.data.payload);
+    //       $scope.members = payload.data.payload;
+    //     })
+    //   });
+    })
+}])
