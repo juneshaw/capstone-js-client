@@ -277,7 +277,7 @@ activityMembers: function(activityId) {
 },
 
 preferenceGroup: function(preferenceId) {
-  return (this.Groups().where('preference_id', preferenceId));
+  return (this.Groups().where('preference_id', preferenceId).first());
 }
 //   return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
 // }
