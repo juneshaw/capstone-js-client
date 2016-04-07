@@ -9,6 +9,8 @@ exports.up = function(knex, Promise) {
     table.string('reservation_url');
     table.string('rating_img_url_small');
     table.string('snippet_text');
+    table.double('lat');
+    table.double('long');
   })
 };
 

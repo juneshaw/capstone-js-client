@@ -36,7 +36,7 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   });
 }]);
 
-connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', 'ActivityService', 'LocationService', 'BusinessService', function($scope, $routeParams, ActivityService, LocationService, BusinessService) {
+connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', '$window', 'ActivityService', 'LocationService', 'BusinessService', function($scope, $routeParams, $window, ActivityService, LocationService, BusinessService) {
   console.log('made it to the ActivityShowController');
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
@@ -44,6 +44,39 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
     BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
       console.log('business data: ', payload.data.payload);
       $scope.business = payload.data.payload;
+      $scope.map = {
+        center: {
+                latitude: $scope.business.lat,
+                longitude: $scope.business.long
+        },
+        zoom: 8
+      };
+      // var web_key = "AIzaSyA34gNqYa9dpD_u4MCmrWUTi-zbQlSw0yA"; // put in grunt config
+
+      // var google_api = "https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA"
+
+      // var my_key = '&key=' + "AIzaSyA34gNqYa9dpD_u4MCmrWUTi-zbQlSw0yA"
+
+
+      // request(google_api+my_key, function (error, response, body) {
+      //   if (!error && response.statusCode == 200) {
+      //     var jase = JSON.parse(body);
+          // var lat_long = jase["results"][0]["geometry"]["location"];
+
+
+//           var lat_long = jase.results[0].geometry.location;
+//           console.log(lat_long);
+//           res.render('index', { title: 'Express', lat_long: lat_long});
+//          }
+//        })
+//
+//       $window.map = new google.maps.Map(document.getElementById('map'), {
+//     center: {
+//         lat: -34.397,
+//         lng: 150.644
+//     },
+//     zoom: 8
+// });
     })
   })
 }])

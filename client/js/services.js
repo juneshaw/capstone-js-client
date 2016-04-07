@@ -58,7 +58,7 @@ app.service("BusinessService", function($http) {
 
   BusinessService.getBusiness = function(businessId) {
     console.log('made it to getBusiness');
-    return $http.get("http://capstone-js.herokuapp.com/locations/"+businessId, {method: "jsonp"});
+    return $http.get("http://capstone-js.herokuapp.com/businesses/"+businessId, {method: "jsonp"});
   }
   return BusinessService;
 })

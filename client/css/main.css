@@ -229,3 +229,7 @@ caption {
     width: 7.5%;
   }
 }
+
+.angular-google-map-container {
+        height: 150px;
+}
