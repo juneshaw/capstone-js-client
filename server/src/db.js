@@ -272,7 +272,7 @@ activitiesForGroup: function(id) {
 },
 
 activityMembers: function(activityId) {
-  return(this.Members().join('activity_member', 'members.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
+  return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
 }
 
 // userByName: function(user_name) {
