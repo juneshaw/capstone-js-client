@@ -10,7 +10,6 @@ return function(input) {
 connectbotControllers.filter('rsvpYes', function () {
   return function(input) {
     return input.filter(function(element) {
-      console.log('element: ', element.rsvp);
       return element.rsvp === 'Y' || element.rsvp === 'y'
     })
 }});
@@ -18,7 +17,6 @@ connectbotControllers.filter('rsvpYes', function () {
 connectbotControllers.filter('rsvpNo', function () {
   return function(input) {
     return input.filter(function(element) {
-      console.log('element: ', element.rsvp);
       return element.rsvp === 'N' || element.rsvp === 'n'
     })
 }});
@@ -26,7 +24,6 @@ connectbotControllers.filter('rsvpNo', function () {
 connectbotControllers.filter('rsvpMaybe', function () {
   return function(input) {
     return input.filter(function(element) {
-      console.log('element: ', element.rsvp);
       return element.rsvp === 'M' || element.rsvp === 'm'
     })
 }});
@@ -35,7 +32,6 @@ connectbotControllers.filter('rsvpMaybe', function () {
 connectbotControllers.filter('rsvpUnknown', function () {
   return function(input) {
     return input.filter(function(element) {
-      console.log('element: ', element.rsvp);
       return element.rsvp === 'U' || element.rsvp === 'u'
     })
 }});
