@@ -380,3 +380,15 @@ form fieldset {
     background-image: -webkit-gradient(linear, left top, left bottom, from(#CCDDFF), to(#99AACC));
     border: none;
 }
+/*
+.modal {
+display: block;
+}*/
+/*
+.appcustom-modal-med > .modal-dialog {
+  width: 60%;
+}*/
+
+.app-modal-window > .modal-dialog {
+  width: 50px;
+}

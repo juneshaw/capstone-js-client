@@ -1,5 +1,13 @@
-var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap', angularDragula(angular), 'connectbotControllers']);
+var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  angularDragula(angular), 'connectbotControllers']);
         // app.config(function($routeProvider, $locationProvider) {
+        app.config(function($sceDelegateProvider) {
+          $sceDelegateProvider.resourceUrlWhitelist([
+            // Allow same origin resource loads.
+            'self',
+            // Allow loading from our assets domain.  Notice the difference between * and **.
+            'http://m.yelp.com/**'
+          ]);
+        })
         app.config(function($routeProvider) {
             $routeProvider
             .when('/', {
@@ -22,8 +30,7 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
                         templateUrl: 'partials/preferences/show.html',
                         controller: 'PreferenceShowController'
             })
-            .otherwise({redirectTo : '/'})
+            .otherwise({redirectTo : '/'});
 
+          })
                 // $locationProvider.html5Mode(true);
-
-        })

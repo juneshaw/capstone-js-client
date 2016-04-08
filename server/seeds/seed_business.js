@@ -10,10 +10,11 @@ exports.seed = function(knex, Promise) {
       phone: "7204814142",
       address: "28065 Hwy 74, Evergreen, CO 80439",
       image_url_small: "https://s3-media3.fl.yelpcdn.com/bphoto/kvddV4S62WCqtRZiRxTlUA/ms.jpg",
-      url: "http://www.yelp.com/biz/elk-meadow-park-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ"
-      moble_url: "http://m.yelp.com/biz/highland-haven-creekside-inn-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ"
+      url: "http://www.yelp.com/biz/elk-meadow-park-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ",
+      mobile_url: "http://m.yelp.com/biz/highland-haven-creekside-inn-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ",
       reservation_url: "",
       rating_img_url_small: "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/f1def11e4e79/ico/stars/v1/stars_5.png",
+      snippet_text: "Love, love, loved",
       lat: 39.6332817,
       long: -105.3184662}),
     knex('business').insert({id: 2,
@@ -24,6 +25,7 @@ exports.seed = function(knex, Promise) {
       url: "",
       mobile_url: "http://m.yelp.com/biz/highland-haven-creekside-inn-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ",
       rating_img_url_small: "https://s3-media1.fl.yelpcdn.com/assets/2/www/img/c7623205d5cd/ico/stars/v1/stars_small_5.png",
+      snippet_text: "I wish I lived closer, but it's always such a nice treat when I go there.",
       lat: 39.6332817,
       long: -105.3184662}),
     knex('business').insert({id: 3,
@@ -35,6 +37,7 @@ exports.seed = function(knex, Promise) {
       mobile_url: "http://m.yelp.com/biz/highland-haven-creekside-inn-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ",
       reservation_url: "",
       rating_img_url_small: "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/a5221e66bc70/ico/stars/v1/stars_small_4_half.png",
+      snippet_text: "Love the location. The owner is very nice and will come out and ask how we are doing!",
       lat: 39.6332817,
       long: -105.3184662}),
     knex('business').insert({id: 4,
@@ -46,6 +49,7 @@ exports.seed = function(knex, Promise) {
       mobile_url: "http://m.yelp.com/biz/highland-haven-creekside-inn-evergreen?utm_campaign=yelp_api\u0026utm_medium=api_v2_search\u0026utm_source=wiYlutU_enbczfxKFD0jsQ",
       reservation_url: "",
       rating_img_url_small: "https://s3-media2.fl.yelpcdn.com/assets/2/www/img/99493c12711e/ico/stars/v1/stars_4_half.png",
+      snippet_text: "I am amazed at the customer service here ... we will be back!",
       lat: 39.6332817,
       long: -105.3184662})
 

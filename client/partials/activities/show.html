@@ -37,6 +37,8 @@
     </div>
     <div class = "col-sm-5 text-center">
       <ul class="list-group">
+
+        <li class="list-group-item">{{business.mobile_url}}</li>
         <li class="list-group-item">{{business.name}}</li>
         <li class="list-group-item">{{business.phone}}</li>
         <li class="list-group-item">{{business.address}}</li>
@@ -46,14 +48,62 @@
         <li class="list-group-item"><span class="badge">3</span> Warnings</li>   -->
       </ul>
 
+
       <img ng-src="{{business.rating_img_url_small}}" class="img-responsive" alt="rating">
-      <button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-slide-top" data-template-url="modal/docs/modal.demo.tpl.html" bs-modal="modal">Show Me More!</button>
-      <img ng-src="{{business.url}} || {{business.mobile_url}}" class="img-responsive img-rounded" alt="rating">
+
+      <!-- <div ng-controller="BusinessModalController">
+
+        <div modal="showModal" close="cancel()">
+          <div class="modal-header">
+              <h4>Modal Dialog</h4>
+          </div>
+          <div class="modal-body">
+              <p>Example paragraph with some text.</p>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" ng-click="ok()">Okay</button>
+            <button class="btn" ng-click="cancel()">Cancel</button>
+          </div>
+        </div>
+      </div> -->
+
+      <div ng-controller="BusinessModalController">
+        <script type="text/ng-template" id="myModalContent.html">
+              <div class="modal-header">
+                  <h3 class="modal-title">Im a modal!</h3>
+              </div>
+              <div class="modal-body">
+                  <ul>
+                      <li ng-repeat="item in items">
+                          <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                      </li>
+                  </ul>
+                  Selected: <b>{{ selected.item }}</b>
+              </div>
+              <div class="modal-footer">
+                  <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                  <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+              </div> -->
+           </script>
+
+          <button type="button" class="btn btn-default" ng-click="open()">Tell me more!</button>
+          <!-- <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
+          <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
+          <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button> -->
+        <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+      </div>
+
+      <!-- <button type="button" class="btn btn-primary span2"  data-template-url="{{business.mobile_url}}" bs-modal="modal">Show Me More!</button> -->
+      <!-- <button type="button" class="btn btn-primary span2" data-animation="am-fade-and-slide-top" data-template-url="{{business.mobile_url}}" bs-modal="modal">Show Me More!</button> -->
+      <!-- <button type="button" class="btn btn-primary span2" data-animation="am-fade-and-slide-top" data-template-url="{{business.url}} || {{business.mobile_url}}" bs-modal="modal">Show Me More!</button> -->
+      <!-- <button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-slide-top" data-template-url="modal/docs/modal.demo.tpl.html" bs-modal="modal">Show Me More!</button> -->
+      <img ng-src="{{business.image_url_small}}" class="img-responsive img-rounded" alt="rating">
     </div>
     <div class = "col-sm-3">
       <div id="map">
         <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
       </div>
+    </div>
     </div>
   </div>
 
