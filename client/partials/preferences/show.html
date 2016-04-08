@@ -1,17 +1,21 @@
 <div class = "container-fluid">
   <h3>Activity Preferences</h3>
+  <h4>{{group.name}}</h4>
   <h4 class = "text-center">{{group.title}}</h4>
   <div class = "row">
     <div class = "col-sm-4"> <!-- Times -->
-      <form class="form-inline" role="form">
+      <form class="form" role="form">
         <div class="form-group">
           <label><i class="fa fa-globe"></i> Time</label></br>
-          <input type="time" id="time" name="time" ng-model="daytime.time"
-              placeholder="HH:mm:ss" required /></br>
+          <input type="time" id="time" name="time" ng-model="preference.time"
+              placeholder="07:00:00" required /></br>
           <label><i class="fa fa-globe"></i> Day</label></br>
-          <input type="text" class="form-control" ng-model="selectedDay" bs-options="day for day in days" placeholder="Enter day" bs-typeahead></br>
+          <!-- <input type="text" class="form-control" ng-model="selectedDay" bs-options="day for day in periods.days" placeholder="Enter day" bs-typeahead></br> -->
+          <select ng-model="preference.day" ng-options="day for day in periods.days"></select></br>
           <label><i class="fa fa-globe"></i>How Often</label></br>
-          <input type="text" class="form-control" ng-model="selectedOften" bs-options="period for period in periods" placeholder="Enter how often" bs-typeahead></br>
+          <select ng-model="preference.periodicity" ng-options="period for period in periods.periods"></select></br>
+
+          <!-- <input type="text" class="form-control" ng-model="selectedOften" bs-options="period for period in periods.periods" placeholder="Enter how often" bs-typeahead></br> -->
           <label><i class="fa fa-globe"></i> Custom Date</label></br>
           <div class="dropdown">
             <!-- <a class="dropdown-toggle" id="dropdown2" role="button" data-toggle="dropdown" data-target="#" href="#">

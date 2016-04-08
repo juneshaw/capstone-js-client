@@ -16,6 +16,11 @@ app.service("GroupService", function($http){
     return $http.get("http://capstone-js.herokuapp.com/groups/"+id+"/activities", {method: "jsonp"});
   }
 
+  GroupService.getGroupFromPreference = function(preferenceId) {
+    return $http.get("http://capstone-js.herokuapp.com/groups/preference/"+preferenceId, {method: "jsonp"});
+  }
+
+
   return GroupService;
 });
 
@@ -75,14 +80,19 @@ app.service("PreferenceService", function($http) {
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
   }
 
-  PreferenceService.getGroup = function(preferenceId) {
-    return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
-  }
-  return PreferenceService;
+  // PreferenceService.getGroup = function(preferenceId) {
+  //   return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
+  // }
 
-  Preference.getPeriods = function() {
-    return(
+  PreferenceService.periods =
     {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-    periods: ["weekly", "biweekly", "monthly"]});
-  }
+    periods: ["weekly", "biweekly", "monthly"]};
+
+  //
+  // Preference.getPeriods = function() {
+  //   return(
+  //   {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  //   periods: ["weekly", "biweekly", "monthly"]});
+  // }
+  return PreferenceService;
 })

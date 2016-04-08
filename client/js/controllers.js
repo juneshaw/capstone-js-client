@@ -65,16 +65,23 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
         })
       });
     })
-}])
+}]);
+
 connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'GroupService', 'LocationService', 'MemberService', 'PreferenceService', function($scope, $routeParams, $animate, GroupService, LocationService, MemberService, PreferenceService) {
   console.log('made it to the PreferenceShowController');
   $scope.preferenceId = $routeParams.id;
-  console.log('preference id: ', $scope.preferenceId);
-  PreferenceService.getGroup($scope.preferenceId).then(function(payload) {
-    $scope.group = payload.data.payload;
-    console.log('group = ', $scope.group);
-
+  $scope.periods = PreferenceService.periods;
+  console.log('periods', $scope.periods);
+  PreferenceService.getPreference($scope.preferenceId).then(function(payload) {
+    $scope.preference = payload.data.payload;
+    console.log('preference = ', $scope.preference);
+    GroupService.getGroupFromPreference($scope.preference.id).then(function(payload) {
+      $scope.group = payload.data.payload;
+      console.log('group for preference: ', $scope.group);
+    });
   })
+// }]);
+
   $scope.today = function() {
   $scope.dt = new Date();
   };
