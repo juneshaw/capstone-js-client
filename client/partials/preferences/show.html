@@ -43,7 +43,22 @@
 
 
       </div>
-      <div class = "text-center"> <!-- Other -->
+      <div class = "col-sm-8"> <!-- Other -->
+        <ul class="thumbnails">
+          <!-- <div ng-repeat="product in products | filter: my÷≥Filter"> -->
+          <!-- <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
+
+          <li ng-repeat="category in categories" ng-click="getDetail(category.id)">
+          <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
+
+            <div class="thumbnail">
+              <img ng-src="{{category.image_url}}">
+              <div class="caption">
+                <h4>{{category.name}}</h4>
+              </div>
+            </div>
+          </li>
+        </ul>
 
       </div>
       <div class = "text-center"> <!-- Map -->
