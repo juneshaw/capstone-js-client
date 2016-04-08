@@ -17,11 +17,11 @@ router.get('/', function(req, res, next) {
   // res.send({'test':"BACK from the server"});
 });
 
-router.get('/preference/:id'), function(req, res, next) {
+router.get('/preference/:id', function(req, res, next) {
   db.groupByPreference(req.params.id).then(function(data) {
     res.send({payload:data});
-  })
-}
+  });
+})
 
 router.get('/:id/activities', function(req, res, next) {
   // knex('users').orderBy('name', 'desc')
