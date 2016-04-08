@@ -5,7 +5,9 @@ exports.up = function(knex, Promise) {
     table.string('name');
     table.string('phone');
     table.string('address');
-    table.string('image_url_small')
+    table.string('image_url_small');
+    table.string('url');
+    table.string('mobile_url');
     table.string('reservation_url');
     table.string('rating_img_url_small');
     table.string('snippet_text');

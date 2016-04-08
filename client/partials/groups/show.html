@@ -1,9 +1,16 @@
 <div class = "container-fluid">
+  <h3 class = "text-center">Group Details</h3>
+  <h4 class = "text-center">{{group.title}}</h4>
+  <hr>
   <div class = "row">
     <div class = "col-sm-4">
       <p>{{group.title}}</p>
       <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture">
+      <div class = "text-center voffset5">
+        <a class = "btn btn-primary span2" href="#/preferences/{{group.id}}">Check Group Preferences</a>
+      </div>
     </div>
+
     <a ng-href="#/activities/{{activity.id}}">
     <div class = "col-sm-4">
       <p>{{group.bio}}</p>

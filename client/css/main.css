@@ -247,8 +247,9 @@ margin-left: 0px;
 }
 
 .thumbnail {
-	height: 140px;
+	height: 110px;
 	position: relative;
+  margin-bottom: 5px;
 }
 
 .thumbnail:hover {
@@ -256,7 +257,7 @@ margin-left: 0px;
 }
 
 .thumbnail > img {
-	max-height: 100px;
+	max-height: 75px;
 }
 
 .thumbnail .caption {
@@ -356,4 +357,26 @@ ul {
 img {
   margin: 0 auto;
   margin-top: 2px;
+}
+
+.voffset2 {
+  margin-top: 2px;
+}
+
+.voffset5 {
+  margin-top: 5px;
+}
+
+form fieldset {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 2em .5em .5em .5em; /*Make space at the top for the legend*/
+    margin: 0 0 1em 0;
+    background: #999;
+    /*filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCDDFF', endColorstr='#99AACC');*/
+    background-image: -moz-linear-gradient(top,  #CCDDFF,  #99AACC);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#CCDDFF), to(#99AACC));
+    border: none;
 }

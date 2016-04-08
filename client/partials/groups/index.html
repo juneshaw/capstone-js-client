@@ -1,7 +1,10 @@
 <div class = "container-fluid text-container">
+  <h3 class = "text-center">My Groups</h3>
+  <!-- <h4 class = "text-center">{{host.first_name}} {{host.last_name}}</h4> -->
+  <hr>
 <!-- <div class = "container-fluid text-container"> -->
   <table class="table-striped table-bordered table-hover">
-    <caption>My Groups</caption>
+    <!-- <caption>My Groups</caption> -->
     <thead>
       <tr>
         <th>Name</th>
@@ -11,12 +14,7 @@
     <tbody>
 
       <tr ng-repeat="group in groups">
-      <!-- <tr ng-repeat="group in groups" such-href="#/groups/{{group.id}}"> -->
 
-      <!-- <tr ng-repeat="group in groups" ng-click="go()"> -->
-      <!-- <tr ng-repeat="group in groups" ng-href="#/groups/{{group.id}}"> -->
-        <!-- <td> -->
-        <!-- <a ng-href="/#/groups/{{group.id}}"> -->
         <td>
           <a ng-href="#/groups/{{group.id}}">
             {{group.title}}
