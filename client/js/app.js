@@ -1,4 +1,8 @@
-var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  angularDragula(angular), 'connectbotControllers']);
+
+var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers']);
+
+
+// var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  angularDragula(angular), 'connectbotControllers']);
         // app.config(function($routeProvider, $locationProvider) {
         app.config(function($sceDelegateProvider) {
           $sceDelegateProvider.resourceUrlWhitelist([

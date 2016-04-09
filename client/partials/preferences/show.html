@@ -44,46 +44,46 @@
 
       </div>
       <div class = "col-sm-8"> <!-- Other -->
-        <ul class="thumbnails">
+
+        <div class='wrapper' ng-controller="CategoryController">
+          <div class='containerVertical'>
+              <div>Move me, but you can only drop me in one of these containers.</div>
+              <div>If you try to drop me somewhere other than these containers, I'll just come back.</div>
+              <div>Item 3.</div>
+              <div>Item 6.</div>
+          </div>
+          <div class='containerVertical'>
+              <div>You can drop me in the left container, otherwise I'll stay here.</div>
+              <div ng-click="clicked = !clicked" ng-class="clicked && 'clickedClass'">Try to click me, dragular distinguish drag from click</div>
+              <div>Item 5.</div>
+          </div>
+      </div>
+
+
+        <!-- <ul class="thumbnails"> -->
           <!-- <div ng-repeat="product in products | filter: my÷≥Filter"> -->
           <!-- <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
 
-          <li ng-repeat="category in categories" ng-click="getDetail(category.id)">
+          <!-- <li ng-repeat="category in categories" ng-click="getDetail(category.id)"> -->
           <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
 
-            <div class="thumbnail">
+            <!-- <div class="thumbnail">
               <img ng-src="{{category.image_url}}">
               <div class="caption">
                 <h4>{{category.name}}</h4>
               </div>
             </div>
           </li>
-        </ul>
+        </ul> -->
 
-      </div>
+
+
       <div class = "text-center"> <!-- Map -->
 
       </div>
 
     </div>
-    <div class="row span12 rsvp rsvpMaybe">  <!-- Theme gallery  and choices -->
-      <ul class="thumbnails">
-        <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="col-sm-2">
-        <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
-
-          <div class="thumbnail">
-            <img ng-src="{{member.image_url}}">
-            <div class="caption">
-              <h4>{{member.first_name}}</h4>
-            </div>
-          </div>
-        </li>
-      </ul>
-
-    </div>
     <div class = "row"> <!-- Sorts/other -->
     </div>
-
-    <div class = "col-sm-8">
-    </div>
   </div>
+</div>

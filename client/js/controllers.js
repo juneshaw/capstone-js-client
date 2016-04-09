@@ -235,3 +235,8 @@ connectbotControllers.controller('ModalInstanceController', ['$scope', '$uibModa
     $uibModalInstance.dismiss('cancel');
   };
 }]);
+
+connectbotControllers.controller('CategoryController', ['$scope', '$element', 'dragularService', function ($scope, $element, dragularService) {
+  dragularService.cleanEnviroment();
+  dragularService('.containerVertical');
+}]);

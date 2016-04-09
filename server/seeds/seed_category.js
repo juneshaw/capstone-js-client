@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
     // Inserts seed entries
     knex('category').insert({id: 1,
       name: 'Meals',
-      url: }),
+      url: ""}),
     knex('category').insert({id: 2,
       address_1: '7783 West 55th Avenue',
       address_2: 'Apartment 2',
