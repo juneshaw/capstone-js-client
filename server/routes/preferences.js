@@ -28,7 +28,7 @@ router.get('/:id/group', function(req, res, next) {
 
 router.post('/:id/edit', function(req, res, next) {
   console.log('got to post preference route with id and req.body', req.params.id, ' ', req.body);
-  db.updatePreference(req.params.id, req.body.json).then(function(data) {
+  db.updatePreference(req.params.id, req.body.json.data).then(function(data) {
     console.console.log('did the updateActivity', req.body);;
   })
 })
