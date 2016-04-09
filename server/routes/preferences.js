@@ -36,7 +36,7 @@ router.post('/:id/edit', function(req, res, next) {
 
   // db.updatePreference(req.params.id, req.body).then(function(data) {
   //   console.console.log('did the updateActivity');;
-  })
+  // })
 })
 
 module.exports = router;

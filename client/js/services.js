@@ -86,6 +86,7 @@ app.service("PreferenceService", function($http) {
             data: preference
         })
     });
+    console.log('data in set times: ', data);
     return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
   }
 
