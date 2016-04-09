@@ -239,6 +239,23 @@ connectbotControllers.controller('ModalInstanceController', ['$scope', '$uibModa
   };
 }]);
 
+app.controller('CategoryController', ['$scope', function ($scope) {
+  $scope.$on('category.drag', function (e, el) {
+    el.removeClass('ex-moved');
+  });
+
+  $scope.$on('category.drop', function (e, el) {
+    el.addClass('ex-moved');
+  });
+
+  $scope.$on('category.over', function (e, el, container) {
+    container.addClass('ex-over');
+  });
+
+  $scope.$on('category.out', function (e, el, container) {
+    container.removeClass('ex-over');
+  });
+}]);
 // connectbotControllers.controller('CategoryController', ['$scope', '$element', 'dragularService', function ($scope, $element, dragularService) {
 //   dragularService.cleanEnviroment();
 //   dragularService('.containerVertical');

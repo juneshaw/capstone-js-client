@@ -43,23 +43,42 @@
 
 
       </div>
-      <div class = "col-sm-8"> <!-- Other -->
 
-        <div class='wrapper' ng-controller="CategoryController">
-          <div class='containerVertical'>
-              <div>Move me, but you can only drop me in one of these containers.</div>
-              <div>If you try to drop me somewhere other than these containers, I'll just come back.</div>
-              <div>Item 3.</div>
-              <div>Item 6.</div>
+      <!-- div class='examples' ng-app='angular-dragula-example'> -->
+      <div class = "col-sm-8"> <!-- Other -->
+        <div class='parent' ng-controller='CategoryController'>
+          <label for='hy'>Move stuff between these two containers. Note how the stuff gets inserted near the mouse pointer? Great stuff.</label>
+          <div class='wrapper'>
+            <div class='container' dragula='"second-bag"'>
+              <div>You can move these elements between these two containers</div>
+              <div>Moving them anywhere else isn't quite possible</div>
+              <div>There's also the possibility of moving elements around in the same container, changing their position</div>
+            </div>
+            <div class='container' dragula='"second-bag"'>
+              <div>This is the default use case. You only need to specify the containers you want to use</div>
+              <div>More interactive use cases lie ahead</div>
+              <div>Make sure to check out the documentation on GitHub!</a></div>
+            </div>
           </div>
-          <div class='containerVertical'>
-              <div>You can drop me in the left container, otherwise I'll stay here.</div>
-              <div ng-click="clicked = !clicked" ng-class="clicked && 'clickedClass'">Try to click me, dragular distinguish drag from click</div>
-              <div>Item 5.</div>
-          </div>
+          <!-- <pre>
+            <code>
+      &lt;div dragula=&#039;&quot;first-bag&quot;&#039;&gt;&lt;/div&gt;
+      &lt;div dragula=&#039;&quot;first-bag&quot;&#039;&gt;&lt;/div&gt;
+            </code>
+          </pre> -->
+        </div>
+
+
+        <!-- <div dragula='"bag-one"'></div> -->
+        <!-- <div dragula='"bag-one"'></div> -->
       </div>
 
+      <!-- <ul ng-controller="CategoryController">
+        <li ng-repeat="category in categories" dragula='"bag-one"' dragula-scope="$parent"></li>
+      </ul>
+      <ul>
 
+      </ul> -->
         <!-- <ul class="thumbnails"> -->
           <!-- <div ng-repeat="product in products | filter: my÷≥Filter"> -->
           <!-- <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
