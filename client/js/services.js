@@ -83,12 +83,15 @@ app.service("PreferenceService", function($http) {
     console.log('preference in setPreferenceTimes', preference);
     var data = $.param({
         json: JSON.stringify({
-            data: preference
+            data: {id: preference.id,
+              time: preference.time,
+              day: preference.day,
+              periodicity: preference.periodicity}
         }),
     });
-    url = "http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit";
+    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
-    $http({
+    return $http({
     method: 'POST',
     url: url,
     data: data,
