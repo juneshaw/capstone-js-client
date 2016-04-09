@@ -1,3 +1,6 @@
+// var angular = require('angular');
+// var angularDragula = require('angular-dragula');
+
 var connectbotControllers = angular.module('connectbotControllers', []);
 //
 // phonecatControllers.controller('PhoneListCtrl', ['$scope', '$http',
@@ -236,7 +239,9 @@ connectbotControllers.controller('ModalInstanceController', ['$scope', '$uibModa
   };
 }]);
 
-connectbotControllers.controller('CategoryController', ['$scope', '$element', 'dragularService', function ($scope, $element, dragularService) {
-  dragularService.cleanEnviroment();
-  dragularService('.containerVertical');
-}]);
+// connectbotControllers.controller('CategoryController', ['$scope', '$element', 'dragularService', function ($scope, $element, dragularService) {
+//   dragularService.cleanEnviroment();
+//   dragularService('.containerVertical');
+// }]);
+
+// connectbotControllers.controller(angularDragula(angular)]);

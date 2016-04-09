@@ -1,5 +1,9 @@
+// var angular = require('angular');
+// var angularDragula = require('angular-dragula');
+//
+// var app = angular.module('my-app', [angularDragula(angular)]);
 
-var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers']);
+var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers', angularDragula(angular) ]);
 
 
 // var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  angularDragula(angular), 'connectbotControllers']);
