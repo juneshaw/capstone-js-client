@@ -84,7 +84,8 @@ app.service("PreferenceService", function($http) {
     var data = $.param({
         json: JSON.stringify({
             data: preference
-        })
+        }),
+        method: POST
     });
     console.log('data in set times: ', data);
     return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
