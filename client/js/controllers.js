@@ -83,6 +83,13 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
       console.log('group for preference: ', $scope.group);
     });
   })
+
+  $scope.updateTimes = function() {
+    console.log('made it to updateTimes');
+    PreferenceService.setPreferenceTimes($scope.preference).then(function(payload) {
+      console.log('payload is: ', payload);
+    })
+  }
 // }]);
 
   $scope.today = function() {

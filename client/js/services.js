@@ -20,7 +20,6 @@ app.service("GroupService", function($http){
     return $http.get("http://capstone-js.herokuapp.com/groups/preference/"+preferenceId, {method: "jsonp"});
   }
 
-
   return GroupService;
 });
 
@@ -78,6 +77,16 @@ app.service("PreferenceService", function($http) {
   PreferenceService.getPreference = function(preferenceId) {
     console.log('made it to getPreference');
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
+  }
+
+  PreferenceService.setPreferenceTimes = function(preference) {
+    console.log('preference in setPreferenceTimes', preference);
+    var data = $.param({
+        json: JSON.stringify({
+            data: preference
+        })
+    });
+    return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
   }
 
   // PreferenceService.getGroup = function(preferenceId) {
