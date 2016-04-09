@@ -85,10 +85,17 @@ app.service("PreferenceService", function($http) {
         json: JSON.stringify({
             data: preference
         }),
-        method: POST
     });
-    console.log('data in set times: ', data);
-    return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
+    url = "http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit";
+
+    $http({
+    method: 'POST',
+    url: url,
+    data: data,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+})
+    // console.log('data in set times: ', data);
+    // return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
   }
 
   // PreferenceService.getGroup = function(preferenceId) {
