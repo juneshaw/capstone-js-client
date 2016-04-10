@@ -117,6 +117,7 @@ app.service("PreferenceService", function($http) {
   }
 
   PreferenceService.insertPreferenceCategory = function(preferenceId, categoryId) {
+    console.log('in insertPreferenceCategory with p/c of ', preferenceId, categoryId);
     var data = $.param({
         json: JSON.stringify({
               "preference_id": preferenceId,
