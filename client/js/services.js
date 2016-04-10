@@ -147,13 +147,14 @@ app.service('CategoryService', function($http) {
     var categories = null;
     console.log('in categoryservice');
     var promise = $http.get('http://capstone-js.herokuapp.com/categories').success(function (data, err) {
-      console.log('err: ', err);
+      console.log('data for categories', data);
       categories = data;
     });
 
     return {
       promise:promise,
       getCategories: function() {
+        console.log('in getCategories with categories: ', categories);
         return categories;
       }
     };
