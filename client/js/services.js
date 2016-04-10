@@ -98,7 +98,7 @@ app.service("PreferenceService", function($http) {
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories", {method: "jsonp"});
   }
 
-  PreferenceService.deletePreferenceCategory = function(preferenceId) {
+  PreferenceService.deletePreferenceCategories = function(preferenceId) {
         return
          $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete", {method: "jsonp"});
   //   var data = {};
