@@ -7,18 +7,18 @@ exports.seed = function(knex, Promise) {
     // Inserts seed entries
     knex('category').insert({id: 1,
       name: 'Meals',
-      url: ""}),
+      image_url: "https://s3-us-west-1.amazonaws.com/connectbot/restaurants.png"}),
     knex('category').insert({id: 2,
-      address_1: '7783 West 55th Avenue',
-      address_2: 'Apartment 2',
-      city: 'Arvada',
-      state: 'CO',
-      zipcode: '80002'}),
+      name: 'Biking',
+      image_url: "https://s3-us-west-1.amazonaws.com/connectbot/biking.png"}),
     knex('category').insert({id: 3,
-      address_1: '6917 Timbers Drive',
-      address_2: ' ',
-      city: 'Evergreen',
-      state: 'CO',
-      zipcode: '80439'})
+      name: 'Arts',
+      image_url: "https://s3-us-west-1.amazonaws.com/connectbot/arts.png"}),
+    knex('category').insert({id: 4,
+      name: 'Music',
+      image_url: "https://s3-us-west-1.amazonaws.com/connectbot/music.png"}),
+    knex('category').insert({id: 5,
+      name: 'Picnic',
+      image_url: "https://s3-us-west-1.amazonaws.com/connectbot/picnic.png"})
   );
 };
