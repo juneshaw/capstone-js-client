@@ -52,7 +52,7 @@ router.post('/:id/categories/insert', function(req, res, next) {
   })
 })
 
-router.post('/:id/categories/delete', function(req, res, next) {
+router.get('/:id/categories/delete', function(req, res, next) {
   console.log('in the pref category delete route with id of ', req.params.id);
 
   db.deletePreference_CategoryByPreference(req.params.id).then(function(data) {
