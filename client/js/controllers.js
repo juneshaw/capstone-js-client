@@ -113,6 +113,8 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
         console.log('about to call insertPreferenceCategory', $scope.preference.id, category.id);
         PreferenceService.insertPreferenceCategory($scope.preference.id, category.id).then(function(payload) {
           console.log('finished the add');
+          $scope.filteredCategories = _.filter($scope.categoriesAll, function(obj){ return !_.findWhere($scope.categories, obj); });
+
         })
       })
     })
