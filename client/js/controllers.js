@@ -142,6 +142,7 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
 
   $scope.updateCategories = function() {
     PreferenceService.deletePreferenceCategory($scope.preference.id).then(function(payload) {
+      console.log('done with delete, now time for the insert with: ', $scope.categories);
       $scope.categories.forEach(function(category) {
         console.log('about to call insertPreferenceCategory', $scope.preference.id, category.id);
         PreferenceService.insertPreferenceCategory($scope.preference.id, category.id).then(function(payload) {

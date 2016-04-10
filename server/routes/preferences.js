@@ -44,7 +44,7 @@ router.post('/:id/times/edit', function(req, res, next) {
 router.post('/:id/categories/insert', function(req, res, next) {
   var jsonObj = JSON.parse(req.body.json);
   console.log('jsonObj for cat insert: ', jsonObj);
-  db.insertPreference_Category(req.params.id,
+  db.insertPreference_Category(
     {preference_id: req.params.id,
       category_id: jsonObj.category_id}).then(function(data) {
         console.log('LEAVE posted prefcat insert');
