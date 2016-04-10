@@ -216,6 +216,7 @@ deleteGroupMember: function(id) {
 },
 
 insertPreference_Category: function (preference_category) {
+  console.log('IIIIIIIIIIIIIII insertPreference_Category with prcat of: ', preference_category);
    return(this.Preference_Categories().insert(preference_category).returning('id'));
 },
 
@@ -228,7 +229,7 @@ updatePreference_Category: function(id, preference_category) {
 },
 
 deletePreference_Category: function(id) {
-  console.log('deletePreference_Category with id of :', id);
+  console.log('DDDDDDDD deletePreference_Category with id of :', id);
   return(this.Preference_Categories().where('id', id).del())
 },
 
