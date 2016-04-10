@@ -100,7 +100,7 @@ app.service("PreferenceService", function($http) {
 }
 
 
-  PreferenceService.getPreferenceCategories = function(preferenceId) {
+    PreferenceService.getPreferenceCategories = function(preferenceId) {
     console.log('made it to getPreference');
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories", {method: "jsonp"});
   }

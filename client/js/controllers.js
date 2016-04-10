@@ -77,15 +77,17 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
 // });
 
 connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'GroupService', 'LocationService', 'MemberService', 'PreferenceService', 'CategoryService', 'CategoryData', function($scope, $routeParams, $animate, GroupService, LocationService, MemberService, PreferenceService, CategoryService, CategoryData) {
-  $scope.categories = CategoryService.getCategories();
+  $scope.categoriesAll = CategoryService.getCategories().payload;
   $scope.preferenceId = $routeParams.id;
   $scope.periods = PreferenceService.periods;
   PreferenceService.getPreference($scope.preferenceId).then(function(payload) {
     $scope.preference = payload.data.payload;
     GroupService.getGroupFromPreference($scope.preference.id).then(function(payload) {
       $scope.group = payload.data.payload;
-      PreferenceService.getPreferenceCategories($scope.preference.id).then(function(payload) {
+      console.log('group data!!!: ', $scope.group);
+      PreferenceService.getPreferenceCategories($scope.preferenceId).then(function(payload) {
         $scope.categories = payload.data.payload;
+        console.log('$scope.categories: ', $scope.categories);
       })
     });
   })
