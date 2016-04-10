@@ -54,8 +54,11 @@ router.post('/:id/categories/insert', function(req, res, next) {
 router.post('/:id/categories/delete', function(req, res, next) {
   console.log('in the pref category delete route with id of ', req.params.id);
   // var jsonObj = JSON.parse(req.body.json);
-  db.deletePreference_Category(req.params.id).then(function(data) {
-        console.log('LEAVE posted prefcat delete');
+  db.preferenceCategoryByPreference(req.params.id).first().then(function(data) {
+    console.log('data for pCByPref: ', data);
+    db.deletePreference_Category(data.id).then(function(data) {
+      console.log('LEAVE done with deletePC');
+    })
   })
 })
 
