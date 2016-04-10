@@ -109,7 +109,7 @@ app.service("PreferenceService", function($http) {
     // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
     return $http({
-    method: 'POST',
+    method: 'GET',
     url: url,
     // data: data,
     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
