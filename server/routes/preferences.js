@@ -30,7 +30,7 @@ router.get('/:id/categories', function(req, res, next) {
   db.preferenceCategories(req.params.id).then(function(data) {
     res.send({payload:data});
   })
-}
+});
 
 router.post('/:id/edit', function(req, res, next) {
   var jsonObj = JSON.parse(req.body.json);
