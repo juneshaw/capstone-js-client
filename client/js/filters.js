@@ -39,3 +39,17 @@ connectbotControllers.filter('rsvpUnknown', function () {
       return element.rsvp === 'U' || element.rsvp === 'u'
     })
 }});
+
+connectbotControllers.filter('currentPreferenceCategory', function(){
+
+    return function(categories, category){
+
+        var arrayToReturn = [];
+        for (var i=0; i<categories.length; i++){
+            if (categories[i].name != category.name) {
+                arrayToReturn.push(categories[i]);
+            }
+        }
+        return arrayToReturn;
+    };
+});

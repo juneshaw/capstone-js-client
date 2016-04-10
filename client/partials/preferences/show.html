@@ -60,7 +60,8 @@
               <div>There's also the possibility of moving elements around in the same container, changing their position</div> -->
             </div>
             <div class="container" dragula="category-bag">
-              <div ng-repeat="category in categoriesAll">{{category.name}}</div>
+
+              <div ng-repeat="category in filteredCategories">{{category.name}}</div>
               <!-- <div>This is the default use case. You only need to specify the containers you want to use</div>
               <div>More interactive use cases lie ahead</div>
               <div>Make sure to check out the documentation on GitHub!</div> -->
