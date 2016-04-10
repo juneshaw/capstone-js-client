@@ -95,11 +95,7 @@ preference: function(id) {
 },
 
 updatePreference: function(id, preference) {
-  console.log('got to updatePreference with id: ', id, ' and pref of: ', preference);
-  // return(this.Preferences().where('id', id).first().update(preference));
-  // return(this.Preferences().where('id', id).first().update({"time":"19:00:00","day":"Monday","periodicity":"monthly"}));
   return(this.Preferences().where('id', id).first().update(preference));
-                    //  {"id":1,"time":"19:00:00","day":"Monday","periodicity":"monthly"}
 },
 
 deletePreference: function(id) {
@@ -256,7 +252,6 @@ insertBusiness: function(business) {
 },
 
 business: function(id) {
-  console.log('in the db business!');
   return(this.Businesses().where('id', id))
 },
 
@@ -271,7 +266,6 @@ deleteBusiness: function(id) {
 //////////////
 
 activitiesForGroup: function(id) {
-  console.log('activitiesForGroup id: ', id);
   return(this.Activities().where('group_id', id));
 },
 

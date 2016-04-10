@@ -14,6 +14,7 @@ var locations = require('./routes/locations')
 var businesses = require('./routes/businesses')
 var activity_members = require('./routes/activity_members')
 var preferences = require('./routes/preferences')
+var categories = require('./routes/categories')
 // var invites = require('./routes/invites')
 
 var app = express();
@@ -46,6 +47,7 @@ app.use('/locations', locations);
 app.use('/businesses', businesses);
 app.use('/activity_members', activity_members);
 app.use('/preferences', preferences);
+app.use('/categories', categories);
 // app.use('/invites', invites);
 
 // catch 404 and forward to error handler

@@ -100,7 +100,24 @@ app.service("PreferenceService", function($http) {
     url: url,
     data: data,
     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-})
+  })
+
+  PreferenceService.setPreferenceCategories = function(preference) {
+    console.log('preference in setPreferenceCategories', preference);
+    var data = $.param({
+        json: JSON.stringify({
+              "category_id": preference.category_id}),
+    });
+    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+
+    return $http({
+    method: 'POST',
+    url: url,
+    data: data,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  })
+
+
     // console.log('data in set times: ', data);
     // return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
   }
@@ -121,3 +138,93 @@ app.service("PreferenceService", function($http) {
   // }
   return PreferenceService;
 })
+
+app.service('CategoryService', function($http) {
+    var categories = null;
+
+    var promise = $http.get('http://capstone-js.herokuapp.com/categories/').success(function (data) {
+      categories = data;
+    });
+
+    return {
+      promise:promise,
+      getCategories: function() {
+        return categories;
+      }
+      // setCategories: function (categories) {
+      //     myData = data;
+      // },
+      // doStuff: function () {
+      //     return myData;//.getSomeData();
+      // }
+    };
+});
+
+
+// app.service("CategoryService", function($http) {
+//   var CategoryService = {};
+  //
+  // CategoryService.getCategory = function(preferenceId) {
+  //   console.log('made it to getCategory');
+  //   return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
+  // }
+
+//   CategoryService.setCategoryTimes = function(preference) {
+//     console.log('preference in setCategoryTimes', preference);
+//     console.log('!!! ', preference.time);
+//     var data = $.param({
+//         json: JSON.stringify({
+//               "time": preference.time,
+//               "day": preference.day,
+//               "periodicity": preference.periodicity}),
+//     //     var data = $.param({
+//     // json: JSON.stringify({
+//     //     name: $scope.newName
+//     // })
+// // });
+  //   });
+  //   url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+  //
+  //   return $http({
+  //   method: 'POST',
+  //   url: url,
+  //   data: data,
+  //   headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  // })
+
+  // CategoryService.setCategoryCategories = function(preference) {
+  //   console.log('preference in setCategoryCategories', preference);
+  //   var data = $.param({
+  //       json: JSON.stringify({
+  //             "category_id": preference.category_id}),
+  //   });
+  //   url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+  //
+  //   return $http({
+  //   method: 'POST',
+  //   url: url,
+  //   data: data,
+  //   headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  // })
+
+
+    // console.log('data in set times: ', data);
+    // return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
+  }
+
+  // CategoryService.getGroup = function(preferenceId) {
+  //   return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
+  // }
+  //
+  // CategoryService.categories =
+  //   {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  //   periods: ["weekly", "biweekly", "monthly"]};
+
+  //
+  // Category.getPeriods = function() {
+  //   return(
+  //   {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+  //   periods: ["weekly", "biweekly", "monthly"]});
+  // }
+//   return CategoryService;
+// })

@@ -20,7 +20,12 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
             $routeProvider
             .when('/', {
                 templateUrl: './partials/index.html',
-                controller: 'MainController'
+                controller: 'MainController',
+                resolve:{
+                  'CategoryData':function(MyService){
+                    // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
+                    return MyService.promise;
+                  }
             })
             .when('/groups', {
                 templateUrl: './partials/groups/index.html',
