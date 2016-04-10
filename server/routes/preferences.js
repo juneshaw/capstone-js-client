@@ -52,6 +52,7 @@ router.post('/:id/categories/insert', function(req, res, next) {
 })
 
 router.post('/:id/categories/delete', function(req, res, next) {
+  console.log('in the pref category delete route with id of ', req.params.id);
   // var jsonObj = JSON.parse(req.body.json);
   db.deletePreference_Category(req.params.id).then(function(data) {
         console.log('LEAVE posted prefcat insert');
