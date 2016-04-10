@@ -99,8 +99,7 @@ app.service("PreferenceService", function($http) {
   }
 
   PreferenceService.deletePreferenceCategories = function(preferenceId) {
-        return
-         $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete", {method: "jsonp"});
+    return      $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete", {method: "jsonp"});
   //   var data = {};
   //   // var data = $.param({
   //   //     json: JSON.stringify({
