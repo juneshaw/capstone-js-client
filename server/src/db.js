@@ -96,7 +96,7 @@ preference: function(id) {
 
 updatePreference: function(id, preference) {
   console.log('got to updatePreference with id: ', id, ' and pref of: ', preference);
-  return(this.Preferences().where('id', id).first().update({"day": "Thursday"}));
+  return(this.Preferences().where('id', id).first().update({"day": "Thursday", "periodicity": "monthly"}));
 },
 
 deletePreference: function(id) {
