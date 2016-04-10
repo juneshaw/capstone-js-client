@@ -95,43 +95,6 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
     });
   })
 
-  $scope.filterCat = function() {
-
-    //
-    // var ids = {};
-    // _.each(bbb, function (bb) { ids[bb.id] = true; });
-    //
-    // var out = _.filter(aaa, function (val) {
-    //     return ids[val.id];
-    // }, bbb);
-    //
-    var ids = {};
-    _.each($scope.categories, function (bb) { ids[bb.id] == true; });
-
-    var out = _.filter($scope.categoriesAll, function (val) {
-        return ids[val.id];
-    }, $scope.categories);
-
-    return out;
-    // return _.filter($scope.categoriesAll, function(a){
-    //   return _.find($scope.categories, function(b){
-    //       return b.id != a.id;
-    //   });
-    // })
-  };
-
-
-  // $scope.filterCat = function () {
-  //   console.log('in filteredCategories');
-  //   console.log('***cat all', $scope.categoriesAll);
-  //   console.log('!!! cat ', $scope.categories);
-  //   return $scope.categoriesAll.filter(function (category) {
-  //     console.log('cat: ', category);
-  //     return ($scope.categories.findIndex(category=>category.name) !=-1)
-      // a.findIndex(x => x.prop2=="yutu")
-      // return $scope.categories.indexOf(category.name) !== -1;
-  //   });
-  // };
 
 
 
