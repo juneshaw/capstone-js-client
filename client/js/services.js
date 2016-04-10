@@ -83,11 +83,16 @@ app.service("PreferenceService", function($http) {
     console.log('preference in setPreferenceTimes', preference);
     var data = $.param({
         json: JSON.stringify({
-            data: {id: preference.id,
+              id: preference.id,
               time: preference.time,
               day: preference.day,
-              periodicity: preference.periodicity}
+              periodicity: preference.periodicity
         }),
+    //     var data = $.param({
+    // json: JSON.stringify({
+    //     name: $scope.newName
+    // })
+// });
     });
     url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
