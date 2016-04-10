@@ -81,11 +81,12 @@ app.service("PreferenceService", function($http) {
 
   PreferenceService.setPreferenceTimes = function(preference) {
     console.log('preference in setPreferenceTimes', preference);
+    console.log('!!! ', preference.time);
     var data = $.param({
         json: JSON.stringify({
-              time: preference.time,
-              day: preference.day,
-              periodicity: preference.periodicity}),
+              "time": preference.time,
+              "day": preference.day,
+              "periodicity": preference.periodicity}),
     //     var data = $.param({
     // json: JSON.stringify({
     //     name: $scope.newName

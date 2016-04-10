@@ -30,7 +30,7 @@ router.post('/:id/edit', function(req, res, next) {
   console.log('got to post preference route with id and req.body', req.params.id, ' ', req.body.json);
   console.log('req.body: ', req.body);
   console.log('req.body.json: ', req.body.json);
-  console.log('req.body.json.time', req.body.json.time);
+  console.log('req.body.json.time', req.body.json["time"]);
   console.log('req.body.json["data"]: ', req.body.json["data"]);
   console.log('req.body.json.data: ', req.body.json.data);
   // db.updatePreference(req.params.id, {"time":"19:00:00","day":"Saturday","periodicity":"biweekly"}).then(function(data) {
