@@ -95,7 +95,7 @@ preference: function(id) {
 },
 
 updatePreference: function(id, preference) {
-  console.log('got to updatePreference', preference);
+  console.log('got to updatePreference', id, preference);
   return(this.Preferences().where('id', id).first().update(preference));
 },
 
