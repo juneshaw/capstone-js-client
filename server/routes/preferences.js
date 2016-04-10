@@ -43,7 +43,8 @@ router.post('/:id/times/edit', function(req, res, next) {
 
 router.post('/:id/categories/insert', function(req, res, next) {
   var jsonObj = JSON.parse(req.body.json);
-  db.insertPreferenceCategory(req.params.id,
+  console.log('jsonObj for cat insert: ', jsonObj);
+  db.insertPreference_Category(req.params.id,
     {preference_id: req.params.id,
       category_id: jsonObj.category_id}).then(function(data) {
         console.log('LEAVE posted prefcat insert');
@@ -52,7 +53,7 @@ router.post('/:id/categories/insert', function(req, res, next) {
 
 router.post('/:id/categories/delete', function(req, res, next) {
   // var jsonObj = JSON.parse(req.body.json);
-  db.deletePreferenceCategory(req.params.id).then(function(data) {
+  db.deletePreference_Category(req.params.id).then(function(data) {
         console.log('LEAVE posted prefcat insert');
   })
 })

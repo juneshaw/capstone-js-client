@@ -228,6 +228,7 @@ updatePreference_Category: function(id, preference_category) {
 },
 
 deletePreference_Category: function(id) {
+  console.log('deletePreference_Category with id of :', id);
   return(this.Preference_Categories().where('id', id).del())
 },
 
