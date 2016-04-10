@@ -145,8 +145,9 @@ app.service("PreferenceService", function($http) {
 
 app.service('CategoryService', function($http) {
     var categories = null;
-
-    var promise = $http.get('http://capstone-js.herokuapp.com/categories/').success(function (data) {
+    console.log('in categoryservice');
+    var promise = $http.get('http://capstone-js.herokuapp.com/categories').success(function (data, err) {
+      console.log('err: ', err);
       categories = data;
     });
 

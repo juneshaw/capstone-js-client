@@ -276,7 +276,7 @@ activityMembers: function(activityId) {
 
 groupByPreference: function(preferenceId) {
   return (this.Groups().where('preference_id', preferenceId).first());
-}
+},
 
 preferenceCategories: function(preferenceId) {
   return (this.Categories().join('preference_category', 'category.id', 'preference_category.category_id').where('preference_category.preference_id, preferenceId')
