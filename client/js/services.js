@@ -99,11 +99,12 @@ app.service("PreferenceService", function($http) {
   }
 
   PreferenceService.deletePreferenceCategory = function(preferenceId) {
-    var data = $.param({
-        json: JSON.stringify({
-              "category_id": preference.category_id}),
-    });
-    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/categories/delete";
+    var data = {};
+    // var data = $.param({
+    //     json: JSON.stringify({
+    //           "category_id": preference.category_id}),
+    // });
+    url = "http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete";
     // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
     // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
@@ -118,9 +119,10 @@ app.service("PreferenceService", function($http) {
   PreferenceService.insertPreferenceCategory = function(preferenceId, categoryId) {
     var data = $.param({
         json: JSON.stringify({
-              "category_id": preferenceId}),
+              "preference_id": preferenceId,
+              "category_id": categoryId}),
     });
-    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/categories/insert";
+    url = "http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/insert";
     // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
     // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
