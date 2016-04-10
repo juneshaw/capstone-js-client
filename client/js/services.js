@@ -99,21 +99,23 @@ app.service("PreferenceService", function($http) {
   }
 
   PreferenceService.deletePreferenceCategory = function(preferenceId) {
-    var data = {};
-    // var data = $.param({
-    //     json: JSON.stringify({
-    //           "category_id": preference.category_id}),
-    // });
-    url = "http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete";
-    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
-    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
-
-    return $http({
-    method: 'GET',
-    url: url,
-    // data: data,
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-    })
+        return
+         $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete", {method: "jsonp"});
+  //   var data = {};
+  //   // var data = $.param({
+  //   //     json: JSON.stringify({
+  //   //           "category_id": preference.category_id}),
+  //   // });
+  //   url = "http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete";
+  //   // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
+  //   // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+  //
+  //   return $http({
+  //   method: 'GET',
+  //   url: url,
+  //   // data: data,
+  //   headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  //   })
   }
 
   PreferenceService.insertPreferenceCategory = function(preferenceId, categoryId) {
