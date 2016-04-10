@@ -33,7 +33,10 @@ router.post('/:id/edit', function(req, res, next) {
   console.log('req.body.json["data"]: ', req.body.json["data"]);
   console.log('req.body.json.data: ', req.body.json.data);
   // db.updatePreference(req.params.id, {"time":"19:00:00","day":"Saturday","periodicity":"biweekly"}).then(function(data) {
-  db.updatePreference(req.params.id, req.body.json).then(function(data) {
+  db.updatePreference(req.params.id,
+    {time: req.body.json.time,
+      day: req.body.json.day,
+      periodicity: req.body.periodicity}).then(function(data) {
     console.log('did the updatePreference', req.body.json);;
   })
 })
