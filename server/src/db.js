@@ -281,7 +281,7 @@ groupByPreference: function(preferenceId) {
 
 preferenceCategoryByPreference: function(preferenceId) {
   return (this.Preference_Categories().where('preference_id', preferenceId));
-}
+},
 
 preferenceCategories: function(preferenceId) {
   console.log('in preferenceCategories in db.js with preferenceId: ', preferenceId);
