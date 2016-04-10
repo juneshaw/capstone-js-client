@@ -291,7 +291,7 @@ preferenceCategories: function(preferenceId) {
 
 deletePreference_CategoryByPreference: function(preferenceId) {
   console.log('in deletePreference_CategoryByPreference with prefid: ', preferenceId);
-  return (this.PreferenceCategories().where('preference_id', preferenceId).del());
+  return (this.Preference_Categories().where('preference_id', preferenceId).del());
 }
 
 //   return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
