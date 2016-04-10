@@ -32,12 +32,28 @@ router.get('/:id/categories', function(req, res, next) {
   })
 });
 
-router.post('/:id/edit', function(req, res, next) {
+router.post('/:id/times/edit', function(req, res, next) {
   var jsonObj = JSON.parse(req.body.json);
   db.updatePreference(req.params.id,
     {time: jsonObj.time,
       day: jsonObj.day,
       periodicity: jsonObj.periodicity}).then(function(data) {
+  })
+})
+
+router.post('/:id/categories/insert', function(req, res, next) {
+  var jsonObj = JSON.parse(req.body.json);
+  db.insertPreferenceCategory(req.params.id,
+    {preference_id: req.params.id,
+      category_id: jsonObj.category_id}).then(function(data) {
+        console.log('LEAVE posted prefcat insert');
+  })
+})
+
+router.post('/:id/categories/delete', function(req, res, next) {
+  var jsonObj = JSON.parse(req.body.json);
+  db.deletePreferenceCategory(req.params.id).then(function(data) {
+        console.log('LEAVE posted prefcat insert');
   })
 })
 

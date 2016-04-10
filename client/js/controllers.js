@@ -86,6 +86,7 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
       $scope.group = payload.data.payload;
       PreferenceService.getPreferenceCategories($scope.preferenceId).then(function(payload) {
         $scope.categories = payload.data.payload;
+        $scope.previousCategories = $scope.categories;
         console.log('$scope.categories: ', $scope.categories);
         console.log('$scope.categoriesAll', $scope.categoriesAll);
         $scope.filteredCategories = _.filter($scope.categoriesAll, function(obj){ return !_.findWhere($scope.categories, obj); });
@@ -139,9 +140,25 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
     })
   }
 
-  $scope.currentPreferenceCategory = function(category) {
-    return($scope.categories.indexOf(category));
-  };
+  $scope.updateCategories = function() {
+    PreferenceService.deletePreferenceCategories($scope.preference.id).then(function(payload) {
+      $scope.categories.forEach(function(category) {
+        PreferenceService.insertPreferenceCategory($scope.preference.id, $scope.category.id).then(function(payload) {
+          console.log('finished the add');
+        })
+      })
+    })
+  }
+
+  $scope.cancelCategoryEdit = function() {
+    console.log('new $scope.categories', $scope.categories);
+    $scope.categories = $scope.previousCategories;
+    console.log('reverted $scope.categories', $scope.categories);
+  }
+  //
+  // $scope.currentPreferenceCategory = function(category) {
+  //   return($scope.categories.indexOf(category));
+  // };
 
     // filter logic here...
     // return false if item already added, true otherwise

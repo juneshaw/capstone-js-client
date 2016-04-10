@@ -282,6 +282,7 @@ preferenceCategories: function(preferenceId) {
   console.log('in preferenceCategories in db.js with preferenceId: ', preferenceId);
   return (this.Categories().join('preference_category', 'category.id', 'preference_category.category_id').where('preference_category.preference_id', preferenceId))
 }
+
 //   return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
 // }
 

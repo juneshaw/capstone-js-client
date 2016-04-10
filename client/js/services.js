@@ -82,7 +82,8 @@ app.service("PreferenceService", function($http) {
               "periodicity": preference.periodicity}),
 
     });
-    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
 
     return $http({
     method: 'POST',
@@ -93,16 +94,35 @@ app.service("PreferenceService", function($http) {
 }
 
 
-    PreferenceService.getPreferenceCategories = function(preferenceId) {
+  PreferenceService.getPreferenceCategories = function(preferenceId) {
     return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories", {method: "jsonp"});
   }
 
-  PreferenceService.setPreferenceCategories = function(preference) {
+  PreferenceService.deletePreferenceCategory = function(preferenceId) {
     var data = $.param({
         json: JSON.stringify({
               "category_id": preference.category_id}),
     });
-    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/categories/delete";
+    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
+    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+
+    return $http({
+    method: 'POST',
+    url: url,
+    data: data,
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+    })
+  }
+
+  PreferenceService.insertPreferenceCategory = function(preferenceId, categoryId) {
+    var data = $.param({
+        json: JSON.stringify({
+              "category_id": preferenceId}),
+    });
+    url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/categories/insert";
+    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
+    // url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
     return $http({
     method: 'POST',

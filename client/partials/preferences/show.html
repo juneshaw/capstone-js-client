@@ -37,8 +37,6 @@
              </div>
            </div>
           </div>
-          <button type="button" class="btn btn-primary" ng-click="updateTimes()">Save</button>
-          <button type="reset" class="btn" ng-click="cancelEdit()">Cancel</button>
         </div>
       </fieldset>
 
@@ -55,55 +53,18 @@
             <div class="container" dragula="category-bag">
 
               <div ng-repeat="category in categories">{{category.name}}</div>
-              <!-- <div>You can move these elements between these two containers</div>
-              <div>Moving them anywhere else isn't quite possible</div>
-              <div>There's also the possibility of moving elements around in the same container, changing their position</div> -->
             </div>
             <div class="container" dragula="category-bag">
 
               <div ng-repeat="category in filteredCategories">{{category.name}}</div>
-              <!-- <div>This is the default use case. You only need to specify the containers you want to use</div>
-              <div>More interactive use cases lie ahead</div>
-              <div>Make sure to check out the documentation on GitHub!</div> -->
             </div>
           </div>
-          <!-- <pre>
-            <code>
-      &lt;div dragula=&#039;&quot;first-bag&quot;&#039;&gt;&lt;/div&gt;
-      &lt;div dragula=&#039;&quot;first-bag&quot;&#039;&gt;&lt;/div&gt;
-            </code>
-          </pre> -->
         </div>
-
-
-        <!-- <div dragula='"bag-one"'></div> -->
-        <!-- <div dragula='"bag-one"'></div> -->
+        <button type="button" class="btn btn-primary" ng-click="updateCategories()">Save</button>
+        <button type="reset" class="btn" ng-click="cancelCategoryEdit()">Cancel</button>
       </div>
 
-      <!-- <ul ng-controller="CategoryController">
-        <li ng-repeat="category in categories" dragula='"bag-one"' dragula-scope="$parent"></li>
-      </ul>
-      <ul>
-
-      </ul> -->
-        <!-- <ul class="thumbnails"> -->
-          <!-- <div ng-repeat="product in products | filter: my÷≥Filter"> -->
-          <!-- <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
-
-          <!-- <li ng-repeat="category in categories" ng-click="getDetail(category.id)"> -->
-          <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
-
-            <!-- <div class="thumbnail">
-              <img ng-src="{{category.image_url}}">
-              <div class="caption">
-                <h4>{{category.name}}</h4>
-              </div>
-            </div>
-          </li>
-        </ul> -->
-
-
-     <!-- Map -->
+     <!-- Map for custom location -->
       <div class = "text-center">
       </div>
 
@@ -118,7 +79,6 @@
       <div class = "row voffset2">
         <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-check"></i> Submit</a>
         <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-question"></i> Cancel</a>
-
       </div>
 
   </div>
