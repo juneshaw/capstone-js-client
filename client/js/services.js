@@ -111,7 +111,7 @@ app.service("PreferenceService", function($http) {
     return $http({
     method: 'POST',
     url: url,
-    data: data,
+    // data: data,
     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
     })
   }

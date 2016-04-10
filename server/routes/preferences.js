@@ -41,6 +41,7 @@ router.post('/:id/times/edit', function(req, res, next) {
   })
 })
 
+
 router.post('/:id/categories/insert', function(req, res, next) {
   var jsonObj = JSON.parse(req.body.json);
   console.log('jsonObj for cat insert: ', jsonObj);
@@ -55,7 +56,7 @@ router.post('/:id/categories/delete', function(req, res, next) {
   console.log('in the pref category delete route with id of ', req.params.id);
 
   db.deletePreference_CategoryByPreference(req.params.id).then(function(data) {
-      console.log('LEAVE done with deletePC');
+      console.log('LEAVE done with deletePC, ', data);
   })
 })
 
