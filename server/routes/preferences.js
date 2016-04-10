@@ -40,7 +40,7 @@ router.post('/:id/edit', function(req, res, next) {
   // db.updatePreference(req.params.id, {"time":"19:00:00","day":"Saturday","periodicity":"biweekly"}).then(function(data) {
   db.updatePreference(req.params.id,
     {time: jsonObj.time,
-      day: jsonObj.json.day,
+      day: jsonObj.day,
       periodicity: jsonObj.periodicity}).then(function(data) {
     console.log('did the updatePreference', jsonObj);;
   })
