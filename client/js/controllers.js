@@ -76,8 +76,9 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
 //   $scope.data = MyService.doStuff();
 // });
 
-connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'GroupService', 'LocationService', 'MemberService', 'PreferenceService', 'CategoryService', function($scope, $routeParams, $animate, GroupService, LocationService, MemberService, PreferenceService, CategoryService) {
+connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'GroupService', 'LocationService', 'MemberService', 'PreferenceService', 'CategoryService', 'CategoryData', function($scope, $routeParams, $animate, GroupService, LocationService, MemberService, PreferenceService, CategoryService, CategoryData) {
   $scope.categories = CategoryService.getCategories();
+  console.log('categories!!!!', $scope.categories);
   console.log('made it to the PreferenceShowController');
   $scope.preferenceId = $routeParams.id;
   $scope.periods = PreferenceService.periods;

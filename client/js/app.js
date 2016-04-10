@@ -42,6 +42,7 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
                             // MyServiceData will also be injectable in your controller, if you don't want this you could create a new promise with the $q service
                             return CategoryService.promise;
                           }
+                        }
             })
             .otherwise({redirectTo : '/'});
 

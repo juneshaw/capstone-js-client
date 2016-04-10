@@ -87,11 +87,7 @@ app.service("PreferenceService", function($http) {
               "time": preference.time,
               "day": preference.day,
               "periodicity": preference.periodicity}),
-    //     var data = $.param({
-    // json: JSON.stringify({
-    //     name: $scope.newName
-    // })
-// });
+
     });
     url = "http://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
 
@@ -101,6 +97,13 @@ app.service("PreferenceService", function($http) {
     data: data,
     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
   })
+}
+
+
+  PreferenceService.getPreferenceCategories = function(preferenceId) {
+    console.log('made it to getPreference');
+    return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories", {method: "jsonp"});
+  }
 
   PreferenceService.setPreferenceCategories = function(preference) {
     console.log('preference in setPreferenceCategories', preference);
@@ -115,12 +118,13 @@ app.service("PreferenceService", function($http) {
     url: url,
     data: data,
     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-  })
+    })
+  }
 
 
     // console.log('data in set times: ', data);
     // return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
-  }
+  // }
 
   // PreferenceService.getGroup = function(preferenceId) {
   //   return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
@@ -151,12 +155,6 @@ app.service('CategoryService', function($http) {
       getCategories: function() {
         return categories;
       }
-      // setCategories: function (categories) {
-      //     myData = data;
-      // },
-      // doStuff: function () {
-      //     return myData;//.getSomeData();
-      // }
     };
 });
 
@@ -210,7 +208,7 @@ app.service('CategoryService', function($http) {
 
     // console.log('data in set times: ', data);
     // return $http.post("http://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
-  }
+  // }
 
   // CategoryService.getGroup = function(preferenceId) {
   //   return $http.get("http://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
