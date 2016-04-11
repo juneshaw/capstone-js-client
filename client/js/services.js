@@ -21,8 +21,9 @@ app.service("GroupService", function($http){
 
   GroupService.getLocationCenter = function(groupId) {
     return $http.get("http://capstone-js.herokuapp.com/groups/location/"+locationId, {method: "jsonp"}).then(function(data){
-      // console.log('group center', data);
+      console.log('group center', data);
     })
+  }
 
   GroupService.actgen = function(groupId) {
     return $http.get("http://capstone-js.herokuapp.com/groups/"+groupId+"/actgen", {method: "jsonp"});
@@ -42,7 +43,7 @@ app.service("GroupService", function($http){
     // var Lon = atan2(y, x)
     // var Hyp = sqrt(x * x + y * y)
     // var Lat = atan2(z, hyp)
-  }
+  // }
   return GroupService;
 });
 
