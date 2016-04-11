@@ -52,11 +52,11 @@
         <div class="parent">
         <!-- <div class="parent" ng-controller="CategoryController"> -->
           <div class="wrapper">
-            <div class="container" dragula="category-bag">
+            <div class="container" dragula="category-bag" dragula-scope="$parent">
 
               <div ng-repeat="category in categories">{{category.name}}</div>
             </div>
-            <div class="container" dragula="category-bag">
+              <div class="container" dragula="category-bag" dragula-scope="$parent">
 
               <div ng-repeat="category in filteredCategories">{{category.name}}</div>
             </div>

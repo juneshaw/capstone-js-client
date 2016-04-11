@@ -429,10 +429,10 @@ display: block;
 a {
   font-weight: bold;
 }
-a,
+/*a,
 a:hover {
   color: #ecf0f1;
-}
+}*/
 
 pre {
   white-space: pre-wrap;

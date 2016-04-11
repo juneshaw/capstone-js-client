@@ -6,6 +6,7 @@ exports.up = function(knex, Promise) {
     table.text('bio');
     table.string('image_url');
     table.integer('preference_id');
+    table.integer('location_id');
   })
 };
 

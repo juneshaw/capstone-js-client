@@ -46,6 +46,10 @@ app.service("ActivityService", function($http) {
   ActivityService.getMembers = function(activityId) {
     return $http.get("http://capstone-js.herokuapp.com/activities/"+activityId+"/members", {method: "jsonp"});
   }
+
+  ActivityService.createActivity = function() {
+
+  }
   return ActivityService;
 })
 
@@ -54,6 +58,27 @@ app.service("LocationService", function($http) {
 
   LocationService.getLocation = function(locationId) {
     return $http.get("http://capstone-js.herokuapp.com/locations/"+locationId, {method: "jsonp"});
+  }
+
+  GroupService.getCenter = function(groupId) {
+    $http.get("http://capstone-js.herokuapp.com/locations/"+locationId, {method: "jsonp"}).then(function(data){
+      console.log('group center', data);
+    })
+
+    // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
+    var X = cos(lat) * cos(lon)
+    var Y = cos(lat) * sin(lon)
+    var Z = sin(lat)
+
+    // Compute average x, y and z coordinates.
+    var x = (x1 + x2 + ... + xn) / n
+    var y = (y1 + y2 + ... + yn) / n
+    var z = (z1 + z2 + ... + zn) / n
+
+    // Convert average x, y, z coordinate to latitude and longitude.
+    var Lon = atan2(y, x)
+    var Hyp = sqrt(x * x + y * y)
+    var Lat = atan2(z, hyp)
   }
   return LocationService;
 })
@@ -150,12 +175,7 @@ app.service("PreferenceService", function($http) {
     {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     periods: ["weekly", "biweekly", "monthly"]};
 
-  //
-  // Preference.getPeriods = function() {
-  //   return(
-  //   {days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-  //   periods: ["weekly", "biweekly", "monthly"]});
-  // }
+
   return PreferenceService;
 })
 

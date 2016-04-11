@@ -18,9 +18,11 @@ var _ = require('lodash');
  * set_parameters: object with params to search
  * callback: callback(error, response, body)
  */
-router.get('/', function(req, res, next) {
+router.get('/new/location/:location/sort/:sort', function(req, res, next) {
   console.log('Inside the activities route');
-  var set_parameters = {location:'Evergreen+CO',sort:'2'};
+  var set_parameters =
+  {location:req.params.location,sort:req.params.sort};
+  //  {location:'Evergreen+CO',sort:'2'};
   function callback(error, response, body) {
     // res.send(body);
     console.log('*************');

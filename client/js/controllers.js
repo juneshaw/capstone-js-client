@@ -82,11 +82,11 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
   $scope.periods = PreferenceService.periods;
   PreferenceService.getPreference($scope.preferenceId).then(function(payload) {
     $scope.preference = payload.data.payload;
-    GroupService.getGroupFromPreference($scope.preference.id).then(function(payload) {
+    GroupService.getGroupFromPreference($scope.preferenceId).then(function(payload) {
       $scope.group = payload.data.payload;
       PreferenceService.getPreferenceCategories($scope.preferenceId).then(function(payload) {
         $scope.categories = payload.data.payload;
-        $scope.previousCategories = $scope.categories;
+        // $scope.previousCategories = $scope.categories;
         console.log('$scope.categories: ', $scope.categories);
         console.log('$scope.categoriesAll', $scope.categoriesAll);
         $scope.filteredCategories = _.filter($scope.categoriesAll, function(obj){ return !_.findWhere($scope.categories, obj); });
@@ -95,9 +95,6 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
     });
   })
 
-
-
-
   $scope.updatePreferenceTimes = function() {
     PreferenceService.setPreferenceTimes($scope.preference).then(function(payload) {
     })
@@ -105,7 +102,6 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
 
   $scope.updateCategories = function() {
     console.log('in updateCategories!!!, about to delete!   ');
-  // $scope.updateCategories = function() {
     PreferenceService.deletePreferenceCategories($scope.preference.id).then(function(payload) {
       console.log('payload after delete: ', payload);
       console.log('done with delete, now time for the insert with: ', $scope.categories);
@@ -113,18 +109,16 @@ connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeP
         console.log('about to call insertPreferenceCategory', $scope.preference.id, category.id);
         PreferenceService.insertPreferenceCategory($scope.preference.id, category.id).then(function(payload) {
           console.log('finished the add');
-          $scope.filteredCategories = _.filter($scope.categoriesAll, function(obj){ return !_.findWhere($scope.categories, obj); });
+        });
+      });
+    });
+  };
 
-        })
-      })
-    })
-  }
-
-  $scope.cancelCategoryEdit = function() {
-    console.log('new $scope.categories', $scope.categories);
-    $scope.categories = $scope.previousCategories;
-    console.log('reverted $scope.categories', $scope.categories);
-  }
+  // $scope.cancelCategoryEdit = function() {
+  //   console.log('new $scope.categories', $scope.categories);
+  //   $scope.categories = $scope.previousCategories;
+  //   console.log('reverted $scope.categories', $scope.categories);
+  // }
   //
   // $scope.currentPreferenceCategory = function(category) {
   //   return($scope.categories.indexOf(category));
