@@ -19,6 +19,26 @@ app.service("GroupService", function($http){
     return $http.get("http://capstone-js.herokuapp.com/groups/preference/"+preferenceId, {method: "jsonp"});
   }
 
+  GroupService.getLocationCenter = function(groupId) {
+    $http.get("http://capstone-js.herokuapp.com/groups/location/"+locationId, {method: "jsonp"}).then(function(data){
+      console.log('group center', data);
+    })
+
+    // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
+    // var X = cos(lat) * cos(lon)
+    // var Y = cos(lat) * sin(lon)
+    // var Z = sin(lat)
+
+    // Compute average x, y and z coordinates.
+    // var x = (x1 + x2 + ... + xn) / n
+    // var y = (y1 + y2 + ... + yn) / n
+    // var z = (z1 + z2 + ... + zn) / n
+
+    // Convert average x, y, z coordinate to latitude and longitude.
+    // var Lon = atan2(y, x)
+    // var Hyp = sqrt(x * x + y * y)
+    // var Lat = atan2(z, hyp)
+  }
   return GroupService;
 });
 
@@ -60,26 +80,6 @@ app.service("LocationService", function($http) {
     return $http.get("http://capstone-js.herokuapp.com/locations/"+locationId, {method: "jsonp"});
   }
 
-  GroupService.getCenter = function(groupId) {
-    $http.get("http://capstone-js.herokuapp.com/locations/"+locationId, {method: "jsonp"}).then(function(data){
-      console.log('group center', data);
-    })
-
-    // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
-    var X = cos(lat) * cos(lon)
-    var Y = cos(lat) * sin(lon)
-    var Z = sin(lat)
-
-    // Compute average x, y and z coordinates.
-    var x = (x1 + x2 + ... + xn) / n
-    var y = (y1 + y2 + ... + yn) / n
-    var z = (z1 + z2 + ... + zn) / n
-
-    // Convert average x, y, z coordinate to latitude and longitude.
-    var Lon = atan2(y, x)
-    var Hyp = sqrt(x * x + y * y)
-    var Lat = atan2(z, hyp)
-  }
   return LocationService;
 })
 

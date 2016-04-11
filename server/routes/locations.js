@@ -9,7 +9,7 @@ dotenv.load();
 router.get('/:id', function(req, res, next) {
   // knex('users').orderBy('name', 'desc')
 
-  db.locations(req.params.id).first().then(function(data) {
+  db.location(req.params.id).first().then(function(data) {
     console.log('made it to the locations show');
       res.send({payload:data});
   });

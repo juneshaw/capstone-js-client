@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var db = require('../src/db.js');
+var engine = require('../src/engine.js')
 // var mailcomposer = require('mailcomposer');
 // var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 // require('dotenv').load();
@@ -21,6 +22,13 @@ router.get('/preference/:id', function(req, res, next) {
   db.groupByPreference(req.params.id).then(function(data) {
     res.send({payload:data});
   });
+})
+
+router.get('activitygen/:id', function(req, res, next) {
+  engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
+    console.log('engine activity: ',data);
+    res.send(data);
+  })
 })
 
 router.get('/:id/activities', function(req, res, next) {
