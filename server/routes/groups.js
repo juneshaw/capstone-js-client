@@ -29,7 +29,7 @@ router.get('/actgen', function(req, res, next) {
   // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
     console.log('engine activity: ',data);
     // res.send(data);
-  })
+  // })
 })
 
 router.get('/:id/activities', function(req, res, next) {
