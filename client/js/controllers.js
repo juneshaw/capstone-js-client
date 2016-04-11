@@ -40,7 +40,7 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
 }]);
 
 connectbotControllers.controller('GroupActgenController', ['$scope', '$routeParams', 'GroupService', 'MemberService', 'ActivityService', function($scope, $routeParams, GroupService, MemberService, ActivityService) {
-  console.log('made it to the GroupShowController with id: ',$routeParams.id);
+  console.log('made it to the GroupShowController ');
   GroupService.actgen().then(function(payload) {
     $scope.group = payload;
     console.log('payload from actgen: ', payload);

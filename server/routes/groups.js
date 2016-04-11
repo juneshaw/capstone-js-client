@@ -26,9 +26,9 @@ router.get('/preference/:id', function(req, res, next) {
 
 router.get('/actgen', function(req, res, next) {
   console.log('in activitygen');
-  // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
+  engine.createActivity().then(function(data) {
     console.log('******* engine activity: ');
-    res.send({payload:"success"});
+    res.send({payload:data});
   // })
 })
 
