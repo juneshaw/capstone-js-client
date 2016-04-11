@@ -24,15 +24,7 @@ router.get('/preference/:id', function(req, res, next) {
   });
 })
 
-router.get('/activityScheduler', function(req, res, next) {
-  console.log('in activityScheduler');
-  // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
-  console.log('******* engine scheduler: ');
-  res.send({payload:"success"});
-  // })
-})
-
-router.get('/:id/actgen', function(req, res, next) {
+router.get('/actgen', function(req, res, next) {
   console.log('in activitygen');
   // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
     console.log('******* engine activity: ');
