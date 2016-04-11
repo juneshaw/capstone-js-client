@@ -24,6 +24,10 @@ router.get('/preference/:id', function(req, res, next) {
   });
 })
 
+
+
+
+
 router.get('/:id/actgen', function(req, res, next) {
   console.log('in activitygen');
   // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
@@ -47,6 +51,13 @@ router.get('/:id', function(req, res, next) {
   })
 });
 
+router.get('/activityScheduler', function(req, res, next) {
+  console.log('in activityScheduler');
+  // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
+  console.log('******* engine scheduler: ');
+  res.send({payload:"success"});
+  // })
+})
 
 // router.get('/', function(req, res, next) {
 //   res.render('index', { title: 'ConnectBot' });

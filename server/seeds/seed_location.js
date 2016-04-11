@@ -10,18 +10,24 @@ exports.seed = function(knex, Promise) {
       address_2: 'Apartment 1',
       city: 'Lakewood',
       state: 'CO',
-      zipcode: '80232'}),
+      zipcode: '80232',
+      lat: 39.6332817,
+      long: -105.3184662}),
     knex('location').insert({id: 2,
       address_1: '7783 West 55th Avenue',
       address_2: 'Apartment 2',
       city: 'Arvada',
       state: 'CO',
-      zipcode: '80002'}),
+      zipcode: '80002',
+      lat: 39.6332817,
+      long: -105.3184662}),
     knex('location').insert({id: 3,
       address_1: '6917 Timbers Drive',
       address_2: ' ',
       city: 'Evergreen',
       state: 'CO',
-      zipcode: '80439'})
+      zipcode: '80439',
+      lat: 39.6332817,
+      long: -105.3184662})
   );
 };

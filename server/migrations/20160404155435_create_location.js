@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
     table.string('city');
     table.string('state');
     table.string('zipcode');
+    table.float('lat');
+    table.float('long');
   })
 };
 
