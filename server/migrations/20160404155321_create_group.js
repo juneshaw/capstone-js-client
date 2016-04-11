@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
     table.string('image_url');
     table.integer('preference_id');
     table.integer('location_id');
+    table.date('next_activity_date');
   })
 };
 
