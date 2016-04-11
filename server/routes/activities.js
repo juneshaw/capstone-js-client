@@ -95,6 +95,12 @@ router.get('/new/location/:location/sort/:sort', function(req, res, next) {
   request_yelp(set_parameters, callback);
 });
 
+router.get('/actgen/:id', function(req, res, next) {
+  res.send({payload:"success"})
+  // knex('users').orderBy('name', 'desc')
+  console.log('in actgen');
+});
+
 router.get('/:id/members', function(req, res, next) {
   console.log('made it to the activities show with param id of: ', req.params.id);
   db.activityMembers(req.params.id).then(function(data) {
@@ -103,12 +109,6 @@ router.get('/:id/members', function(req, res, next) {
   });
 });
 
-
-router.get('/:id/actgen', function(req, res, next) {
-  res.send({payload:"success"})
-  // knex('users').orderBy('name', 'desc')
-console.log('in actgen');
-});
 
 router.get('/:id', function(req, res, next) {
   console.log('made it to the activities show with param id of: ', req.params.id);
