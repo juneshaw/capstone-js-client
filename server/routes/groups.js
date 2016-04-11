@@ -24,11 +24,11 @@ router.get('/preference/:id', function(req, res, next) {
   });
 })
 
-router.get('/:id/actgen', function(req, res, next) {
+router.get('/actgen', function(req, res, next) {
   console.log('in activitygen');
-  engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
+  // engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
     console.log('engine activity: ',data);
-    res.send(data);
+    // res.send(data);
   })
 })
 
