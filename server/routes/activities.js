@@ -103,6 +103,13 @@ router.get('/:id/members', function(req, res, next) {
   });
 });
 
+
+router.get('/:id/actgen', function(req, res, next) {
+  res.send({payload:"success"})
+  // knex('users').orderBy('name', 'desc')
+console.log('in actgen');
+});
+
 router.get('/:id', function(req, res, next) {
   console.log('made it to the activities show with param id of: ', req.params.id);
   db.activity(req.params.id).first().then(function(data) {
