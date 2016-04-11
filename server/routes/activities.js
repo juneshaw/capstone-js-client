@@ -20,7 +20,7 @@ var _ = require('lodash');
  */
 
 router.get('/', function(req, res, next) {
-     res.send({payload:success});
+     res.send({payload:"success"});
  });
 
 router.get('/new/location/:location/sort/:sort', function(req, res, next) {
