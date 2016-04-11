@@ -17,10 +17,8 @@ module.exports = {
     //  {location:'Evergreen+CO',sort:'2'};
     function callback(error, response, body) {
       // res.send(body);
-      console.log('@@@@@@@@@@@@@');
-      console.log('body: ', body);
+      // console.log('body: ', body);
       var activities = JSON.parse(body).businesses;
-      console.log('activities:', activities);
 
       var randomResultIndex= Math.floor(Math.random() * (activities.length - 0 )) + 0;
       console.log('chosen activity: ', activities[randomResultIndex]);
@@ -34,7 +32,9 @@ module.exports = {
       time: time.time,
       location_id: group.location_id,
       business_id: 0,
-      address: activity.location.display_address,
+      address: activity.location.address[0],
+      city: activity.location.city,
+      state: activity.location.state_code,
       lat: activity.location.coordinate.lat,
       long: activity.location.coordinate.long,
       phone: activity.display_phone,

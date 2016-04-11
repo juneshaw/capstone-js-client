@@ -288,7 +288,7 @@ preferenceCategories: function(preferenceId) {
 },
 
 preferenceTimes: function(preferenceId) {
-  return(this.Preferences().where('id', preferenceId));
+  return(this.Preferences().where('id', preferenceId).first());
 },
 
 deletePreference_CategoryByPreference: function(preferenceId) {

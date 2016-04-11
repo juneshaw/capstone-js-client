@@ -10,6 +10,8 @@ exports.up = function(knex, Promise) {
     table.integer('location_id');
     table.integer('business_id');
     table.string('address');
+    table.string('city');
+    table.string('state');
     table.string('category_name');
     table.float('lat');
     table.float('long');
