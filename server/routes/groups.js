@@ -24,18 +24,13 @@ router.get('/preference/:id', function(req, res, next) {
   });
 })
 
-router.get('/:id', function(req, res, next) {
-  console.log('got to the show group route');
-  db.group(req.params.id).then(function(data) {
-    res.send({payload:data});
-  })
-});
-
 router.get('/:id/actgen', function(req, res, next) {
-  res.send({payload:"success"})
-  // knex('users').orderBy('name', 'desc')
-  console.log('in actgen');
-});
+  console.log('in activitygen');
+  engine.createActivity(req.params.id, req.body.location, req.body.preference).then(function(data) {
+    console.log('******* engine activity: ',data);
+    res.send(data);
+  })
+})
 
 router.get('/:id/activities', function(req, res, next) {
   // knex('users').orderBy('name', 'desc')
@@ -43,6 +38,13 @@ router.get('/:id/activities', function(req, res, next) {
   db.activitiesForGroup(req.params.id).orderBy('date', 'desc').first().then(function(data) {
     res.send({payload:data});
   });
+});
+
+router.get('/:id', function(req, res, next) {
+  console.log('got to the show group route');
+  db.group(req.params.id).then(function(data) {
+    res.send({payload:data});
+  })
 });
 
 

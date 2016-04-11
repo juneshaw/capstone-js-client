@@ -18,6 +18,11 @@ var _ = require('lodash');
  * set_parameters: object with params to search
  * callback: callback(error, response, body)
  */
+
+router.get('/', function(req, res, next) {
+     res.send({payload:success});
+ });
+
 router.get('/new/location/:location/sort/:sort', function(req, res, next) {
   console.log('Inside the activities route');
   var set_parameters =
@@ -95,11 +100,6 @@ router.get('/new/location/:location/sort/:sort', function(req, res, next) {
   request_yelp(set_parameters, callback);
 });
 
-router.get('/:id/actgen', function(req, res, next) {
-  res.send({payload:"success"})
-  // knex('users').orderBy('name', 'desc')
-  console.log('in actgen');
-});
 
 router.get('/:id/members', function(req, res, next) {
   console.log('made it to the activities show with param id of: ', req.params.id);

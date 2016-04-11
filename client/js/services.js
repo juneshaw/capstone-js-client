@@ -20,9 +20,13 @@ app.service("GroupService", function($http){
   }
 
   GroupService.getLocationCenter = function(groupId) {
-    $http.get("http://capstone-js.herokuapp.com/groups/location/"+locationId, {method: "jsonp"}).then(function(data){
-      console.log('group center', data);
+    return $http.get("http://capstone-js.herokuapp.com/groups/location/"+locationId, {method: "jsonp"}).then(function(data){
+      // console.log('group center', data);
     })
+
+  GroupService.actgen = function(groupId) {
+    return $http.get("http://capstone-js.herokuapp.com/groups/"+groupId+"/actgen", {method: "jsonp"});
+  }
 
     // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
     // var X = cos(lat) * cos(lon)

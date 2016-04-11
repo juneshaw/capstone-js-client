@@ -26,6 +26,10 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
                 templateUrl: './partials/groups/index.html',
                 controller: 'GroupIndexController'
             })
+            .when('/groups/:id/actgen', {
+              templateUrl: 'partials/groups/actgen.html',
+              controller: 'GroupActgenController'
+            })
             .when('/groups/:id', {
                         templateUrl: 'partials/groups/show.html',
                          controller: 'GroupShowController'

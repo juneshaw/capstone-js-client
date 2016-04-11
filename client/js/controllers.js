@@ -39,6 +39,25 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   });
 }]);
 
+connectbotControllers.controller('GroupActgenController', ['$scope', '$routeParams', 'GroupService', 'MemberService', 'ActivityService', function($scope, $routeParams, GroupService, MemberService, ActivityService) {
+  console.log('made it to the GroupShowController with id: ',$routeParams.id);
+  $scope.groupId = $routeParams.id;
+  GroupService.actgen($scope.groupId).then(function(payload) {
+    $scope.group = payload;
+    console.log('payload from actgen: ', payload);
+  })
+  // GroupService.getGroup($scope.groupId).then(function(payload) {
+  //   $scope.group = payload.data.payload;
+  //   MemberService.getMember($scope.group.host_id).then(function(payload) {
+  //     $scope.host = payload.data.payload;
+  //     GroupService.getActivityLatest($scope.groupId).then(function(payload) {
+  //       $scope.activity = payload.data.payload;
+  //     })
+  //   })
+  // }, function(error) {
+  // });
+}]);
+
 connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService) {
   console.log('made it to the ActivityShowController');
   $scope.activityId = $routeParams.id;
