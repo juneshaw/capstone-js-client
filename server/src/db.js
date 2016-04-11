@@ -289,6 +289,10 @@ preferenceCategories: function(preferenceId) {
   return (this.Categories().join('preference_category', 'category.id', 'preference_category.category_id').where('preference_category.preference_id', preferenceId))
 },
 
+preferenceTimes: function(preferenceId) {
+  return(this.Preferences().where('id', preferenceId));
+},
+
 deletePreference_CategoryByPreference: function(preferenceId) {
   console.log('in deletePreference_CategoryByPreference with prefid: ', preferenceId);
   return (this.Preference_Categories().where('preference_id', preferenceId).del().count());

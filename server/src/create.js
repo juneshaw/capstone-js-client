@@ -8,11 +8,11 @@ var db = require('./db.js');
 
 module.exports = {
 
-  createActivity: function(group, city_state, sort, category_filter) {
+  createActivity: function(group, category_filter, time) {
     console.log('got the createActivity call with', city_state, sort, category_filter);
 
     var set_parameters =
-    {location: city_state, sort: sort, category_filter: category_filter}
+    {location: group.city_state, sort: group.sort, category_filter: category_filter}
     // {location:req.params.location,sort:req.params.sort};
     //  {location:'Evergreen+CO',sort:'2'};
     function callback(error, response, body) {
@@ -24,6 +24,25 @@ module.exports = {
 
       var randomResultIndex= Math.floor(Math.random() * (activities.length - 0 )) + 0;
       console.log('chosen activity: ', activities[randomResultIndex]);
+      var activity = activities[randomResultIndex];
+      db.insertActivity({group_id:group.id,
+      name: activity.name,
+      custom_category_id: 0,
+      category_id: 0,
+      date: group.next_activity_date,
+      time: time,
+      location_id: group.location_id,
+      business_id: 0,
+      address: activity.display_address,
+      lat: activity.coordinate.lat,
+      long: activity.coordinate.long,
+      phone: activity.display_phone,
+      image_url: activity.image_url,
+      category_name: activity.categories[0][0]
+    }).then(function(data) {
+      console.log('data', data);   // need the id back
+        // db.initializeActivityRsvp(group, activityId)
+    })
 
     }
     var request_yelp = function(set_parameters, callback) {
