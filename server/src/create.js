@@ -9,7 +9,7 @@ var db = require('./db.js');
 module.exports = {
 
   createActivity: function(group, category_filter, time) {
-    console.log('got the createActivity call with', city_state, sort, category_filter);
+    console.log('got the createActivity call with', group.city_state, group.sort, category_filter, time.time);
 
     var set_parameters =
     {location: group.city_state, sort: group.sort, category_filter: category_filter}
@@ -25,17 +25,18 @@ module.exports = {
       var randomResultIndex= Math.floor(Math.random() * (activities.length - 0 )) + 0;
       console.log('chosen activity: ', activities[randomResultIndex]);
       var activity = activities[randomResultIndex];
+
       db.insertActivity({group_id:group.id,
       name: activity.name,
       custom_category_id: 0,
       category_id: 0,
       date: group.next_activity_date,
-      time: time,
+      time: time.time,
       location_id: group.location_id,
       business_id: 0,
-      address: activity.display_address,
-      lat: activity.coordinate.lat,
-      long: activity.coordinate.long,
+      address: activity.location.display_address,
+      lat: activity.location.coordinate.lat,
+      long: activity.location.coordinate.long,
       phone: activity.display_phone,
       image_url: activity.image_url,
       category_name: activity.categories[0][0]

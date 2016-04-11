@@ -9,7 +9,12 @@ exports.up = function(knex, Promise) {
     table.time('time');
     table.integer('location_id');
     table.integer('business_id');
-
+    table.string('address');
+    table.string('category_name');
+    table.float('lat');
+    table.float('long');
+    table.string('phone');
+    table.string('image_url');
   })
 };
 
