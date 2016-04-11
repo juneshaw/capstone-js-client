@@ -29,7 +29,7 @@ router.get('/actgen', function(req, res, next) {
   engine.createActivity().then(function(data) {
     console.log('******* engine activity: ');
     res.send({payload:data});
-  // })
+  })
 })
 
 router.get('/:id/activities', function(req, res, next) {
