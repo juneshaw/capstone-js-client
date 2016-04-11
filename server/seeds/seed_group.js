@@ -12,6 +12,7 @@ exports.seed = function(knex, Promise) {
       image_url: 'https://s3-us-west-1.amazonaws.com/connectbot/friends_dusk.jpg',
       preference_id: 1,
       location_id: 1,
+      sort: 1,
       next_activity_date: "2016-06-05"}),
     knex('group').insert({id: 2,
       title: 'Galvanize Cohort',
@@ -20,6 +21,7 @@ exports.seed = function(knex, Promise) {
       image_url: 'https://s3-us-west-1.amazonaws.com/connectbot/friends_street.jpg',
       preference_id: 2,
       location_id: 2,
+      sort: 2,
       next_activity_date: "2016-06-01"}),
     knex('group').insert({id: 3,
       title: 'Cousins in Denver',
@@ -28,6 +30,7 @@ exports.seed = function(knex, Promise) {
       image_url: 'https://s3-us-west-1.amazonaws.com/connectbot/friends_river.jpg',
       preference_id: 3,
       location_id: 3,
+      sort: 0,
       next_activity_date: "2016-04-25"})
   );
 };
