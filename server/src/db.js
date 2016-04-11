@@ -294,6 +294,8 @@ deletePreference_CategoryByPreference: function(preferenceId) {
   return (this.Preference_Categories().where('preference_id', preferenceId).del().count());
 }
 
+
+
 //   return(this.Members().join('activity_member', 'member.id', 'activity_member.member_id').where('activity_member.activity_id', activityId))
 // }
 

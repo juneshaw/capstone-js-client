@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     table.integer('location_id');
     table.integer('sort');
     table.date('next_activity_date');
+    table.string('city_state');
   })
 };
 

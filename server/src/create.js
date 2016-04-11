@@ -1,20 +1,30 @@
+
+var oauthSignature = require('oauth-signature');
+var n = require('nonce')();
+var request = require('request');
+var qs = require('querystring');
+var _ = require('lodash');
+var db = require('./db.js');
+
 module.exports = {
 
-  createActivity: function(group) {
-    console.log('got the group: ', group);
+  createActivity: function(group, city_state, sort, category_filter) {
+    console.log('got the createActivity call with', city_state, sort, category_filter);
 
     var set_parameters =
-    {location: group.location_center, group.sort}
+    {location: city_state, sort: sort, category_filter: category_filter}
     // {location:req.params.location,sort:req.params.sort};
     //  {location:'Evergreen+CO',sort:'2'};
     function callback(error, response, body) {
       // res.send(body);
-      console.log('*************');
-      console.log('error: ', error);
-      // console.log('!!!!!!!!!!!!!');
-      // console.log('response: ', response);
       console.log('@@@@@@@@@@@@@');
       console.log('body: ', body);
+      var activities = JSON.parse(body).businesses;
+      console.log('activities:', activities);
+
+      var randomResultIndex= Math.floor(Math.random() * (activities.length - 0 )) + 0;
+      console.log('chosen activity: ', activities[randomResultIndex]);
+
     }
     var request_yelp = function(set_parameters, callback) {
 
@@ -26,7 +36,7 @@ module.exports = {
 
       /* We can setup default parameters here */
       var default_parameters = {
-        location: 'San+Francisco',
+        location: 'Denver+CO',
         sort: '2'
       };
 

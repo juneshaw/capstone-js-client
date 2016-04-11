@@ -13,7 +13,8 @@ exports.seed = function(knex, Promise) {
       preference_id: 1,
       location_id: 1,
       sort: 1,
-      next_activity_date: "2016-06-05"}),
+      next_activity_date: "2016-04-25",
+      city_state: "Arvada+CO"}),
     knex('group').insert({id: 2,
       title: 'Galvanize Cohort',
       host_id: 1,
@@ -22,7 +23,8 @@ exports.seed = function(knex, Promise) {
       preference_id: 2,
       location_id: 2,
       sort: 2,
-      next_activity_date: "2016-06-01"}),
+      next_activity_date: "2016-06-01",
+      city_state: "Denver+CO"}),
     knex('group').insert({id: 3,
       title: 'Cousins in Denver',
       host_id: 1,
@@ -31,6 +33,7 @@ exports.seed = function(knex, Promise) {
       preference_id: 3,
       location_id: 3,
       sort: 0,
-      next_activity_date: "2016-04-25"})
+      next_activity_date: "2016-06-05",   
+      city_state:"Denver+CO"})
   );
 };

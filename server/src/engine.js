@@ -42,18 +42,21 @@ createActivities: function () {
       }
     })
 
-    // For each of the groups that need an activity scheduled, schedule those activities
+    // For each of the groups that need an activity scheduled, retrieve a random category,
+    // and create those activities with the groups city_state and sort parameters for yelp.
+    var randomCategoryIndex;
     groups.forEach(function(group) {
       console.log('group: ', group);
-      create.createActivity(group)
+      db.preferenceCategories(group.preference_id).then(function(categories) {
+
+        // Randomize the category to be one of the categories of the group
+        var randomCategoryIndex = Math.floor(Math.random() * (categories.length - 0)) + 0;
+        console.log('randomCategoryIndex: ', randomCategoryIndex);
+        create.createActivity(group.city_state, group.sort, categories[randomCategoryIndex].name);
+      })
     })
-
-
   })
 },
-//
-// createActivity: function(group) {
-//   console.log('in createActivity with group of: ', group);
-// }
+
 
 };

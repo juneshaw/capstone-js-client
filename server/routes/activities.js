@@ -29,9 +29,7 @@ router.get('/new/location/:location/sort/:sort', function(req, res, next) {
   {location:req.params.location,sort:req.params.sort};
   //  {location:'Evergreen+CO',sort:'2'};
   function callback(error, response, body) {
-    // res.send(body);
-    console.log('*************');
-    console.log('error: ', error);
+    res.send(body);
     // console.log('!!!!!!!!!!!!!');
     // console.log('response: ', response);
     console.log('@@@@@@@@@@@@@');

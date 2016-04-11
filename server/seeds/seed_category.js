@@ -6,19 +6,19 @@ exports.seed = function(knex, Promise) {
 
     // Inserts seed entries
     knex('category').insert({id: 1,
-      name: 'Meals',
+      name: 'restaurants',
       image_url: "https://s3-us-west-1.amazonaws.com/connectbot/restaurants.png"}),
     knex('category').insert({id: 2,
-      name: 'Biking',
+      name: 'hiking',
       image_url: "https://s3-us-west-1.amazonaws.com/connectbot/biking.png"}),
     knex('category').insert({id: 3,
-      name: 'Arts',
+      name: 'arts',
       image_url: "https://s3-us-west-1.amazonaws.com/connectbot/arts.png"}),
     knex('category').insert({id: 4,
-      name: 'Music',
+      name: 'musicvenues',
       image_url: "https://s3-us-west-1.amazonaws.com/connectbot/music.png"}),
     knex('category').insert({id: 5,
-      name: 'Picnic',
+      name: 'gardens',
       image_url: "https://s3-us-west-1.amazonaws.com/connectbot/picnic.png"})
   );
 };
