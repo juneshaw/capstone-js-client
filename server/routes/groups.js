@@ -34,7 +34,7 @@ router.get('/:id', function(req, res, next) {
 router.get('/:id/actgen', function(req, res, next) {
   res.send({payload:"success"})
   // knex('users').orderBy('name', 'desc')
-console.log('in actgen');
+  console.log('in actgen');
 });
 
 router.get('/:id/activities', function(req, res, next) {

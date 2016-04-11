@@ -95,7 +95,7 @@ router.get('/new/location/:location/sort/:sort', function(req, res, next) {
   request_yelp(set_parameters, callback);
 });
 
-router.get('/actgen/:id', function(req, res, next) {
+router.get('/:id/actgen', function(req, res, next) {
   res.send({payload:"success"})
   // knex('users').orderBy('name', 'desc')
   console.log('in actgen');
