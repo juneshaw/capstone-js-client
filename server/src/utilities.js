@@ -1,23 +1,7 @@
 module.exports =
 {
-parseDateDay: function (dateString) {
-  console.log('dateString: ', dateString);
-  var monthday = dateString.split(' ')
-  console.log('monthday: ',monthday);
-  // return new Date(monthday[2], monthday[0]-1, monthday[1]);
-  var date = new Date(monthday[3], monthday[1]-1, monthday[2]);
-  console.log('date: ', date);
-  return date;
-},
 
 dayDiff: function (firstDate, secondDate) {
-  var firstDay = this.parseDateDay(firstDate);
-  var secondDay = this.parseDateDay(secondDate);
-  var daydif = Math.round((second-first)/(1000*60*60*24));
-  return daydif;
-},
-
-dayDiff2: function (firstDate, secondDate) {
   // One day in milliseconds
   var one_day=1000*60*60*24
 
