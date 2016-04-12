@@ -19,17 +19,18 @@
 }
 
 .splashpic {
-  background-image: url("../images/friends.jpg");
-  /*background-image:  url("../images/friends.jpg");*/
   background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+  margin-top: 10px;
+  height: 80vh;
   background-size: contain;
   background-position: center top;
   max-height:100%;
   max-width:100%;
-  /*background-blend-mode: color;*/
-  /*border: solid 5px #245580;*/
+  border: solid 3px black;
+}
+
+.splashdiv {
+  background-color: #245580;
 }
 
 .ticket {
@@ -236,7 +237,7 @@ caption {
 
 body {
   line-height: 16px;
-  background-color: #245580;
+  /*background-color: #245580;*/
 }
 
 .progress {
@@ -580,4 +581,12 @@ button:hover {
 
 #navbrand{
   color: white;
+}
+
+#main-brand {
+  margin-top: -10px;
+}
+
+#sub-brand {
+  padding-left: 0px;
 }
