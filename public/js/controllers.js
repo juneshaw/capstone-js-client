@@ -35,7 +35,7 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   });
 }]);
 
-connectbotControllers.controller('GroupActgenController', ['$scope', '$routeParams', 'GroupService', 'MemberService', 'ActivityService', function($scope, $routeParams, GroupService, MemberService, ActivityService) {
+connectbotControllers.controller('GroupActgenController', ['$scope', '$routeParams', 'GroupService', 'MemberService', 'ActivityService', 'RsvpService', function($scope, $routeParams, GroupService, MemberService, ActivityService, RsvpService) {
   console.log('got to actgen controller');
   GroupService.actgen().then(function(payload) {
     $scope.group = payload;
@@ -53,7 +53,7 @@ connectbotControllers.controller('GroupActgenController', ['$scope', '$routePara
   // });
 }]);
 
-connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService) {
+connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', 'RsvpService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService, RsvpService) {
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
     $scope.activity = payload.data.payload;
@@ -79,6 +79,10 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
         })
       });
     })
+
+    $scope.reply = function(response, memberId, activityId) {
+      RsvpService.reply(response, memberId, activityId);
+    }
 }]);
 
 connectbotControllers.controller('PreferenceShowController', ['$scope', '$routeParams', '$animate', 'GroupService', 'LocationService', 'MemberService', 'PreferenceService', 'CategoryService', 'CategoryData', function($scope, $routeParams, $animate, GroupService, LocationService, MemberService, PreferenceService, CategoryService, CategoryData) {

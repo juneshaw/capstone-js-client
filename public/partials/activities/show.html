@@ -22,9 +22,13 @@
       </a>
       <div class = text-center>
         <div class = "row voffset2">
-          <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-check"></i> Going</a>
+          <!-- var myId = 1; -->
+          <a class = "btn btn-primary span2" ng-click="reply('Y', 1, activity.id)"><i class="fa fa-check"></i> Going</a>
+          <a class = "btn btn-primary span2" ng-click="reply('M', 1, activity.id)"><i class="fa fa-question"></i> Maybe</a>
+          <a class = "btn btn-primary span2" ng-click="reply('N', 1, activity.id)"><i class="fa fa-frown-o"></i> Can't make it</a>
+          <!-- <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-check"></i> Going</a>
           <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-question"></i> Maybe</a>
-          <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-frown-o"></i> Can't make it</a>
+          <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-frown-o"></i> Can't make it</a> -->
         </div>
         <div class = "row voffset2">
           <a class="btn btn-primary span2" href="https://www.google.com/calendar/event?action=TEMPLATE&amp;text=ScheduleThis&amp;dates=20160414T160000/20160414T220000&amp;details=Did+you+know%2F%29&amp;location=1245+Champa+St%2C+Denver%2C+CO%2C+80204%2C+United+States&amp;sprop=website:http://www.thecommons.co&amp;trp=false" title="Add to Google Calendar"><i class="fa fa-calendar"></i> Save the Date</a>

@@ -78,6 +78,37 @@ app.service("ActivityService", function($http) {
   return ActivityService;
 })
 
+app.service("RsvpService", function($http) {
+  var RsvpService = {};
+
+
+  RsvpService.reply = function(reply, memberId, activityId) {
+    url = "https://capstone-js.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
+    console.log('in RsvpService with ', reply, memberId, activityId);
+    return $http.get(url, {method: "jsonp"});
+
+    // var data = $.param({
+    //     json: JSON.stringify({
+    //           "activity_id": activityId,
+    //           "member_id": memberId,
+    //           "reply": reply}),
+    //
+    // });
+    // url = "https://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
+    // url = "https://capstone-js.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
+    // url = "https://capstone-js.herokuapp.com/activities/"+preference.id+"/times/edit";
+
+  //  return $http({
+  //     method: 'POST',
+  //     url: url,
+  //     data: data,
+  //     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+  //   })
+  }
+
+  return RsvpService;
+})
+
 app.service("LocationService", function($http) {
   var LocationService = {};
 
