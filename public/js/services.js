@@ -26,6 +26,7 @@ app.service("GroupService", function($http){
 
   GroupService.actgen = function() {
     return $http.get("https://capstone-js.herokuapp.com/groups/actgen", {method: "jsonp"});
+    console.log('got to the actgen controller');
   }
 
     // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
