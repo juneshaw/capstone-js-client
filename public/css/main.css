@@ -1,4 +1,8 @@
 /* red ##CF370D */
+/* teal #59a673 */
+/* navy #245580 */
+
+
 [ng-click],
 [data-ng-click],
 [x-ng-click],
@@ -14,16 +18,18 @@
     padding: 15px;
 }
 
-.splash {
-  background-image:  url("../images/friends.jpg");
+.splashpic {
+  background-image: url("../images/friends.jpg");
   /*background-image:  url("../images/friends.jpg");*/
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
   background-size: contain;
-  background-position:center top;
+  background-position: center top;
+  max-height:100%;
+  max-width:100%;
   /*background-blend-mode: color;*/
-  /*border: dashed 5px red;*/
+  /*border: solid 5px #245580;*/
 }
 
 .ticket {
@@ -35,14 +41,6 @@
   background-size: contain;
   background-position:center top;
   padding: 10px;
-}
-
-.splashpic {
-  /*width: auto;
-  height: auto;*/
-  border: solid 5px black;
-  max-height:100%;
-  max-width:100%;
 }
 
 #splashbanner {
@@ -237,7 +235,8 @@ caption {
 }
 
 body {
-  line-height: 16px
+  line-height: 16px;
+  background-color: #245580;
 }
 
 .progress {
@@ -427,9 +426,9 @@ display: block;
   border-bottom: 5px solid #c00;
 }
 
-a {
+/*a {
   font-weight: bold;
-}
+}*/
 /*a,
 a:hover {
   color: #ecf0f1;
@@ -568,3 +567,17 @@ button:hover {
   top: 50%;
   margin-top: -8px;
   line-height: 16px;
+}
+
+.navcolor {
+  background-color: #59a673;
+  color: white;
+}
+
+#navitem {
+  color: white;
+}
+
+#navbrand{
+  color: white;
+}
