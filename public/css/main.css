@@ -42,6 +42,7 @@
   background-size: contain;
   background-position:center top;
   padding: 10px;
+  color: #245580;
 }
 
 #splashbanner {
@@ -333,6 +334,7 @@ button.back {
 .rsvp {
   text-align: center;
   margin: 5px;
+  color: white;
 }
 
 .rsvpYes {
@@ -598,4 +600,16 @@ button:hover {
 
 #sub-brand {
   padding-left: 0px;
+}
+
+#group_index {
+  color: white;
+}
+
+#group_show {
+  color: white;
+}
+
+#activity_show {
+  color: white;
 }

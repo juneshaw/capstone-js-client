@@ -1,4 +1,4 @@
-<div class = "container-fluid">
+<div id="group_show" class = "container-fluid">
   <h3 class = "text-center">Group Details</h3>
   <h4 class = "text-center">{{group.title}}</h4>
   <hr>
@@ -16,19 +16,19 @@
       </div>
     </div>
 
-    <a ng-href="#/activities/{{activity.id}}">
-    <div class = "col-sm-4">
-      <p>{{group.bio}}</p>
-      <span>Host: {{host.first_name}} {{host.last_name}}</span>
-      <div class = "text-center ticket">
+      <div class = "col-sm-4">
+        <p>{{group.bio}}</p>
+        <span>Host: {{host.first_name}} {{host.last_name}}</span>
+        <a ng-href="#/activities/{{activity.id}}">
+        <div class = "text-center ticket">
 
-        <h4>{{activity.name}}</h4>
-        <h6>{{activity.date | date : fullDate}}</h6>
-        <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-        <!-- <h6>{{activity.location_id}}</h6> -->
+          <h4>{{activity.name}}</h4>
+          <h6>{{activity.date | date : fullDate}}</h6>
+          <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
+          <!-- <h6>{{activity.location_id}}</h6> -->
+        </div>
+      </a>
       </div>
-    </div>
-  </a>
 
     <div class = "col-sm-4">
       <!-- <p>{{group.location_id}}</p> -->
