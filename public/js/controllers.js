@@ -33,14 +33,17 @@ connectbotControllers.controller('GroupShowController', ['$scope', '$routeParams
   $scope.groupId = $routeParams.id;
   GroupService.getGroup($scope.groupId).then(function(payload) {
     $scope.group = payload.data.payload;
-    MemberService.getMember($scope.group.host_id).then(function(payload) {
-      $scope.host = payload.data.payload;
-      GroupService.getActivityLatest($scope.groupId).then(function(payload) {
-        $scope.activity = payload.data.payload;
+    MemberService.getMembers($scope.group.id).then(function(payload) {
+      console.log('members in controller', payload);
+      $scope.members = payload.data.payload;
+      MemberService.getMember($scope.group.host_id).then(function(payload) {
+        $scope.host = payload.data.payload;
+        GroupService.getActivityLatest($scope.groupId).then(function(payload) {
+          $scope.activity = payload.data.payload;
+        })
       })
     })
-  }, function(error) {
-  });
+  })
 }]);
 
 connectbotControllers.controller('GroupActgenController', ['$scope', '$routeParams', 'GroupService', 'MemberService', 'ActivityService', 'RsvpService', function($scope, $routeParams, GroupService, MemberService, ActivityService, RsvpService) {

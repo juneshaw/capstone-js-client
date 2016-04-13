@@ -29,6 +29,10 @@ app.service("GroupService", function($http){
     console.log('got to the actgen controller');
   }
 
+  GroupService.getMembers= function(groupId) {
+    return $http.get("https://capstone-js2.herokuapp.com/groups/"+groupId+"/members", {method: "jsonp"});
+  }
+
     // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
     // var X = cos(lat) * cos(lon)
     // var Y = cos(lat) * sin(lon)
@@ -85,7 +89,7 @@ app.service("RsvpService", function($http) {
     url = "https://capstone-js2.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/";
     return $http.get(url, {method: "jsonp"});
   }
-  
+
   RsvpService.reply = function(reply, memberId, activityId) {
     url = "https://capstone-js2.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
     console.log('in RsvpService with ', reply, memberId, activityId);

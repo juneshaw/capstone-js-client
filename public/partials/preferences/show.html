@@ -6,9 +6,8 @@
   <!-- Times -->
   <div class = "row">
     <div class = "col-sm-4">
+      <h4>Event time, day, interval</h4>
       <form class="form" ng-submit="updateTimes()" role="form">
-        <fieldset>
-          <legend>When to get together</legend>
         <div class="form-group">
           <label>Time</label></br>
           <input type="time" id="time" name="time" ng-model="preference.time"
@@ -40,8 +39,6 @@
         </div>
         <button type="button" class="btn btn-primary" ng-click="updatePreferenceTimes()">Save</button>
         <button type="reset" class="btn" ng-click="cancelPreferenceTimes()">Cancel</button>
-      </fieldset>
-
       </form>
 
 

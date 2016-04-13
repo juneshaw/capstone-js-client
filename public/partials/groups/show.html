@@ -38,7 +38,15 @@
       </div>
     </div>
   </div>
-    <div class = "row row-horizon">
+  <div class = "row row-horizon">
+    <div ng-repeat = "member in members">
+      <div class = "col-sm-2 col-sm-offset-1">
+        <img class = "img-circle" ng-src="{{member.image_url}}">
+        <h4>{{member.first_name}}</h4>
+      </div>
+    </div>
+  </div>
+  <!-- <div class = "row row-horizon">
       <div class = "col-md-6">
         <h1>Test This</h1>
       </div>
@@ -62,9 +70,7 @@
       </div>
       <div class = "col-md-6">
         <h1>Test This</h1>
-      </div>
+      </div> -->
 
   </div>
-  </div>
-
 </div>
