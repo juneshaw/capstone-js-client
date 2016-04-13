@@ -3,37 +3,29 @@
   <!-- <h4 class = "text-center">{{host.first_name}} {{host.last_name}}</h4> -->
   <hr>
 <!-- <div class = "container-fluid text-container"> -->
-  <table class="table-striped table-bordered table-hover">
-    <!-- <caption>My Groups</caption> -->
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Bio</th>
-      </tr>
-    </thead>
-    <tbody>
-
-      <tr ng-repeat="group in groups">
-
-        <td>
-          <a ng-href="#/groups/{{group.id}}">
-            {{group.title}}
+  <div ng-repeat = "group in groups" class = "row">
+    <h3>{{group.title}}</h3>
+    <div class = "row">
+      <div class = "col-sm-4" >
+        <image class = "group_pic" src = "{{group.image_url}}"></image>
+      </div>
+      <div class = "col-sm-8" >
+        <a ng-href="#/activities/{{activity.id}}">
+          <div class = "col-sm-4">
+            <!-- <p>{{group.bio}}</p> -->
+            <!-- <span>Host: {{host.first_name}} {{host.last_name}}</span> -->
+            <div class = "text-center ticket">
+              <h3>Activity Coming Up</h3>
+              <h4>{{group.activity.name}}</h4>
+              <h6>{{group.activity.date | date : fullDate}}</h6>
+              <h6>{{group.activity.time | timeToNormal  | date: 'shortTime'}}</h6>
+              <h6>(RSVP Status)</h6>
+              <!-- <h6>{{activity.lomemberion_id}}</h6> -->
+            </div>
           </a>
-        </td>
-        <td>
-          <a ng-href="#/groups/{{group.id}}">
-          <!-- <a style="display: block;" ng-href="#/groups/{{group.id}}"> -->
-            {{group.bio}}
-          </a>
-        </td>
-          <!-- <td>{{group.id}}</td> -->
-          <!-- <td>{{group.title}}</td>
-          <td>{{group.bio}}</td> -->
-        <!-- </a> -->
-        <!-- </td> -->
-      </tr>
-    <!-- </a> -->
-    </tbody>
-  <!-- <img class="splashpic" src="../../images/friends.jpg" alt="Friend Picture"> -->
-  </table>
+      </div>
+
+    </div>
+
+</div>
 </div>

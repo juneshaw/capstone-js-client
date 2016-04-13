@@ -13,10 +13,18 @@ connectbotControllers.controller('MainController', ['$scope', function($scope){
 }]);
 
 // app.controller('GroupIndexController', ['$scope', GroupService, function($scope){
-connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupService', function($scope, GroupService){
+connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupService', 'ActivityService', function($scope, GroupService, ActivityService){
   // $scope.group_collection = "Testing group index";
   GroupService.getGroups().then(function(payload) {
     $scope.groups = payload.data.payload;
+    $scope.groups.forEach(function(group, index) {
+      GroupService.getActivityLatest(group.id).then(function(payload) {
+        console.log('getActivityLatest: ', payload);
+        $scope.groups[index].activity=payload.data.payload;
+        // RsvpService.getReply()
+      })
+
+    })
   }, function(error) {
   });
 }]);

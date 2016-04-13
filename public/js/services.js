@@ -81,7 +81,11 @@ app.service("ActivityService", function($http) {
 app.service("RsvpService", function($http) {
   var RsvpService = {};
 
-
+  RsvpService.getReply = function(memberId, activityId) {
+    url = "https://capstone-js2.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/";
+    return $http.get(url, {method: "jsonp"});
+  }
+  
   RsvpService.reply = function(reply, memberId, activityId) {
     url = "https://capstone-js2.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
     console.log('in RsvpService with ', reply, memberId, activityId);

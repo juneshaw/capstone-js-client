@@ -1,5 +1,5 @@
 {
-  "firebase": "capstone-js2",
+  "firebase": "capstone-js",
   "public": "public",
   "ignore": [
     "firebase.json",

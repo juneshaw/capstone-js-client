@@ -237,7 +237,7 @@ caption {
 
 body {
   line-height: 16px;
-  /*background-color: #245580;*/
+  background-color: #245580;
 }
 
 .progress {
@@ -246,6 +246,10 @@ body {
 
 #listNav .btn:first-child {
 margin-left: 0px;
+}
+
+.group_pic {
+  height: 150px;
 }
 
 .thumbnail {
