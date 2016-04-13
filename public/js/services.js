@@ -33,6 +33,10 @@ app.service("GroupService", function($http){
     return $http.get("https://capstone-js2.herokuapp.com/groups/"+groupId+"/members", {method: "jsonp"});
   }
 
+  GroupService.getGroupByActivity= function(activityId) {
+    return $http.get("https://capstone-js2.herokuapp.com/activities/"+ activityId+"/group", {method: "jsonp"});
+  }
+
     // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
     // var X = cos(lat) * cos(lon)
     // var Y = cos(lat) * sin(lon)

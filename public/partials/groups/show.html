@@ -1,10 +1,8 @@
 <div id="group_show" class = "container-fluid">
-  <h3 class = "text-center">Group Details</h3>
-  <h4 class = "text-center">{{group.title}}</h4>
+  <h3 class = "text-center">{{group.title}} Details</h3>
   <hr>
   <div class = "row">
     <div class = "col-sm-4">
-      <p>{{group.title}}</p>
       <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture">
       <div class = "text-center voffset5">
         <a class = "btn btn-primary span2" href="#/preferences/{{group.id}}">Check Group Preferences</a>
@@ -19,6 +17,7 @@
       <div class = "col-sm-4">
         <p>{{group.bio}}</p>
         <span>Host: {{host.first_name}} {{host.last_name}}</span>
+        <br><br>
         <a ng-href="#/activities/{{activity.id}}">
         <div class = "text-center ticket">
 
@@ -39,8 +38,7 @@
     </div>
   </div>
 
-  <div class="row span12 rsvp rsvpMaybe">
-    <i class="fa fa-question fa-2x"></i>
+  <div class="row span12  gallery">
     <ul class="thumbnails">
       <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="col-sm-2">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->

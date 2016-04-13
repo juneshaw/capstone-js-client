@@ -1,5 +1,5 @@
 <div id="activity_show" class = "container-fluid">
-  <h3 class = "text-center">Next Activity:   {{activity.name}}</h3>
+  <h3 class = "text-center">{{group.title}} Next Activity:   {{activity.name}}</h3>
   <hr>
 
   <div class = "row">
@@ -45,7 +45,7 @@
         <li class="list-group-item">{{business.name}}</li>
         <li class="list-group-item">{{business.phone}}</li>
         <li class="list-group-item">{{business.address}}</li>
-        <li class="list-group-item">{{business.snippet_text}}</li>
+        <!-- <li class="list-group-item">{{business.snippet_text}}</li> -->
 
         <!-- <li class="list-group-item"><span class="badge">5</span> Deleted</li>
         <li class="list-group-item"><span class="badge">3</span> Warnings</li>   -->
@@ -115,7 +115,7 @@
   <h3 class = "rsvp">RSVPs</h3>
 
   <div class="row span12 rsvp rsvpYes">
-    <i class="fa fa-question fa-2x"></i>
+    <i class="fa fa-thumbs-up fa-2x"></i>
     <ul class="thumbnails">
       <li ng-repeat="member in members | rsvpYes" ng-click="getDetail(member.id)" class="col-sm-2">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
@@ -146,7 +146,7 @@
   </div>
 
   <div class="row span12 rsvp rsvpNo">
-    <i class="fa fa-frown-o fa-2x"></i>
+    <i class="fa fa-thumbs-down fa-2x"></i>
     <ul class="thumbnails">
       <li ng-repeat="member in members | rsvpNo" ng-click="getDetail(member.id)" class="col-sm-2 animate-repeat">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->

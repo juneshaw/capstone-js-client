@@ -345,6 +345,11 @@ button.back {
   border: solid 3px yellow;
 }
 
+.gallery {
+  border: solid 3px white;
+  padding: 5px;
+}
+
 .rsvpNo {
   border: solid 3px red;
 }
@@ -611,5 +616,9 @@ button:hover {
 }
 
 #activity_show {
+  color: white;
+}
+
+#preference_show {
   color: white;
 }

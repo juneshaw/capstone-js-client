@@ -1,4 +1,4 @@
-<div class = "container-fluid">
+<div id = "preference_show" class = "container-fluid">
   <h3 class = "text-center">Activity Preferences</h3>
   <h4 class = "text-center">{{group.title}}</h4>
   <hr>
@@ -11,15 +11,15 @@
         <div class="form-group">
           <label>Time</label></br>
           <input type="time" id="time" name="time" ng-model="preference.time"
-              placeholder="07:00:00" required /></br>
-          <label>Day</label></br>
+              placeholder="07:00:00" required ></br>
+          <label>Day</label>
           <!-- <input type="text" class="form-control" ng-model="selectedDay" bs-options="day for day in periods.days" placeholder="Enter day" bs-typeahead></br> -->
-          <select ng-model="preference.day" ng-options="day for day in periods.days"></select></br>
-          <label>How Often</label></br>
-          <select ng-model="preference.periodicity" ng-options="period for period in periods.periods"></select></br>
+          <select ng-model="preference.day" ng-options="day for day in periods.days"></select><br><br>
+          <label>How Often</label>
+          <select ng-model="preference.periodicity" ng-options="period for period in periods.periods"></select></br><br>
 
           <!-- <input type="text" class="form-control" ng-model="selectedOften" bs-options="period for period in periods.periods" placeholder="Enter how often" bs-typeahead></br> -->
-          <label>Custom Date</label></br>
+          <label>Custom Date</label>
           <div class="dropdown">
             <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
               <datetimepicker data-ng-model="data.dateDropDownInput" data-datetimepicker-config="{ dropdownSelector: '#dropdown2' }"/>
@@ -30,7 +30,7 @@
                <p class="input-group">
                  <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
                  <span class="input-group-btn">
-                   <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+                   <button type="button" class="btn btn-default" ng-click="open1()">  <i class="glyphicon glyphicon-calendar"></i></button>
                  </span>
                </p>
              </div>
