@@ -1,25 +1,33 @@
 <div class = "container-fluid text-container">
   <h3 class = "text-center">My Groups</h3>
   <!-- <h4 class = "text-center">{{host.first_name}} {{host.last_name}}</h4> -->
-  <hr>
+  <!-- <hr> -->
 <!-- <div class = "container-fluid text-container"> -->
   <div ng-repeat = "group in groups" class = "row">
-    <h3>{{group.title}}</h3>
+    <hr>
+    <h3 style="text-align: center">{{group.title}}</h3>
     <div class = "row">
+
       <div class = "col-sm-4" >
-        <image class = "group_pic" src = "{{group.image_url}}"></image>
+        <a ng-href="#/groups/{{group.id}}">
+          <image class = "group_pic" src = "{{group.image_url}}"></image>
+        </a>
       </div>
       <div class = "col-sm-8" >
-        <a ng-href="#/activities/{{activity.id}}">
+        <a ng-href="#/activities/{{group.activity.id}}">
           <div class = "col-sm-4">
             <!-- <p>{{group.bio}}</p> -->
             <!-- <span>Host: {{host.first_name}} {{host.last_name}}</span> -->
-            <div class = "text-center ticket">
+            <div class = "row">
               <h3>Activity Coming Up</h3>
-              <h4>{{group.activity.name}}</h4>
-              <h6>{{group.activity.date | date : fullDate}}</h6>
-              <h6>{{group.activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-              <h6>(RSVP Status)</h6>
+            </div>
+            <div class = "row">
+              <div class = "text-center ticket">
+                <h4>{{group.activity.name}}</h4>
+                <h6>{{group.activity.date | date : fullDate}}</h6>
+                <h6>{{group.activity.time | timeToNormal  | date: 'shortTime'}}</h6>
+              <!-- <h6>(RSVP Status)</h6> -->
+              </div>
               <!-- <h6>{{activity.lomemberion_id}}</h6> -->
             </div>
           </a>
