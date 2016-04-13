@@ -3,29 +3,29 @@ app.service("GroupService", function($http){
 
   GroupService.getGroups = function(){
     // return $http.get("https://localhost:3000/groups", {method: "jsponp"});
-    return $http.get("https://capstone-js.herokuapp.com/groups", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/groups", {method: "jsonp"});
   }
 
   GroupService.getGroup = function(id){
     // return $http.get("https://localhost:3000/groups/"+id, {method: "jsponp"});
-    return $http.get("https://capstone-js.herokuapp.com/groups/"+id, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/groups/"+id, {method: "jsonp"});
   }
 
   GroupService.getActivityLatest = function(id) {
-    return $http.get("https://capstone-js.herokuapp.com/groups/"+id+"/activities", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/groups/"+id+"/activities", {method: "jsonp"});
   }
 
   GroupService.getGroupFromPreference = function(preferenceId) {
-    return $http.get("https://capstone-js.herokuapp.com/groups/preference/"+preferenceId, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/groups/preference/"+preferenceId, {method: "jsonp"});
   }
 
   GroupService.getLocationCenter = function(groupId) {
-    return $http.get("https://capstone-js.herokuapp.com/groups/location/"+locationId, {method: "jsonp"}).then(function(data){
+    return $http.get("https://capstone-js2.herokuapp.com/groups/location/"+locationId, {method: "jsonp"}).then(function(data){
     })
   }
 
   GroupService.actgen = function() {
-    return $http.get("https://capstone-js.herokuapp.com/groups/actgen", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/groups/actgen", {method: "jsonp"});
     console.log('got to the actgen controller');
   }
 
@@ -52,10 +52,10 @@ app.service("MemberService", function($http){
 
   MemberService.getMembers = function(){
     // return $http.get("https://localhost:3000/groups", {method: "jsponp"});
-    return $http.get("https://capstone-js.herokuapp.com/members", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/members", {method: "jsonp"});
   }
   MemberService.getMember = function(id) {
-    return $http.get("https://capstone-js.herokuapp.com/members/"+id, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/members/"+id, {method: "jsonp"});
   }
   return MemberService;
 });
@@ -65,11 +65,11 @@ app.service("ActivityService", function($http) {
   var ActivityService = {};
 
   ActivityService.getActivity = function(activityId) {
-    return $http.get("https://capstone-js.herokuapp.com/activities/"+activityId, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/activities/"+activityId, {method: "jsonp"});
   }
 
   ActivityService.getMembers = function(activityId) {
-    return $http.get("https://capstone-js.herokuapp.com/activities/"+activityId+"/members", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/activities/"+activityId+"/members", {method: "jsonp"});
   }
 
   ActivityService.createActivity = function() {
@@ -83,7 +83,7 @@ app.service("RsvpService", function($http) {
 
 
   RsvpService.reply = function(reply, memberId, activityId) {
-    url = "https://capstone-js.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
+    url = "https://capstone-js2.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
     console.log('in RsvpService with ', reply, memberId, activityId);
     return $http.get(url, {method: "jsonp"});
 
@@ -94,9 +94,9 @@ app.service("RsvpService", function($http) {
     //           "reply": reply}),
     //
     // });
-    // url = "https://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
-    // url = "https://capstone-js.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
-    // url = "https://capstone-js.herokuapp.com/activities/"+preference.id+"/times/edit";
+    // url = "https://capstone-js2.herokuapp.com/preferences/"+preference.id+"/edit";
+    // url = "https://capstone-js2.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
+    // url = "https://capstone-js2.herokuapp.com/activities/"+preference.id+"/times/edit";
 
   //  return $http({
   //     method: 'POST',
@@ -113,7 +113,7 @@ app.service("LocationService", function($http) {
   var LocationService = {};
 
   LocationService.getLocation = function(locationId) {
-    return $http.get("https://capstone-js.herokuapp.com/locations/"+locationId, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/locations/"+locationId, {method: "jsonp"});
   }
 
   return LocationService;
@@ -123,7 +123,7 @@ app.service("BusinessService", function($http) {
   var BusinessService = {};
 
   BusinessService.getBusiness = function(businessId) {
-    return $http.get("https://capstone-js.herokuapp.com/businesses/"+businessId, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/businesses/"+businessId, {method: "jsonp"});
   }
   return BusinessService;
 })
@@ -132,7 +132,7 @@ app.service("PreferenceService", function($http) {
   var PreferenceService = {};
 
   PreferenceService.getPreference = function(preferenceId) {
-    return $http.get("https://capstone-js.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/preferences/"+preferenceId, {method: "jsonp"});
   }
 
   PreferenceService.setPreferenceTimes = function(preference) {
@@ -143,8 +143,8 @@ app.service("PreferenceService", function($http) {
               "periodicity": preference.periodicity}),
 
     });
-    // url = "https://capstone-js.herokuapp.com/preferences/"+preference.id+"/edit";
-    url = "https://capstone-js.herokuapp.com/preferences/"+preference.id+"/times/edit";
+    // url = "https://capstone-js2.herokuapp.com/preferences/"+preference.id+"/edit";
+    url = "https://capstone-js2.herokuapp.com/preferences/"+preference.id+"/times/edit";
 
     return $http({
     method: 'POST',
@@ -156,11 +156,11 @@ app.service("PreferenceService", function($http) {
 
 
   PreferenceService.getPreferenceCategories = function(preferenceId) {
-    return $http.get("https://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/preferences/"+preferenceId+"/categories", {method: "jsonp"});
   }
 
   PreferenceService.deletePreferenceCategories = function(preferenceId) {
-    return $http.get("https://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/delete", {method: "jsonp"});
+    return $http.get("https://capstone-js2.herokuapp.com/preferences/"+preferenceId+"/categories/delete", {method: "jsonp"});
   }
 
   PreferenceService.insertPreferenceCategory = function(preferenceId, categoryId) {
@@ -170,7 +170,7 @@ app.service("PreferenceService", function($http) {
               "category_id": categoryId}),
     });
 
-    url = "https://capstone-js.herokuapp.com/preferences/"+preferenceId+"/categories/insert";
+    url = "https://capstone-js2.herokuapp.com/preferences/"+preferenceId+"/categories/insert";
 
     return $http({
     method: 'POST',
@@ -182,11 +182,11 @@ app.service("PreferenceService", function($http) {
 
 
     // console.log('data in set times: ', data);
-    // return $http.post("https://capstone-js.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
+    // return $http.post("https://capstone-js2.herokuapp.com/groups/preference/"+preference.id+"/edit",data);
   // }
 
   // PreferenceService.getGroup = function(preferenceId) {
-  //   return $http.get("https://capstone-js.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
+  //   return $http.get("https://capstone-js2.herokuapp.com/preferences/"+preferenceId+"/group", {method: "jsonp"});
   // }
 
   PreferenceService.periods =
@@ -199,7 +199,7 @@ app.service("PreferenceService", function($http) {
 
 app.service('CategoryService', function($http) {
     var categories = null;
-    var promise = $http.get('https://capstone-js.herokuapp.com/categories').success(function (data, err) {
+    var promise = $http.get('https://capstone-js2.herokuapp.com/categories').success(function (data, err) {
       categories = data;
     });
 
