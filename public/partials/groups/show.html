@@ -38,14 +38,44 @@
       </div>
     </div>
   </div>
-  <div class = "row row-horizon">
+
+  <div class="row span12 rsvp rsvpMaybe">
+    <i class="fa fa-question fa-2x"></i>
+    <ul class="thumbnails">
+      <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="col-sm-2">
+      <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
+
+        <div class = "thumbnail" style="background-color:black">
+          <img class = "img-circle" ng-src="{{member.image_url}}">
+          <div class="caption">
+            <h4>{{member.first_name}}</h4>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+<!-- With circles -->
+  <!-- <div ng-repeat = "member in members">
+
+    <div class="thumbnail" style="background-color:green"> -->
+    <!-- <div class="thumbnail"> -->
+      <!-- <img class = "img-circle" ng-src="{{member.image_url}}">
+      <div class="caption">
+        <h4>{{member.first_name}}</h4>
+      </div>
+    </div>
+</div> -->
+
+  <!-- <div class = "row row-horizon">
     <div ng-repeat = "member in members">
       <div class = "col-sm-2 col-sm-offset-1">
         <img class = "img-circle" ng-src="{{member.image_url}}">
         <h4>{{member.first_name}}</h4>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- <div class = "row row-horizon">
       <div class = "col-md-6">
         <h1>Test This</h1>

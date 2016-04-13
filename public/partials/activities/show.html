@@ -113,17 +113,14 @@
   </div>
 
   <h3 class = "rsvp">RSVPs</h3>
-  <div class="row span12 rsvp rsvpYes">
-    <i class="fa fa-check fa-2x"></i>
-    <ul class="thumbnails">
-      <!-- <div ng-repeat="product in products | filter: my÷≥Filter"> -->
-      <!-- <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6> -->
 
+  <div class="row span12 rsvp rsvpYes">
+    <i class="fa fa-question fa-2x"></i>
+    <ul class="thumbnails">
       <li ng-repeat="member in members | rsvpYes" ng-click="getDetail(member.id)" class="col-sm-2">
       <!-- <li ng-repeat="member in members" ng-click="getDetail(member.id)" class="span2"> -->
 
-        <div class="thumbnail" style="background-color:green">
-        <!-- <div class="thumbnail"> -->
+        <div class = "thumbnail" style="background-color:green">
           <img class = "img-circle" ng-src="{{member.image_url}}">
           <div class="caption">
             <h4>{{member.first_name}}</h4>
@@ -147,6 +144,7 @@
       </li>
     </ul>
   </div>
+
   <div class="row span12 rsvp rsvpNo">
     <i class="fa fa-frown-o fa-2x"></i>
     <ul class="thumbnails">
