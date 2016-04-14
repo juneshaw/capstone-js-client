@@ -69,15 +69,15 @@ connectbotControllers.controller('GroupActgenController', ['$scope', '$routePara
 }]);
 
 connectbotControllers.controller('ActivityShowController', ['$scope', '$routeParams', '$animate', 'ActivityService', 'LocationService', 'BusinessService', 'MemberService', 'RsvpService', 'GroupService', function($scope, $routeParams, $animate, ActivityService, LocationService, BusinessService, MemberService, RsvpService, GroupService) {
-  app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
-    console.log('doing the sce ******');
-    $sceDelegateProvider.resourceUrlWhitelist([
-      // Allow same origin resource loads.
-      'self',
+  // app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
+  //   console.log('doing the sce ******');
+  //   $sceDelegateProvider.resourceUrlWhitelist([
+  //     // Allow same origin resource loads.
+  //     'self',
       // Allow loading from our assets domain.  Notice the difference between * and **.
-      'http://m.yelp.com/**'
-    ]);
-  })
+  //     'http://m.yelp.com/**'
+  //   ]);
+  // })
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
     $scope.activity = payload.data.payload;
