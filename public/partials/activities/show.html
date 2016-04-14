@@ -14,9 +14,11 @@
         <div class = "text-center ticket">
 
           <h4>{{activity.name}}</h4>
+          <h6>{{activity.category_name}}</h6>
           <h6>{{activity.date | date : fullDate}}</h6>
           <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
           <h6>{{activity.address}}</h6>
+          <h6>{{activity.phone}}</h6>
           <!-- <h6>{{activity.lomemberion_id}}</h6> -->
         </div>
       </a>
@@ -39,17 +41,17 @@
       <!-- <div class="span8 memberOptions">{{member.options}}</div> -->
       <!-- <button ng-click='newmember(memberIndex + 1)' class="btn btn-primary pull-right span2">+ ICAL EXPORT</button> -->
     </div>
-    <div class = "col-sm-5 text-center">
-      <ul class="list-group" style="color:black">
+    <div class = "col-sm-4 text-center">
+      <!-- <ul class="list-group" style="color:black">
 
         <li class="list-group-item">{{business.name}}</li>
         <li class="list-group-item">{{business.phone}}</li>
-        <li class="list-group-item">{{business.address}}</li>
+        <li class="list-group-item">{{business.address}}</li> -->
         <!-- <li class="list-group-item">{{business.snippet_text}}</li> -->
 
         <!-- <li class="list-group-item"><span class="badge">5</span> Deleted</li>
         <li class="list-group-item"><span class="badge">3</span> Warnings</li>   -->
-      </ul>
+      <!-- </ul> -->
 
 
       <img ng-src="{{business.rating_img_url_small}}" class="img-responsive" alt="rating">
