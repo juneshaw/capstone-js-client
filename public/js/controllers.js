@@ -84,16 +84,15 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
       $scope.business = payload.data.payload;
       $scope.map = {
         center: {
-                latitude: $scope.business.lat,
-                longitude: $scope.business.long
+                latitude: $scope.business.location.coordinate.latitude,
+                longitude: $scope.business.location.coordinate.latitude
         },
         zoom: 11,
         markers: [{
           id: Date.now(),
           coords: {
-              latitude: $scope.business.lat,
-              longitude: $scope.business.long
-          }
+            latitude: $scope.business.location.coordinate.latitude,
+            longitude: $scope.business.location.coordinate.latitude          }
         }]};
         // $scope.map.markers.push(marker);
 
