@@ -9,11 +9,9 @@ var connectbotControllers = angular.module('connectbotControllers', []);
 
 
 connectbotControllers.controller('MainController', ['$scope', function($scope){
-
-  $scope.test='splash page'
-  app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
-      $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://localhost:9011/**']);
-       }]);
+  // app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
+  //     $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://localhost:9011/**']);
+  //      }]);
 }]);
 
 // app.controller('GroupIndexController', ['$scope', GroupService, function($scope){

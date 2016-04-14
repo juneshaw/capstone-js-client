@@ -3,25 +3,17 @@
 //
 // var app = angular.module('my-app', [angularDragula(angular)]);
 
-var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers', '$sceDelegateProvider', angularDragula(angular) ]);
-// var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers', angularDragula(angular) ]);
-
-
-// var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  angularDragula(angular), 'connectbotControllers']);
+var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers', angularDragula(angular) ]);
         // app.config(function($routeProvider, $locationProvider) {
-        app.config(function($sceDelegateProvider) {
-          $sceDelegateProvider.resourceUrlWhitelist([
+        // app.config(function($sceDelegateProvider) {
+        //   $sceDelegateProvider.resourceUrlWhitelist([
             // Allow same origin resource loads.
-            'self',
-
-
-
-
+            // 'self',
             // Allow loading from our assets domain.  Notice the difference between * and **.
-            'https://m.yelp.com/**'
-          ]);
-          console.log('doing the whitelisting');
-        })
+        //     'https://m.yelp.com/**'
+        //   ]);
+        //   console.log('doing the whitelisting');
+        // })
         app.config(function($routeProvider) {
             $routeProvider
             .when('/', {
