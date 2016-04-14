@@ -20,11 +20,12 @@
         <br><br>
         <a ng-href="#/activities/{{activity.id}}">
         <div class = "text-center ticket">
-
-          <h4>{{activity.name}}</h4>
-          <h6>{{activity.date | date : fullDate}}</h6>
-          <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-          <!-- <h6>{{activity.location_id}}</h6> -->
+          <h3>{{activity.name}}</h3>
+          <h4>{{activity.category_name}}</h4>
+          <h4>{{activity.date | date : fullDate}}</h4>
+          <h4>{{activity.time | timeToNormal  | date: 'shortTime'}}</h4>
+          <h4>{{activity.address}}</h4>
+          <h4>{{activity.phone}}</h4>
         </div>
       </a>
       </div>

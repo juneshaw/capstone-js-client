@@ -86,7 +86,7 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
                 latitude: $scope.business.lat,
                 longitude: $scope.business.long
         },
-        zoom: 8,
+        zoom: 11,
         markers: [{
           id: Date.now(),
           coords: {

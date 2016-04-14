@@ -8,40 +8,40 @@
       <!-- <img class = "img-responsive" src="{{group.image_url}}" alt="Group Picture"> -->
     <!-- </div> -->
     <a ng-href="#/activities/{{activity.id}}">
-      <div class = "col-sm-4">
+      <div class = "col-sm-5">
         <!-- <p>{{group.bio}}</p> -->
         <!-- <span>Host: {{host.first_name}} {{host.last_name}}</span> -->
         <div class = "text-center ticket">
-
-          <h4>{{activity.name}}</h4>
-          <h6>{{activity.category_name}}</h6>
-          <h6>{{activity.date | date : fullDate}}</h6>
-          <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-          <h6>{{activity.location.address[0]}}</h6>
-          <h6>{{activity.display_phone}}</h6>
+          <h3>{{activity.name}}</h3>
+          <h4>{{activity.category_name}}</h4>
+          <h4>{{activity.date | date : fullDate}}</h4>
+          <h4>{{activity.time | timeToNormal  | date: 'shortTime'}}</h4>
+          <h4>{{activity.address}}</h4>
+          <h4>{{activity.phone}}</h4>
           <!-- <h6>{{activity.lomemberion_id}}</h6> -->
         </div>
       </a>
       <div class = text-center>
         <div class = "row voffset2">
           <!-- var myId = 1; -->
-          <a class = "btn btn-primary span2" ng-click="reply('Y', 1, activity.id)"><i class="fa fa-check"></i> Going</a>
+          <!-- <a class = "btn btn-primary span2" ng-click="reply('Y', 1, activity.id)"><i class="fa fa-check"></i> Going</a>
           <a class = "btn btn-primary span2" ng-click="reply('M', 1, activity.id)"><i class="fa fa-question"></i> Maybe</a>
-          <a class = "btn btn-primary span2" ng-click="reply('N', 1, activity.id)"><i class="fa fa-frown-o"></i> Can't make it</a>
+          <a class = "btn btn-primary span2" ng-click="reply('N', 1, activity.id)"><i class="fa fa-frown-o"></i> Can't make it</a> -->
           <!-- <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-check"></i> Going</a>
           <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-question"></i> Maybe</a>
           <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-frown-o"></i> Can't make it</a> -->
-        </div>
+        <!-- </div> -->
         <div class = "row voffset2">
           <a class="btn btn-primary span2" href="https://www.google.com/calendar/event?action=TEMPLATE&amp;text=ScheduleThis&amp;dates=20160414T160000/20160414T220000&amp;details=Did+you+know%2F%29&amp;location=1245+Champa+St%2C+Denver%2C+CO%2C+80204%2C+United+States&amp;sprop=website:http://www.thecommons.co&amp;trp=false" title="Add to Google Calendar"><i class="fa fa-calendar"></i> Save the Date</a>
         </div>
+      </div>
       </div>
       <!-- <a class="btn btn-primary span2" href="http://www.thecommons.co/event/get-hired-denver-startup-job-fair/?ical=1&amp;tribe_display=" title="Download .ics file">+ iCal Export</a> -->
       <!-- <button ng-click='#' class="btn btn-primary span2">+ GOOGLE CALENDAR</button></a> -->
       <!-- <div class="span8 memberOptions">{{member.options}}</div> -->
       <!-- <button ng-click='newmember(memberIndex + 1)' class="btn btn-primary pull-right span2">+ ICAL EXPORT</button> -->
     </div>
-    <div class = "col-sm-4 text-center">
+    <div class = "col-sm-2 text-center">
       <!-- <ul class="list-group" style="color:black">
 
         <li class="list-group-item">{{business.name}}</li>
@@ -54,7 +54,6 @@
       <!-- </ul> -->
 
 
-      <img ng-src="{{business.rating_img_url_small}}" class="img-responsive" alt="rating">
 
       <!-- <div ng-controller="BusinessModalController">
 
@@ -93,20 +92,19 @@
               </div> -->
            </script>
 
-          <button type="button" class="btn btn-default" ng-click="open()">Tell me more!</button>
+          <!-- Fix SCE whitelist for next line -->
+          <!-- <button type="button" class="btn btn-default" ng-click="open()">Tell me more!</button> -->
           <!-- <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
           <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
           <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button> -->
         <div ng-show="selected">Selection from a modal: {{ selected }}</div>
       </div>
 
-      <!-- <button type="button" class="btn btn-primary span2"  data-template-url="{{business.mobile_url}}" bs-modal="modal">Show Me More!</button> -->
-      <!-- <button type="button" class="btn btn-primary span2" data-animation="am-fade-and-slide-top" data-template-url="{{business.mobile_url}}" bs-modal="modal">Show Me More!</button> -->
-      <!-- <button type="button" class="btn btn-primary span2" data-animation="am-fade-and-slide-top" data-template-url="{{business.url}} || {{business.mobile_url}}" bs-modal="modal">Show Me More!</button> -->
-      <!-- <button type="button" class="btn btn-lg btn-danger" data-animation="am-fade-and-slide-top" data-template-url="modal/docs/modal.demo.tpl.html" bs-modal="modal">Show Me More!</button> -->
       <img ng-src="{{business.image_url_small}}" class="img-responsive img-rounded" alt="rating">
+      <img ng-src="{{business.rating_img_url_small}}" class="img-responsive" alt="rating">
+
     </div>
-    <div class = "col-sm-3">
+    <div class = "col-lg-3 col-lg-offset-1">
       <div id="map">
         <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
       </div>
@@ -115,6 +113,18 @@
   </div>
 
   <h3 class = "rsvp">RSVPs</h3>
+
+  <div class = text-center>
+    <div class = "row voffset2">
+      <!-- var myId = 1; -->
+      <a class = "btn btn-primary span2" ng-click="reply('Y', 1, activity.id)"><i class="fa fa-check"></i> Going</a>
+      <a class = "btn btn-primary span2" ng-click="reply('M', 1, activity.id)"><i class="fa fa-question"></i> Maybe</a>
+      <a class = "btn btn-primary span2" ng-click="reply('N', 1, activity.id)"><i class="fa fa-frown-o"></i> Can't make it</a>
+      <!-- <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-check"></i> Going</a>
+      <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-question"></i> Maybe</a>
+      <a class = "btn btn-primary span2" href="mailto:june.shaw@me.com"><i class="fa fa-frown-o"></i> Can't make it</a> -->
+    </div>
+  </div>
 
   <div class="row span12 rsvp rsvpYes">
     <i class="fa fa-thumbs-up fa-2x"></i>
