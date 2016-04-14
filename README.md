@@ -1,2 +1,2 @@
 G18 Capstone Automated Group Connection Planner
-# capstone-js2-client
+# capstone-js3-client
