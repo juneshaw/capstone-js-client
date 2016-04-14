@@ -80,10 +80,11 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
     $scope.activity = payload.data.payload;
+    console.log('activity!!!: ', $scope.activity);
     BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
       $scope.business = payload.data.payload;
+      console.log('$scope.business: ', $scope.business);
       $scope.map = {
-        console.log('$scope.business: ', $scope.business);
         center: {
                 latitude: $scope.business.location.coordinate.latitude,
                 longitude: $scope.business.location.coordinate.latitude
