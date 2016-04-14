@@ -79,22 +79,23 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
   // })
   $scope.activityId = $routeParams.id;
   ActivityService.getActivity($scope.activityId).then(function(payload) {
+    console.log('activity???', payload);
+    console.log('activity!!!: ', payload);
     $scope.activity = payload.data.payload;
-    console.log('activity!!!: ', $scope.activity);
-    BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
-      $scope.business = payload.data.payload;
-      console.log('$scope.business: ', $scope.business);
+    // BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
+    //   $scope.business = payload.data.payload;
+    //   console.log('$scope.business: ', $scope.business);
       $scope.map = {
         center: {
-                latitude: $scope.business.location.coordinate.latitude,
-                longitude: $scope.business.location.coordinate.latitude
+                latitude: $scope.activity.lat,
+                longitude: $scope.activity.long
         },
         zoom: 11,
         markers: [{
           id: Date.now(),
           coords: {
-            latitude: $scope.business.location.coordinate.latitude,
-            longitude: $scope.business.location.coordinate.latitude          }
+            latitude: $scope.activity.lat,
+            longitude: $scope.activity.long          }
         }]};
         // $scope.map.markers.push(marker);
 
@@ -104,7 +105,7 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
             $scope.group = payload.data.payload;
             console.log('group is: ', $scope.group);
           })
-        })
+        // })
       });
     })
 
