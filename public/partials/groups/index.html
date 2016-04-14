@@ -16,11 +16,11 @@
       </div>
       <div class = "col-sm-5" >
             <div class = "row " style="text-align:center">
-              <h3>Next Activity!</h3>
+              <h3>Next Event!</h3>
             <a ng-href="#/activities/{{group.activity.id}}">
               <div class = "text-center ticket">
                 <h3>{{group.activity.name}}</h3>
-                <h5><i class="fa fa-users" aria-hidden="true"></i>  {{activity.category_name}} <i class="fa fa-users" aria-hidden="true"></i></h5>
+                <h5><i class="fa fa-users" aria-hidden="true"></i>  {{group.activity.category_name}} <i class="fa fa-users" aria-hidden="true"></i></h5>
                 <h5>{{group.activity.date | date : fullDate}}   {{group.activity.time | timeToNormal  | date: 'shortTime'}}</h5>
                 <h5>{{group.activity.address}}</h5>
                 <h5>{{group.activity.phone}}</h5>
