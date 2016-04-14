@@ -1,15 +1,15 @@
 <div id = "preference_show" class = "container-fluid">
-  <h3 class = "text-center">Activity Preferences</h3>
-  <h4 class = "text-center">{{group.title}}</h4>
+  <h3 class = "text-center">{{group.title}} Activity Preferences</h3>
   <hr>
 
   <!-- Times -->
   <div class = "row">
-    <div class = "col-sm-4">
-      <h4>Event time, day, interval</h4>
+    <div class = "col-sm-4 col-sm-offset-2">
+      <h4 style="color:#E6CA5C">Choose your event time, day, and interval</h4>
+      <br>
       <form class="form" ng-submit="updateTimes()" role="form">
         <div class="form-group">
-          <label>Time</label></br>
+          <label>Time</label>
           <input type="time" id="time" name="time" ng-model="preference.time"
               placeholder="07:00:00" required ></br>
           <label>Day</label>
@@ -37,30 +37,36 @@
            </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" ng-click="updatePreferenceTimes()">Save</button>
-        <button type="reset" class="btn" ng-click="cancelPreferenceTimes()">Cancel</button>
+        <div class = "row voffset2">
+          <button type="button" class="btn btn-primary" ng-click="updatePreferenceTimes()">Save</button>
+          <button type="reset" class="btn" ng-click="cancelPreferenceTimes()">Cancel</button>
+        </div>
       </form>
 
 
       </div>
 
       <!-- div class='examples' ng-app='angular-dragula-example'> -->
-      <div class = "col-sm-8"> <!-- Other -->
+      <h4 style="color:#E6CA5C">Choose your categories of events</h4>
+      <br>
+      <div class = "col-sm-6"> <!-- Other -->
         <div class="parent">
         <!-- <div class="parent" ng-controller="CategoryController"> -->
-          <div class="wrapper">
-            <div class="container" dragula="category-bag" dragula-scope="$parent">
+          <div id = "category_bucket" class="wrapper">
+            <div id = " category_options" class="container" dragula="category-bag" dragula-scope="$parent">
 
-              <div ng-repeat="category in categories">{{category.name}}</div>
+              <div class = "category_buttons" ng-repeat="category in categories">{{category.name}}</div>
             </div>
-              <div class="container" dragula="category-bag" dragula-scope="$parent">
+              <div id = " category_selections" class="container" dragula="category-bag" dragula-scope="$parent">
 
-              <div ng-repeat="category in filteredCategories">{{category.name}}</div>
+              <div class = "category_buttons" ng-repeat="category in filteredCategories">{{category.name}}</div>
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary" ng-click="updateCategories()">Save</button>
-        <button type="reset" class="btn" ng-click="cancelCategoryEdit()">Cancel</button>
+          <div class = "row voffset2">
+            <button type="button" class="btn btn-primary" ng-click="updateCategories()">Save</button>
+            <button type="reset" class="btn" ng-click="cancelCategoryEdit()">Cancel</button>
+          </div>
       </div>
 
      <!-- Map for custom location -->

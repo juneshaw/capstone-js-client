@@ -15,22 +15,17 @@
         </a>
       </div>
       <div class = "col-sm-5" >
-          <!-- <div class = "col-sm-4"> -->
-            <!-- <p>{{group.bio}}</p> -->
-            <!-- <span>Host: {{host.first_name}} {{host.last_name}}</span> -->
             <div class = "row " style="text-align:center">
               <h3>Next Activity!</h3>
-            <!-- </div> -->
-            <!-- <div class = "row"> -->
             <a ng-href="#/activities/{{group.activity.id}}">
               <div class = "text-center ticket">
-                <h4>{{group.activity.name}}</h4>
-                <h6>{{group.activity.date | date : fullDate}}</h6>
-                <h6>{{group.activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-              <!-- <h6>(RSVP Status)</h6> -->
+                <h3>{{group.activity.name}}</h3>
+                <h5><i class="fa fa-users" aria-hidden="true"></i>  {{activity.category_name}} <i class="fa fa-users" aria-hidden="true"></i></h5>
+                <h5>{{group.activity.date | date : fullDate}}   {{group.activity.time | timeToNormal  | date: 'shortTime'}}</h5>
+                <h5>{{group.activity.address}}</h5>
+                <h5>{{group.activity.phone}}</h5>
               </div>
             </a>
-              <!-- <h6>{{activity.lomemberion_id}}</h6> -->
             </div>
           </div>
       </div>

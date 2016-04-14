@@ -256,6 +256,7 @@ margin-left: 0px;
 
 .group_pic {
   height: 150px;
+  border: solid 10px black;
 }
 
 .thumbnail {
@@ -480,7 +481,7 @@ ul {
 }
 
 .parent {
-  background-color: rgba(255, 255, 255, 0.2);
+  /*background-color: rgba(255, 255, 255, 0.2);*/
   /*margin: 50px 0;
   padding: 20px;*/
 }
@@ -620,5 +621,25 @@ button:hover {
 }
 
 #preference_show {
+  color: white;
+}
+
+#category_bucket {
+  background_color: inherit;
+}
+
+.category_buttons {
+  color: #245580;
+}
+
+#category_selection {
+  background-color: white;
+  margin-right: 30px;
+}
+
+#category_options {
+}
+
+#main {
   color: white;
 }
