@@ -17,8 +17,8 @@
           <h6>{{activity.category_name}}</h6>
           <h6>{{activity.date | date : fullDate}}</h6>
           <h6>{{activity.time | timeToNormal  | date: 'shortTime'}}</h6>
-          <h6>{{activity.address}}</h6>
-          <h6>{{activity.phone}}</h6>
+          <h6>{{activity.location.address[0]}}</h6>
+          <h6>{{activity.display_phone}}</h6>
           <!-- <h6>{{activity.lomemberion_id}}</h6> -->
         </div>
       </a>
