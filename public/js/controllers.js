@@ -82,30 +82,26 @@ connectbotControllers.controller('ActivityShowController', ['$scope', '$routePar
     console.log('activity???', payload);
     console.log('activity!!!: ', payload);
     $scope.activity = payload.data.payload;
-    // BusinessService.getBusiness($scope.activity.business_id).then(function(payload) {
-    //   $scope.business = payload.data.payload;
-    //   console.log('$scope.business: ', $scope.business);
-      $scope.map = {
-        center: {
-                latitude: $scope.activity.lat,
-                longitude: $scope.activity.long
-        },
-        zoom: 11,
-        markers: [{
-          id: Date.now(),
-          coords: {
-            latitude: $scope.activity.lat,
-            longitude: $scope.activity.long          }
-        }]};
-        // $scope.map.markers.push(marker);
+    $scope.map = {
+      center: {
+              latitude: $scope.activity.lat,
+              longitude: $scope.activity.long
+      },
+      zoom: 11,
+      markers: [{
+        id: Date.now(),
+        coords: {
+          latitude: $scope.activity.lat,
+          longitude: $scope.activity.long          }
+      }]};
+      // $scope.map.markers.push(marker);
 
-        ActivityService.getMembers($scope.activityId).then(function(payload) {
-          $scope.members = payload.data.payload;
-          GroupService.getGroupByActivity($scope.activity.id).then(function(payload) {
-            $scope.group = payload.data.payload;
-            console.log('group is: ', $scope.group);
-          })
-        // })
+      ActivityService.getMembers($scope.activityId).then(function(payload) {
+        $scope.members = payload.data.payload;
+        GroupService.getGroupByActivity($scope.activity.id).then(function(payload) {
+          $scope.group = payload.data.payload;
+          console.log('group is: ', $scope.group);
+        })
       });
     })
 
@@ -331,9 +327,3 @@ app.controller('CategoryController', ['$scope', function ($scope) {
     container.removeClass('ex-over');
   });
 }]);
-// connectbotControllers.controller('CategoryController', ['$scope', '$element', 'dragularService', function ($scope, $element, dragularService) {
-//   dragularService.cleanEnviroment();
-//   dragularService('.containerVertical');
-// }]);
-
-// connectbotControllers.controller(angularDragula(angular)]);

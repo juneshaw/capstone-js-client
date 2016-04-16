@@ -36,22 +36,6 @@ app.service("GroupService", function($http){
   GroupService.getGroupByActivity= function(activityId) {
     return $http.get("https://capstone-js3.herokuapp.com/activities/"+ activityId+"/group", {method: "jsonp"});
   }
-
-    // Convert lat/lon (must be in radians) to Cartesian coordinates for each location.
-    // var X = cos(lat) * cos(lon)
-    // var Y = cos(lat) * sin(lon)
-    // var Z = sin(lat)
-
-    // Compute average x, y and z coordinates.
-    // var x = (x1 + x2 + ... + xn) / n
-    // var y = (y1 + y2 + ... + yn) / n
-    // var z = (z1 + z2 + ... + zn) / n
-
-    // Convert average x, y, z coordinate to latitude and longitude.
-    // var Lon = atan2(y, x)
-    // var Hyp = sqrt(x * x + y * y)
-    // var Lat = atan2(z, hyp)
-  // }
   return GroupService;
 });
 
@@ -98,24 +82,6 @@ app.service("RsvpService", function($http) {
     url = "https://capstone-js3.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
     console.log('in RsvpService with ', reply, memberId, activityId);
     return $http.get(url, {method: "jsonp"});
-
-    // var data = $.param({
-    //     json: JSON.stringify({
-    //           "activity_id": activityId,
-    //           "member_id": memberId,
-    //           "reply": reply}),
-    //
-    // });
-    // url = "https://capstone-js3.herokuapp.com/preferences/"+preference.id+"/edit";
-    // url = "https://capstone-js3.herokuapp.com/activities/"+activityId+"/members/" + memberId + "/rsvp/" +reply;
-    // url = "https://capstone-js3.herokuapp.com/activities/"+preference.id+"/times/edit";
-
-  //  return $http({
-  //     method: 'POST',
-  //     url: url,
-  //     data: data,
-  //     headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-  //   })
   }
 
   return RsvpService;
