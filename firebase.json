@@ -1,5 +1,5 @@
 {
-  "firebase": "event-bot-server-jshaw",
+  "firebase": "event-bot-client-jshaw",
   "public": "public",
   "ignore": [
     "firebase.json",
