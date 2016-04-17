@@ -1,5 +1,5 @@
 {
-  "firebase": "capstone-js",
+  "firebase": "event-bot-client-jshaw",
   "public": "public",
   "ignore": [
     "firebase.json",
