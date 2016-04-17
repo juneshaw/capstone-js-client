@@ -1,2 +1,2 @@
 G18 Capstone Automated Group Connection Planner
-# event-bot-client-jshaw-client
+# event-bot-server-jshaw-client
