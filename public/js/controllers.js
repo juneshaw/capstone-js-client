@@ -9,6 +9,11 @@ var connectbotControllers = angular.module('connectbotControllers', []);
 
 
 connectbotControllers.controller('MainController', ['$scope', function($scope){
+  $scope.logout = function() {
+  auth.signout();
+  store.remove('profile');
+  store.remove('token');
+}
   // app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
   //     $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://localhost:9011/**']);
   //      }]);
@@ -327,3 +332,11 @@ app.controller('CategoryController', ['$scope', function ($scope) {
     container.removeClass('ex-over');
   });
 }]);
+
+app.controller( 'LoginController', function ( $scope, auth) {
+  $scope.auth = auth;
+});
+
+app.controller('UserInfoController', ['$scope', 'auth', function ($scope, auth) {
+  $scope.auth = auth;
+});
