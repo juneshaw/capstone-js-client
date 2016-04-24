@@ -45,9 +45,10 @@
                       </ul> -->
 
                      <ul class="nav navbar-nav navbar-right">
-                        <!-- <li class = "nav-link greeting">Hello</li> -->
+                        <li class = "nav-link greeting" ng-controller="LoginController">Hello {{auth.profile.nickname}}!</li>
                         <li class = "nav-item">
-                          <input type="submit" class = "nav-item" ng-controller="LoginController" ng-click="auth.signin()" value="Log in"/>
+                          <input type="submit" class = "nav-item" ng-controller="LoginController" ng-click="signin()" value="Log in"/>
+                          <!-- <input type="submit" class = "nav-item" ng-controller="LoginController" ng-click="auth.signin()" value="Log in"/> -->
 
                           <!-- <a id = "navitem" class = "nav-link external" href="#/login">Sign in</a> -->
                           <!-- <a id = "navitem" class = "nav-link external" href="#/login">Sign in</a> -->

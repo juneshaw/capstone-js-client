@@ -10,6 +10,8 @@ var connectbotControllers = angular.module('connectbotControllers', []);
 
 connectbotControllers.controller('MainController', ['$scope', 'auth', function($scope, auth){
   $scope.auth = auth;
+
+
 }]);
 
   // $scope.logout = function() {
@@ -22,8 +24,10 @@ connectbotControllers.controller('MainController', ['$scope', 'auth', function($
   //     $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://localhost:9011/**']);
   //      }]);
 
-connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupService', 'ActivityService', function($scope, GroupService, ActivityService){
+connectbotControllers.controller('GroupIndexController', ['$scope', 'auth', 'store', 'GroupService', 'ActivityService',  function($scope, auth, store, GroupService, ActivityService){
   // $scope.group_collection = "Testing group index";
+  $scope.auth = auth;
+
   GroupService.getGroups().then(function(payload) {
     $scope.groups = payload.data.payload;
     $scope.groups.forEach(function(group, index) {
@@ -343,6 +347,11 @@ app.controller( 'LoginController', ['$scope', 'auth', 'store', function ( $scope
   store.remove('profile');
   store.remove('token');
 }
+  $scope.signin = function() {
+    console.log('im in the main controller signin');
+    auth.signin({sso: false});
+  };
+
 }]);
 
 app.controller('UserInfoController', ['$scope', 'auth', function ($scope, auth) {
