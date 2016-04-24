@@ -58,7 +58,7 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
             })
             // Logged in route
             .when('/user-info', {
-              templateUrl: 'userinfo.html',
+              templateUrl: 'partials/login/userinfo.html',
               controller: 'UserInfoController',
               requiresLogin: true
             })

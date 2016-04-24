@@ -8,18 +8,20 @@ var connectbotControllers = angular.module('connectbotControllers', []);
 
 
 
-connectbotControllers.controller('MainController', ['$scope', function($scope){
-  $scope.logout = function() {
-  auth.signout();
-  store.remove('profile');
-  store.remove('token');
-}
+connectbotControllers.controller('MainController', ['$scope', 'auth', function($scope, auth){
+  $scope.auth = auth;
+}]);
+
+  // $scope.logout = function() {
+  //   console.log('i logged out!');
+  // auth.signout();
+  // store.remove('profile');
+  // store.remove('token');
+// }
   // app.config(['$sceDelegateProvider', function($sceDelegateProvider) {
   //     $sceDelegateProvider.resourceUrlWhitelist(['self', 'http://localhost:9011/**']);
   //      }]);
-}]);
 
-// app.controller('GroupIndexController', ['$scope', GroupService, function($scope){
 connectbotControllers.controller('GroupIndexController', ['$scope', 'GroupService', 'ActivityService', function($scope, GroupService, ActivityService){
   // $scope.group_collection = "Testing group index";
   GroupService.getGroups().then(function(payload) {
@@ -333,8 +335,14 @@ app.controller('CategoryController', ['$scope', function ($scope) {
   });
 }]);
 
-app.controller( 'LoginController', ['$scope', 'auth', function ( $scope, auth) {
+app.controller( 'LoginController', ['$scope', 'auth', 'store', function ( $scope, auth, store) {
   $scope.auth = auth;
+  $scope.logout = function() {
+    console.log('i logged out!');
+  auth.signout();
+  store.remove('profile');
+  store.remove('token');
+}
 }]);
 
 app.controller('UserInfoController', ['$scope', 'auth', function ($scope, auth) {
