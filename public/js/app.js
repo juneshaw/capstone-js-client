@@ -3,7 +3,7 @@
 //
 // var app = angular.module('my-app', [angularDragula(angular)]);
 
-var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers', 'auth0', 'angular-storage', 'angular-jwt', angularDragula(angular) ]);
+var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.bootstrap',  'connectbotControllers', 'auth0', 'angular-storage', 'angular-jwt', angularDragula(angular), 'auth0', 'angular-storage', 'angular-jwt' ]);
 
 // app.js
 // angular.module('YOUR-APP-NAME', ['auth0', 'angular-storage', 'angular-jwt'])
@@ -11,9 +11,23 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
           authProvider.init({
             domain: 'juneshaw.auth0.com',
             clientID: 'ePaUUAMbYwRxaWmp876xOblLO9v2th8z',
-            callbackURL: location.href,
+            // callbackURL: location.href,
             // Here include the URL to redirect to if the user tries to access a resource when not authenticated.
             loginUrl: '/login'
+          });
+
+          //app.js
+          authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
+            console.log("Login Success");
+            profilePromise.then(function(profile) {
+              store.set('profile', profile);
+              store.set('token', idToken);
+            });
+            $location.path('/');
+          });
+
+          authProvider.on('loginFailure', function() {
+            // Error Callback
           });
         })
 
@@ -41,13 +55,13 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
             .when('/login', {
               templateUrl: 'partials/login/login.html',
               controller: 'LoginController'
-            });
+            })
             // Logged in route
             .when('/user-info', {
               templateUrl: 'userinfo.html',
               controller: 'UserInfoController',
               requiresLogin: true
-            });
+            })
             .when('/groups', {
                 templateUrl: './partials/groups/index.html',
                 controller: 'GroupIndexController'
@@ -98,20 +112,6 @@ var app = angular.module('clientApp', ['ngRoute', 'uiGmapgoogle-maps', 'ui.boots
           app.run(function(auth) {
             // This hooks al auth events to check everything as soon as the app starts
             auth.hookEvents();
-          });
-          
-          //app.js
-          authProvider.on('loginSuccess', function($location, profilePromise, idToken, store) {
-            console.log("Login Success");
-            profilePromise.then(function(profile) {
-              store.set('profile', profile);
-              store.set('token', idToken);
-            });
-            $location.path('/');
-          });
-
-          authProvider.on('loginFailure', function() {
-             // Error Callback
           });
 
 

@@ -333,10 +333,10 @@ app.controller('CategoryController', ['$scope', function ($scope) {
   });
 }]);
 
-app.controller( 'LoginController', function ( $scope, auth) {
+app.controller( 'LoginController', ['$scope', 'auth', function ( $scope, auth) {
   $scope.auth = auth;
-});
+}]);
 
 app.controller('UserInfoController', ['$scope', 'auth', function ($scope, auth) {
   $scope.auth = auth;
-});
+}]);
